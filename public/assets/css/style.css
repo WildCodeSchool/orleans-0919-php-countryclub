@@ -1,50 +1,59 @@
-:root{
-    --yellowColor: #FFB223;
-    --brownColor: #B7542D;
+:root {
+    --primary-color: #FFB223;
+    --secondary-color: #B7542D;
+    --block-color-dark: #555;
+    --text-color-light: #EEE;
+    --text-color-medium: #BBB;
+    --text-color-dark: #A9A9A9;
 }
 
-footer{
-    background-color: #555;
-    color: #bbb;
+footer {
+    background-color: var(--block-color-dark);
+    color: var(--text-color-light);
     line-height:1.5;
     width:100%;
     height:35%;
 }
-footer a{
+
+footer a {
     text-decoration: none;
-    color: #eee;
+    color: var(--text-color-light);
 }
-a:hover{
+
+a:hover {
     text-decoration:underline;
 }
-.footer_nav{
+
+.footer_nav {
     display:flex;
     justify-content:space-around;
     padding-bottom:20px;
     border-bottom:2px gray solid;
 }
-.asso_footer{
+.asso_footer {
     display:flex;
     flex-flow:column;
 }
-.asso_footer a{
+
+.asso_footer a {
     padding-top:3px;
     font-size:20px;
     text-decoration:none;
 }
-.infos_footer{
+
+.infos_footer {
     display:flex;
     flex-flow:column;
     text-align: center;
     margin-top: 20px;
-    font-family: Zilla Slab;
 }
-.infos_footer a{
+
+.infos_footer a {
     padding-top:3px;
     text-decoration:none;
     font-size: 1.3em;
 }
-.footer2{
+.footerAdress {
     display: flex;
     justify-content: center;
     padding: 1rem 0 ;
@@ -52,35 +61,35 @@ a:hover{
     align-items: center;
     line-height: 0.5rem;
     margin-top: 20px;
-    font-family: Zilla Slab;
-}
-
-.footer2 {
     font-size: 1.2em;
 }
 
-.title_footer{
+.title_footer {
     font-weight:bold;
     font-size:20px;
-    color:white;
+    color: white;
 }
+
 .logo_CCR45 img {
     width: 150px;
     margin: 20px 0;
 }
-.row{
+
+.row {
     padding-top: 25px;
 }
+
 footer a:hover {
-    color: darkgrey;
+    color: var(--text-color-dark);
     text-decoration: none;
 }
-.links1{
+
+.links1 {
     text-align: center;
     margin-top: 20px;
-    font-family: Zilla Slab;
     font-size: 1.3em;
 }
 
-
-
+address {
+    text-align: center;
+}
