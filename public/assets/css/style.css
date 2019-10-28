@@ -5,12 +5,13 @@
     --text-color-light: #EEE;
     --text-color-medium: #BBB;
     --text-color-dark: #A9A9A9;
+    --font-title: 'Stardos Stencil', cursive;
+    --font-content: 'Roboto', sans-serif;
 }
 
 footer {
     background-color: var(--block-color-dark);
     color: var(--text-color-light);
-    line-height:1.5;
     width:100%;
     height:35%;
 }
@@ -30,6 +31,7 @@ a:hover {
     padding-bottom:20px;
     border-bottom:2px gray solid;
 }
+
 .asso_footer {
     display:flex;
     flex-flow:column;
@@ -51,28 +53,31 @@ a:hover {
 .infos_footer a {
     padding-top:3px;
     text-decoration:none;
-    font-size: 1.3em;
+    font-size: 16pt;
 }
+
 .footerAdress {
     display: flex;
     justify-content: center;
-    padding: 1rem 0 ;
+    padding: 2rem 0 ;
     flex-direction: column;
     align-items: center;
-    line-height: 0.5rem;
     margin-top: 20px;
-    font-size: 1.2em;
+    font-size: 16pt;
+    border-top: 1px solid white;
 }
 
 .title_footer {
-    font-weight:bold;
-    font-size:20px;
+    font-weight:500;
+    font-size:30px;
     color: white;
+    font-family: var(--font-title);
 }
 
 .logo_CCR45 img {
-    width: 150px;
+    width: 175px;
     margin: 20px 0;
+    filter: drop-shadow(0 0 0.4rem #303030);
 }
 
 .row {
@@ -87,9 +92,12 @@ footer a:hover {
 .links1 {
     text-align: center;
     margin-top: 20px;
-    font-size: 1.3em;
+    font-size: 16pt;
+    line-height: 1.7;
+    font-size: 16pt;
 }
 
 address {
     text-align: center;
+    line-height: 1.1;
 }
