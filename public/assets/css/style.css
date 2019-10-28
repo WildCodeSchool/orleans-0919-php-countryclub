@@ -1,19 +1,26 @@
 :root {
-    --primary-color: #FFB223;
-    --secondary-color: #B7542D;
-    --block-color-dark: #555;
-    --text-color-light: #EEE;
-    --text-color-medium: #BBB;
-    --text-color-dark: #A9A9A9;
+    --primary-color: #FFB223; /*yellow*/
+    --secondary-color: #B7542D; /*brown*/
+    --block-color-dark: #555; /* dark grey */
+    --text-color-light: #EEE; /* light grey */
+    --text-color-medium: #BBB; /* medium grey */
+    --text-color-dark: #A9A9A9; /* dark grey */
 }
 
-.carousel-caption {
-    padding-bottom: 80px;
-}
-
-.title-carousel{
-    font-size: 60px;
-    font-size: calc(60px + 8 * ((100vw - 320px) / 960));
+.title-carousel-primary{
+    font-size: calc(14px + 80 * ((100vw - 320px) / 960));
     text-shadow: 0px 0px 0.3em black;
-
+    font-family: 'Stardos Stencil', cursive;
 }
+
+.title-carousel-secondary{
+    font-size: calc(14px + 60 * ((100vw - 320px) / 960));
+    text-shadow: 0px 0px 0.3em black;
+    font-family: 'Roboto', sans-serif;
+}
+
+.d-none {
+    display: block !important;
+}
+
+
