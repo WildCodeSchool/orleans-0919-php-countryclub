@@ -5,22 +5,20 @@
     --text-color-light: #EEE; /* light grey */
     --text-color-medium: #BBB; /* medium grey */
     --text-color-dark: #A9A9A9; /* dark grey */
+    --font-title: 'Stardos Stencil', cursive;
+    --font-content: 'Roboto', sans-serif;
 }
 
 .title-carousel-primary{
     font-size: calc(14px + 80 * ((100vw - 320px) / 960));
     text-shadow: 0px 0px 0.3em black;
-    font-family: 'Stardos Stencil', cursive;
+    font-family: var(--font-title);
 }
 
 .title-carousel-secondary{
     font-size: calc(14px + 60 * ((100vw - 320px) / 960));
     text-shadow: 0px 0px 0.3em black;
-    font-family: 'Roboto', sans-serif;
-}
-
-.d-none {
-    display: block !important;
+    font-family: var(--font-content);
 }
 
 
