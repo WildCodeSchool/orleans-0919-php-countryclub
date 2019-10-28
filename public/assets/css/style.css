@@ -21,4 +21,90 @@
     font-family: var(--font-content);
 }
 
+footer {
+    background-color: var(--block-color-dark);
+    color: var(--text-color-light);
+    line-height:1.5;
+    width:100%;
+    height:35%;
+}
+
+footer a {
+    text-decoration: none;
+    color: var(--text-color-light);
+}
+
+a:hover {
+    text-decoration:underline;
+}
+
+.footer_nav {
+    display:flex;
+    justify-content:space-around;
+    padding-bottom:20px;
+    border-bottom:2px gray solid;
+}
+.asso_footer {
+    display:flex;
+    flex-flow:column;
+}
+
+.asso_footer a {
+    padding-top:3px;
+    font-size:20px;
+    text-decoration:none;
+}
+
+.infos_footer {
+    display:flex;
+    flex-flow:column;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.infos_footer a {
+    padding-top:3px;
+    text-decoration:none;
+    font-size: 1.3em;
+}
+.footerAdress {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0 ;
+    flex-direction: column;
+    align-items: center;
+    line-height: 0.5rem;
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+
+.title_footer {
+    font-weight:bold;
+    font-size:20px;
+    color: white;
+}
+
+.logo_CCR45 img {
+    width: 150px;
+    margin: 20px 0;
+}
+
+.row {
+    padding-top: 25px;
+}
+
+footer a:hover {
+    color: var(--text-color-dark);
+    text-decoration: none;
+}
+
+.links1 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.3em;
+}
+
+address {
+    text-align: center;
+}
 
