@@ -1,0 +1,9 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <h1>Association {{ association.title }}</h1>
+    <p>{{ association.id }}. {{ association.title }}</p>
+    <a href="/association/edit/{{ association.id }}">Edit</a>
+    <a href="/association/delete/{{association.id}}">Supprimer</a>
+    <a href="/association/index">Back</a>
+{% endblock %}

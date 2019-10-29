@@ -1,0 +1,7 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <h1>Edit association {{ association.title }}</h1>
+    {% include 'Association/_form.html.twig' %}
+    <a href="/association/show/{{ association.id }}">Back</a>
+{% endblock %}

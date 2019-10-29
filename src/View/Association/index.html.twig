@@ -1,0 +1,13 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <h1>Associations</h1>
+    <ul>
+        {% for association in associations %}
+            <li><a href="/association/show/{{ association.id }}">{{ association.id }}. {{ association.title }}</a></li>
+        {% else %}
+            <li>Nothing to display</li>
+        {% endfor %}
+    </ul>
+    <a href="/association/add">Ajouter</a>
+{% endblock %}
