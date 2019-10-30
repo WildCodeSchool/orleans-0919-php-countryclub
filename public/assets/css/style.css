@@ -9,17 +9,12 @@
     --font-content: 'Roboto', sans-serif;
 }
 
-.title-carousel-primary{
+.title-carousel{
     font-size: calc(14px + 80 * ((100vw - 320px) / 960));
-    text-shadow: 0px 0px 0.3em black;
+    text-shadow: 0px 0px 0.1em black;
     font-family: var(--font-title);
 }
 
-.title-carousel-secondary{
-    font-size: calc(14px + 60 * ((100vw - 320px) / 960));
-    text-shadow: 0px 0px 0.3em black;
-    font-family: var(--font-content);
-}
 
 footer {
     background-color: var(--block-color-dark);
