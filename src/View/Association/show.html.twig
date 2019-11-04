@@ -1,9 +1,21 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-    <h1>Association {{ association.title }}</h1>
-    <p>{{ association.id }}. {{ association.title }}</p>
-    <a href="/association/edit/{{ association.id }}">Edit</a>
-    <a href="/association/delete/{{association.id}}">Supprimer</a>
-    <a href="/association/index">Back</a>
+{#    <h1>Association {{ association.title }}</h1>#}
+{#    <p>{{ association.id }}. {{ association.title }}</p>#}
+{#    <a href="/association/edit/{{ association.id }}">Edit</a>#}
+{#    <a href="/association/delete/{{association.id}}">Supprimer</a>#}
+{#    <a href="/association/index">Back</a>#}
+
+{# Présentation #}
+{# Animatrices #}
+    <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+    </div>
+
+{# Bureau #}
+
 {% endblock %}
