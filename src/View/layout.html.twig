@@ -15,9 +15,12 @@
 
 <body>
 
-{% block header %}Nav{% endblock %}
+{% block header %}
+    {% include 'Home/header.html.twig' %}
+{% endblock %}
 {% block content %}{% endblock %}
 <h1>Bonjour à tous !</h1>
+{% include 'Home/country.html.twig' %}
 {% block footer %}Footer{% endblock %}
 
 

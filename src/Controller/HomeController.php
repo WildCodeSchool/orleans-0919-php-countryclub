@@ -8,6 +8,8 @@
 
 namespace App\Controller;
 
+use App\Model\CountryManager;
+
 class HomeController extends AbstractController
 {
 
@@ -19,8 +21,11 @@ class HomeController extends AbstractController
      * @throws \Twig\Error\RuntimeError
      * @throws \Twig\Error\SyntaxError
      */
+
     public function index()
     {
-        return $this->twig->render('Home/index.html.twig');
+        $countryManager = new CountryManager();
+        $country = $countryManager->selectAll();
+        return $this->twig->render('Home/index.html.twig', ['country' => $country]);
     }
 }
