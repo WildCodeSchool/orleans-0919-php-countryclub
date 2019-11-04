@@ -1,12 +1,32 @@
 :root {
-    --primary-color: #FFB223; /*yellow*/
-    --secondary-color: #B7542D; /*brown*/
-    --block-color-dark: #555; /* dark grey */
-    --text-color-light: #EEE; /* light grey */
-    --text-color-medium: #BBB; /* medium grey */
-    --text-color-dark: #A9A9A9; /* dark grey */
     --font-title: 'Stardos Stencil', cursive;
     --font-content: 'Roboto', sans-serif;
+    --primary-color: #FFB223;
+    --secondary-color: #B7542D;
+    --block-color-dark: #555;
+    --text-color-light: #EEE;
+    --text-color-medium: #BBB;
+    --text-color-dark: #A9A9A9;
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: black;
+    margin: 2vw;
+}
+.navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover {
+    color: lightslategrey;
+}
+.navbar-brand {
+    margin-right: 5vw;
+}
+.nav-link {
+    font-size: 15pt;
+    font-family: var(--font-title);
+}
+.navbar-toggler-icon {
+    background: lightgray;
+}
+.dark-blue-text {
+    color: black;
 }
 
 .title-carousel-primary{
@@ -113,4 +133,3 @@ address {
     text-align: center;
     line-height: 1.1;
 }
-
