@@ -1,34 +1,32 @@
+{% block contryDay %}
 
-
-<div class="container bg-secondary text-white" >
-    <div  class="card-header" align="center"><h2> COUNTRY DAY</h2></div>
+<div class="container bg-light text-dark" >
+    <div  class="card-header" align="center"><h2>COUNTRY DAY</h2></div>
     <div class="row ">
         <div class="col-lg-6">
             <figure class="figure">
-                <img   src="../../../assets/images/new_country.jpg" class="rounded mx-auto d-block"
+{% for one in country if(one.id)==1 %}
+                <img   src="../../../assets/images/{{ one.picture }}" class="rounded mx-auto d-block"
                        width="=250" height="550"
                        alt="country day">
                 <figcaption class="figure-caption">Country day 2020.</figcaption>
-        </figure>
-        </div>
-
+            </figure>
+            </div>
         <div class="col-lg-6">
             <div class="card-body">
-                {% for one in country if(one.id) ==1 %}
                 <h4 class="card-title">{{ one.title }}</h4>
                 <p class="card-text">
                     {{ one.content }}
                 </p>
-                {% endfor %}
-                <a href="#" class="btn btn-primary">Bulletin d'inscription</a>
+{% endfor %}
             </div>
             <div>
-                <video controls src="https://youtu.be/Z6jcL8ej3To" width="auto" height="250">
-                    <source src="https://youtu.be/Z6jcL8ej3To" type="video/mp4" />
-                </video>
+                <iframe width="510" height="300" src="https://www.youtube.com/embed/FqJl3d7yU5g"
+                        frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;
+                             picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
     </div>
 </div>
-
+{% endblock %}
 
