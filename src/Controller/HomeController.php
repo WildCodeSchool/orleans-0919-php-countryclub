@@ -24,8 +24,8 @@ class HomeController extends AbstractController
     public function index()
     {
 
-        $NewsManager = new NewsManager();
-        $news = $NewsManager->selectAll();
+        $newsManager = new NewsManager();
+        $news = $newsManager->selectAll();
         return $this->twig->render('Home/index.html.twig', ['news' =>$news]);
     }
 }

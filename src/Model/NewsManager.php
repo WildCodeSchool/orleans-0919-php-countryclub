@@ -3,7 +3,6 @@
 
 namespace App\Model;
 
-
 class NewsManager extends AbstractManager
 {
     /**
@@ -63,4 +62,3 @@ class NewsManager extends AbstractManager
         return $statement->execute();
     }
 }
-
