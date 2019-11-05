@@ -8,6 +8,8 @@
 
 namespace App\Controller;
 
+use App\Model\NewsManager;
+
 class HomeController extends AbstractController
 {
 
@@ -21,6 +23,9 @@ class HomeController extends AbstractController
      */
     public function index()
     {
-        return $this->twig->render('Home/index.html.twig');
+
+        $NewsManager = new NewsManager();
+        $news = $NewsManager->selectAll();
+        return $this->twig->render('Home/index.html.twig', ['news' =>$news]);
     }
 }
