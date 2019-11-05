@@ -1,0 +1,13 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <h1>Admins</h1>
+    <ul>
+        {% for admin in admins %}
+            <li><a href="/admin/show/{{ admin.id }}">{{ admin.id }}. {{ admin.title }}</a></li>
+        {% else %}
+            <li>Nothing to display</li>
+        {% endfor %}
+    </ul>
+    <a href="/admin/add">Ajouter</a>
+{% endblock %}

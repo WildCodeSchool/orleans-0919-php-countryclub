@@ -1,0 +1,7 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <h1>Edit contact {{ contact.title }}</h1>
+    {% include 'Contact/_form.html.twig' %}
+    <a href="/contact/show/{{ contact.id }}">Back</a>
+{% endblock %}

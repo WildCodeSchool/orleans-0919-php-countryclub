@@ -1,0 +1,10 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <h1>Admin {{ admin.title }}</h1>
+    <p>{{ admin.id }}. {{ admin.title }}</p>
+    <a href="/admin/edit/{{ admin.id }}">Edit</a>
+    <a href="/admin/delete/{{admin.id}}">Supprimer</a>
+    <a href="/admin/index">Back</a>
+
+{% endblock %}
