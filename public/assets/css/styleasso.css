@@ -1,0 +1,17 @@
+h2, h3 {
+    text-align: center;
+}
+
+.imagePresentation {
+    width: 30em;
+    margin-bottom: 50px;
+}
+
+.card {
+    opacity: 95%;
+    margin-bottom: 2em;
+}
+
+.card:hover {
+    opacity: 100%;
+}
