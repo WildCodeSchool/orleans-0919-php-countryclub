@@ -6,7 +6,9 @@
     --block-color-dark: #555;
     --text-color-light: #EEE;
     --text-color-medium: #BBB;
-    --text-color-dark: #A9A9A9;
+    --text-color-dark: #878787;
+    --dark-color: black;
+    --light-color: white;
 }
 
 @font-face {
@@ -22,7 +24,7 @@
     background-color: transparent;
 }
 .navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover {
-    color: lightslategrey;
+    color: var( --text-color-dark);
     border-bottom: 2px var(--text-color-medium) solid;
     padding-bottom: 0;
 }
@@ -30,8 +32,8 @@
     margin-right: 5vw;
 }
 
-.bg-white {
-    background-color: rgba(255,255,255,0.8) !important;
+.bg-white-transp {
+    background-color: rgba(255,255,255,0.8);
 }
 
 .nav-link {
@@ -42,11 +44,7 @@
     background: lightgray;
 }
 .dark-blue-text {
-    color: black;
-}
-
-.mb-5, .my-5 {
-    margin-bottom: 0 !important;
+    color: var(--dark-color);
 }
 
 .navbar img{
@@ -61,7 +59,7 @@
 
 .title-carousel{
     font-size: calc(14px + 65 * ((100vw - 320px) / 960));
-    text-shadow: 0px 0px 0.1em black;
+    text-shadow: 0px 0px 0.1em var(--dark-color);
     font-family: var(--font-title);
 }
 
@@ -126,13 +124,13 @@ a:hover {
     align-items: center;
     margin-top: 20px;
     font-size: 16pt;
-    border-top: 1px solid white;
+    border-top: 1px solid var(--light-color);
 }
 
 .title_footer {
     font-weight:500;
     font-size:30px;
-    color: white;
+    color: var(--light-color);
     font-family: var(--font-title);
 }
 

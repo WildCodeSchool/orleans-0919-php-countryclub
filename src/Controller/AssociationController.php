@@ -35,7 +35,6 @@ class AssociationController extends AbstractController
         return $this->twig->render('Association/index.html.twig', ['associations' => $associations]);
     }
 
-
     /**
      * Display association informations specified by $id
      *
@@ -53,63 +52,4 @@ class AssociationController extends AbstractController
         return $this->twig->render('Association/show.html.twig', ['association' => $association]);
     }
 
-
-    /**
-     * Display association edition page specified by $id
-     *
-     * @param int $id
-     * @return string
-     * @throws \Twig\Error\LoaderError
-     * @throws \Twig\Error\RuntimeError
-     * @throws \Twig\Error\SyntaxError
-     */
-    public function edit(int $id): string
-    {
-        $associationManager = new AssociationManager();
-        $association = $associationManager->selectOneById($id);
-
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $association['title'] = $_POST['title'];
-            $associationManager->update($association);
-        }
-
-        return $this->twig->render('Association/edit.html.twig', ['association' => $association]);
-    }
-
-
-    /**
-     * Display association creation page
-     *
-     * @return string
-     * @throws \Twig\Error\LoaderError
-     * @throws \Twig\Error\RuntimeError
-     * @throws \Twig\Error\SyntaxError
-     */
-    public function add()
-    {
-
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $associationManager = new AssociationManager();
-            $association = [
-                'title' => $_POST['title'],
-            ];
-            $id = $associationManager->insert($association);
-            header('Location:/association/show/' . $id);
-        }
-
-        return $this->twig->render('Association/add.html.twig');
-    }
-
-
-    /**
-     * Handle association deletion
-     *
-     * @param int $id
-     */
-    public function delete(int $id)
-    {
-        $associationManager = new AssociationManager();
-        $associationManager->delete($id);
-        header('Location:/association/index');
-    }
 }
