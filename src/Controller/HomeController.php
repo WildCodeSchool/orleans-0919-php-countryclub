@@ -25,7 +25,7 @@ class HomeController extends AbstractController
     public function index()
     {
         $countryManager = new CountryManager();
-        $country = $countryManager->selectAll();
-        return $this->twig->render('Home/index.html.twig', ['country' => $country]);
+        $countryDays = $countryManager->selectLast();
+        return $this->twig->render('Home/index.html.twig', ['countryDay' => $countryDays]);
     }
 }

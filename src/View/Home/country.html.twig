@@ -3,23 +3,20 @@
 <div class="container bg-light text-dark" >
     <div  class="card-header" align="center"><h2>COUNTRY DAY</h2></div>
     <div class="row ">
-        <div class="col-lg-6">
+        <div class="col-md-6">
             <figure class="figure">
-{% for one in country if(one.id)==1 %}
-                <img   src="../../../assets/images/{{ one.picture }}" class="rounded mx-auto d-block" width="=250" height="550" alt="country day">
-                <figcaption class="figure-caption">Country day 2020.</figcaption>
+                <img   src="/assets/images/{{ countryDay.picture }}" class="rounded mx-auto d-block" width="=250" height="550" alt="country day">
             </figure>
-            </div>
-        <div class="col-lg-6">
+        </div>
+        <div class="col-md-6">
             <div class="card-body">
-                <h4 class="card-title">{{ one.title }}</h4>
+                <h4 class="card-title">{{ countryDay.title }} titre</h4>
                 <p class="card-text">
-                    {{ one.content }}
+                    {{ countryDay.content }}
                 </p>
-{% endfor %}
             </div>
             <div>
-                <iframe width="510" height="300" src="https://www.youtube.com/embed/FqJl3d7yU5g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="450" height="300" src="https://www.youtube.com/embed/FqJl3d7yU5g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
     </div>

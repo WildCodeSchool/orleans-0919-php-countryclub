@@ -133,3 +133,6 @@ address {
     text-align: center;
     line-height: 1.1;
 }
+iframe {
+    width: 97%;
+}

@@ -26,48 +26,13 @@ class CountryManager extends AbstractManager
     {
         parent::__construct(self::TABLE);
     }
-
-
     /**
-     * @param array $event
-     * @return int
+     * Get last row from database.
+     *
+     * @return array
      */
-    public function insert(array $event): int
+    public function selectLast(): array
     {
-        // prepared request
-        $statement = $this->pdo->prepare("INSERT INTO $this->table (`title`) VALUES (:title)");
-        $statement->bindValue('title', $event['title'], \PDO::PARAM_STR);
-
-        if ($statement->execute()) {
-            return (int)$this->pdo->lastInsertId();
-        }
-    }
-
-
-    /**
-     * @param int $id
-     */
-    public function delete(int $id): void
-    {
-        // prepared request
-        $statement = $this->pdo->prepare("DELETE FROM $this->table WHERE id=:id");
-        $statement->bindValue('id', $id, \PDO::PARAM_INT);
-        $statement->execute();
-    }
-
-
-    /**
-     * @param array $event
-     * @return bool
-     */
-    public function update(array $event):bool
-    {
-
-        // prepared request
-        $statement = $this->pdo->prepare("UPDATE $this->table SET `title` = :title WHERE id=:id");
-        $statement->bindValue('id', $event['id'], \PDO::PARAM_INT);
-        $statement->bindValue('title', $event['title'], \PDO::PARAM_STR);
-
-        return $statement->execute();
+        return $this->pdo->query("SELECT * FROM  $this->table ORDER BY  date DESC LIMIT 1")->fetch();
     }
 }
