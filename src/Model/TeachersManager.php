@@ -12,7 +12,7 @@ namespace App\Model;
 /**
  *
  */
-class AssociationManager extends AbstractManager
+class TeachersManager extends AbstractManager
 {
     /**
      *

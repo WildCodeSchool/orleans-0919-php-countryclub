@@ -9,7 +9,7 @@
 
 namespace App\Controller;
 
-use App\Model\AssociationManager;
+use App\Model\TeachersManager;
 
 /**
  * Class AssociationController
@@ -29,26 +29,10 @@ class AssociationController extends AbstractController
      */
     public function index()
     {
-        $associationManager = new AssociationManager();
-        $associations = $associationManager->selectAll();
+        $associationManager = new TeachersManager();
+        $teachers = $associationManager->selectAll();
 
-        return $this->twig->render('Association/index.html.twig', ['associations' => $associations]);
+        return $this->twig->render('Association/index.html.twig', ['teachers' => $teachers]);
     }
 
-    /**
-     * Display association informations specified by $id
-     *
-     * @param int $id
-     * @return string
-     * @throws \Twig\Error\LoaderError
-     * @throws \Twig\Error\RuntimeError
-     * @throws \Twig\Error\SyntaxError
-     */
-    public function show(int $id)
-    {
-        $associationManager = new AssociationManager();
-        $association = $associationManager->selectOneById($id);
-
-        return $this->twig->render('Association/show.html.twig', ['association' => $association]);
-    }
 }
