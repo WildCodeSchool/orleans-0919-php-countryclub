@@ -9,6 +9,7 @@
     --text-color-dark: #878787;
     --dark-color: black;
     --light-color: white;
+    --bg-transp : rgba(255,255,255,0.8);
 }
 
 @font-face {
@@ -33,7 +34,7 @@
 }
 
 .bg-white-transp {
-    background-color: rgba(255,255,255,0.8);
+    background-color: var(--bg-transp);
 }
 
 .nav-link {
@@ -41,7 +42,7 @@
     font-family: var(--font-title);
 }
 .navbar-toggler-icon {
-    background: lightgray;
+    background: var(--text-color-dark);
 }
 .dark-blue-text {
     color: var(--dark-color);
@@ -192,7 +193,6 @@ address {
 }
 .one-news-home {
     margin-top: 2em;
-    margin-bottom;
 }
 .text-news-home {
     font-family: var(--font-content);

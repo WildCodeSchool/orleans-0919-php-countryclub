@@ -12,12 +12,12 @@ namespace App\Model;
 /**
  *
  */
-class TeachersManager extends AbstractManager
+class TeacherManager extends AbstractManager
 {
     /**
      *
      */
-    const TABLE = 'teachers';
+    const TABLE = 'teacher';
 
     /**
      *  Initializes this class.

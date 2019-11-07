@@ -8,7 +8,7 @@
     {# Animatrices #}
     <h1>Animatrices</h1>
     <ul>
-        {% for association in associations %}
+        {% for teacher in teachers %}
             <li><a href="/association/show/{{ association.id }}">{{ association.id }}. {{ association.title }}</a></li>
         {% else %}
             <li>Nothing to display</li>
