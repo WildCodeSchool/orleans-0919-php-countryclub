@@ -142,3 +142,38 @@ ul {
 .btn-primary {
     
 }
+/* Section news home*/
+.title-news {
+    font-size: 2.2em;
+    font-family: var(--font-title);
+}
+.box-news-home {
+    margin-left: 2em;
+    margin-top: 1em;
+    margin-bottom: 2em;
+    text-align: center;
+}
+.date-news-home {
+    color: var(--text-color-dark);
+    text-decoration: none;
+    font-family: var(--font-content);
+    font-size: 1.2em;
+    margin-top: 1em;
+}
+.title-news-home {
+    font-family: var(--font-content);
+    font-size: 1.8em;
+}
+.button-news-display {
+    background-color: var(--text-color-medium);
+    padding: 0.5em;
+    font-family: var(--font-content);
+    border: none;
+}
+.one-news-home {
+    margin-top: 2em;
+}
+.text-news-home {
+    font-family: var(--font-content);
+    text-align: left;
+}
