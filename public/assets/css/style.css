@@ -133,3 +133,12 @@ address {
     text-align: center;
     line-height: 1.1;
 }
+.card-header {
+    font-family: var(--font-title);
+}
+ul {
+    list-style-type: none;
+}
+.btn-primary {
+    
+}
