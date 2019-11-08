@@ -3,7 +3,6 @@
 
 namespace App\Controller;
 
-
 class AdhererController extends AbstractController
 {
     public function index()

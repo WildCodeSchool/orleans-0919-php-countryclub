@@ -3,7 +3,6 @@
 
 namespace App\Model;
 
-
 class AdhererManager extends AbstractManager
 {
     public function selectOneById(int $id)
