@@ -26,6 +26,7 @@ class CountryManager extends AbstractManager
     {
         parent::__construct(self::TABLE);
     }
+
     /**
      * Get last row from database.
      *
