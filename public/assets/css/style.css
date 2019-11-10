@@ -114,3 +114,21 @@ address {
     line-height: 1.1;
 }
 
+.titlePresentation, .titleMember {
+    text-align: center;
+}
+
+.imagePresentation {
+    width: 30em;
+    margin-bottom: 50px;
+}
+
+.cardMember {
+    opacity: 95%;
+    margin-bottom: 2em;
+}
+
+.cardMember:hover {
+    opacity: 100%;
+}
+
