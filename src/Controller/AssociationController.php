@@ -9,7 +9,7 @@
 
 namespace App\Controller;
 
-use App\Model\AssociationManager;
+use App\Model\MemberManager;
 
 /**
  * Class AssociationController
@@ -29,7 +29,7 @@ class AssociationController extends AbstractController
      */
     public function index()
     {
-        $associationManager = new AssociationManager();
+        $associationManager = new MemberManager();
         $associations = $associationManager->selectAll();
 
         return $this->twig->render('Association/index.html.twig', ['associations' => $associations]);

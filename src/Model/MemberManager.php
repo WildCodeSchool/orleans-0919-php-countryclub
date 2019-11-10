@@ -12,12 +12,12 @@ namespace App\Model;
 /**
  *
  */
-class AssociationManager extends AbstractManager
+class MemberManager extends AbstractManager
 {
     /**
      *
      */
-    const TABLE = 'members';
+    const TABLE = 'member';
 
     /**
      *  Initializes this class.
