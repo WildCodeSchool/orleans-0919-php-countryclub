@@ -12,10 +12,10 @@ namespace App\Controller;
 use App\Model\MemberManager;
 
 /**
- * Class AssociationController
+ * Class MemberController
  *
  */
-class AssociationController extends AbstractController
+class MemberController extends AbstractController
 {
 
 
@@ -29,9 +29,9 @@ class AssociationController extends AbstractController
      */
     public function index()
     {
-        $associationManager = new MemberManager();
-        $associations = $associationManager->selectAll();
+        $memberManager = new MemberManager();
+        $members = $memberManager->selectAll();
 
-        return $this->twig->render('Association/index.html.twig', ['associations' => $associations]);
+        return $this->twig->render('Member/index.html.twig', ['members' => $members]);
     }
 }

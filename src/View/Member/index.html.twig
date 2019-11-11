@@ -33,12 +33,12 @@
     <h3 class="titleMember">Voici le bureau</h3>
     <div class="container-fluid">
         <div class="row d-flex justify-content-around">
-            {% for associations in associations %}
+            {% for member in members %}
                 <div class="cardMember" style="width: 18rem;">
-                    <img src="/upload/MembersPhotos/{{ associations.picture }}" class="card-img-top" alt="members photos...">
+                    <img src="/upload/MembersPhotos/{{ member.picture }}" class="card-img-top" alt="members photos...">
                     <div class="card-body">
-                        <h5 class="card-title">{{associations.function}}</h5>
-                        <p class="card-text">{{ associations.firstname }} {{ associations.lastname }}</p>
+                        <h5 class="card-title">{{member.function}}</h5>
+                        <p class="card-text">{{ member.firstname }} {{ member.lastname }}</p>
                     </div>
                 </div>
             {% endfor %}
