@@ -1,18 +1,18 @@
 {% block countryDay %}
 
 <div class="container bg-light text-dark" >
-    <div  class="card-header" align="center"><h2>COUNTRY DAY</h2></div>
+    <div  class="card-header" align="center"><h3>COUNTRY DAY</h3></div>
     <div class="row ">
         <div class="col-md-6">
             <figure class="figure">
-                <img   src="/assets/images/{{ countryDay.picture }}" class="rounded mx-auto d-block" width="=250" height="550" alt="country day">
+                <img   src="/assets/images/{{ countryDay.image }}" class="rounded mx-auto d-block" width="=250" height="550" alt="country day">
             </figure>
         </div>
         <div class="col-md-6">
             <div class="card-body">
-                <h4 class="card-title">{{ countryDay.title }} titre</h4>
+                <h4 class="card-title">{{ countryDay.subtitle }} titre</h4>
                 <p class="card-text">
-                    {{ countryDay.content }}
+                    {{ countryDay.description }}
                 </p>
             </div>
             <div>

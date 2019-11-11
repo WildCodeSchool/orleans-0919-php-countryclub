@@ -17,7 +17,7 @@ class CountryManager extends AbstractManager
     /**
      *
      */
-    const TABLE = 'event';
+    const TABLE = 'countryDay';
 
     /**
      *  Initializes this class.
