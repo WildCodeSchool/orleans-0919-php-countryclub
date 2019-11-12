@@ -231,7 +231,6 @@ iframe {
     text-align: left;
 }
 
-
 /************** ASSOCIATION *****************/
 
 .teacherCard {
@@ -261,4 +260,10 @@ iframe {
     text-align: justify;
     font-style: italic;
     padding-top: 10px;
+}
+
+/*************** Admin *******************/
+
+.btn-logout {
+    align-self: center;
 }
