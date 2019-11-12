@@ -176,19 +176,7 @@ address {
     text-align: center;
 }
 
-.imagePresentation {
-    width: 30em;
-    margin-bottom: 50px;
-}
 
-.cardMember {
-    opacity: 95%;
-    margin-bottom: 2em;
-}
-
-.cardMember:hover {
-    opacity: 100%;
-}
 
 iframe {
     width: 97%;
@@ -233,19 +221,36 @@ iframe {
 
 /************** ASSOCIATION *****************/
 
+.titleAssociation {
+    margin-top: 40px;
+}
+
+.lead {
+    text-align: justify;
+}
+
+.jumbotron-fluid {
+    padding-left: 50px;
+    width: 50%;
+}
+
+.imgPres{
+    border-radius: 10px;
+}
+
 .teacherCard {
     width: 18rem;
     border: none;
     box-shadow: 10px 10px 15px var(--text-color-light);
-    margin-bottom: 40px;
+    margin: 0 100px 40px;
 }
 
 .teachers {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
 }
 
-.card-img-top {
+.imgTeachers {
     width: 60%;
     align-self: center;
     margin-top: 20px;
@@ -256,14 +261,45 @@ iframe {
     text-align: center;
 }
 
-.card-text {
+.teacher-text {
     text-align: justify;
     font-style: italic;
     padding-top: 10px;
 }
+
+.memberFunction {
+    text-align: center;
+    font-style: italic;
+}
+
+.memberName {
+    text-align: center;
+}
+
+.imgMember {
+    align-self: center;
+}
+
+.imagePresentation {
+    width: 30em;
+    margin-bottom: 50px;
+}
+
+.cardMember {
+    opacity: 100%;
+    margin-bottom: 2em;
+    display: flex;
+    flex-direction: column;
+}
+
+.cardMember:hover {
+    opacity: 80%;
+}
+
 
 /*************** Admin *******************/
 
 .btn-logout {
     align-self: center;
 }
+
