@@ -1,0 +1,21 @@
+<div class="box-news-home">
+    <h3 class="title-news">Focus sur l'association:</h3>
+    {% for article in  news %}
+        <div class="one-news-home">
+            <p class="p-block-news-home">
+            <p class="date-news-home">{{article.date|date("d/m/Y")}}</p>
+            <p class="title-news-home">{{article.title}}</p>
+            <button class="button-news-display" type="button" data-toggle="collapse" data-target="#collapse{{ article.id }}" aria-expanded="false" aria-controls="collapse1">
+                En savoir plus
+            </button>
+            </p>
+            <div class="collapse" id="collapse{{ article.id }}">
+                <div class="card card-body">
+                    <p class="text-news-home">
+                        {{ article.description }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>

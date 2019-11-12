@@ -8,6 +8,10 @@
 
 namespace App\Controller;
 
+use App\Model\CountryManager;
+
+use App\Model\NewsManager;
+
 class HomeController extends AbstractController
 {
 
@@ -19,8 +23,15 @@ class HomeController extends AbstractController
      * @throws \Twig\Error\RuntimeError
      * @throws \Twig\Error\SyntaxError
      */
+
     public function index()
     {
-        return $this->twig->render('Home/index.html.twig');
+        $countryManager = new CountryManager();
+        $countryDays = $countryManager->selectLast();
+        return $this->twig->render('Home/index.html.twig', ['countryDay' => $countryDays]);
+
+        $newsManager = new NewsManager();
+        $news = $newsManager->selectAll();
+        return $this->twig->render('Home/index.html.twig', ['news' =>$news]);
     }
 }
