@@ -3,8 +3,6 @@
 {% block content %}
 
 {# Présentation #}
-
-
     <h1 class="titleAssociation">L'ASSOCIATION EN BREF...</h1>
     <div class="container-fluid">
         <div class="row d-flex justify-content-around">
@@ -26,6 +24,20 @@
 
 
 {# Animatrices #}
+    <h1>Animatrices</h1>
+    <div class="container-fluid teachers">
+        {% for teacher in teachers %}
+            <div class="card teacherCard">
+                <img src="/assets/upload/{{ teacher.image }}" class="card-img-top" alt="Country's teacher">
+                <div class="card-body">
+                    <h2 clas="teacherTitle">{{ teacher.firstname }} {{ teacher.lastname }}</h2>
+                    <p class="card-text">{{ teacher.description }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+
 
 
 {# Bureau #}
