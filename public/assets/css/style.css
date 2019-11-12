@@ -171,6 +171,25 @@ address {
     line-height: 1.1;
 }
 
+
+.titlePresentation, .titleMember {
+    text-align: center;
+}
+
+.imagePresentation {
+    width: 30em;
+    margin-bottom: 50px;
+}
+
+.cardMember {
+    opacity: 95%;
+    margin-bottom: 2em;
+}
+
+.cardMember:hover {
+    opacity: 100%;
+}
+
 iframe {
     width: 97%;
 }
@@ -211,6 +230,7 @@ iframe {
     font-family: var(--font-content);
     text-align: left;
 }
+
 
 /************** ASSOCIATION *****************/
 
