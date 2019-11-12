@@ -4,4 +4,6 @@
 *.cache
 db.php
 .idea
-upload
+
+!public/assets/upload/.gitignore
+
