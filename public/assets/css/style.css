@@ -17,6 +17,14 @@
     src: url("../font/docktrin.ttf");
 }
 
+
+h1 {
+    font-family: var(--font-title) ;
+    text-align: center;
+    padding: 40px 0;
+}
+
+
 /************** NAVBAR *****************/
 
 .navbar-dark .navbar-nav .nav-link {
@@ -223,3 +231,34 @@ iframe {
     text-align: left;
 }
 
+
+/************** ASSOCIATION *****************/
+
+.teacherCard {
+    width: 18rem;
+    border: none;
+    box-shadow: 10px 10px 15px var(--text-color-light);
+    margin-bottom: 40px;
+}
+
+.teachers {
+    display: flex;
+    justify-content: space-around;
+}
+
+.card-img-top {
+    width: 60%;
+    align-self: center;
+    margin-top: 20px;
+    border-radius: 50%;
+}
+
+.teacherTitle {
+    text-align: center;
+}
+
+.card-text {
+    text-align: justify;
+    font-style: italic;
+    padding-top: 10px;
+}

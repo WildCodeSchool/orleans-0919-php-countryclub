@@ -1,21 +1,19 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-
-
-
     {# Présentation #}
     {# Animatrices #}
     <h1>Animatrices</h1>
-    <ul>
+    <div class="container teachers">
         {% for teacher in teachers %}
-            <li><a href="/association/show/{{ teacher.id }}"> {{ teacher.firstname }} {{ teacher.lastname }}</a></li>
-        {% else %}
-            <li>Nothing to display</li>
+            <div class="card teacherCard">
+                <img src="/assets/uploads/{{ teacher.image }}" class="card-img-top" alt="country's teacher">
+                <div class="card-body">
+                    <h3 class="teacherTitle">{{ teacher.firstname }} {{ teacher.lastname }}</h3>
+                    <p class="card-text"> "{{ teacher.description }}" </p>
+                </div>
+            </div>
         {% endfor %}
-    </ul>
-
+    </div>
     {# Bureau #}
-
-
 {% endblock %}
