@@ -261,3 +261,9 @@ iframe {
     font-style: italic;
     padding-top: 10px;
 }
+
+/*************** Admin *******************/
+
+.btn-logout {
+    align-self: center;
+}
