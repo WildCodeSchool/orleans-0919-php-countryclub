@@ -2,20 +2,25 @@
 
 {% block content %}
     <img src="/assets/images/road66.jpg" alt="landscape road 66">
-{# Présentation #}
+    {# Présentation #}
     <h1 class="titleAssociation">L'ASSOCIATION EN BREF ...</h1>
     <div class="container-fluid">
         <div class="row d-flex justify-content-center">
             <div class="imagePresentation">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Country-Dancing-Arthur_Murray_Dance_Studio_in_The_Woodlands_TX1080x720.jpg/800px-Country-Dancing-Arthur_Murray_Dance_Studio_in_The_Woodlands_TX1080x720.jpg" class="card-img-top imgPres" alt="...">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Country-Dancing-Arthur_Murray_Dance_Studio_in_The_Woodlands_TX1080x720.jpg/800px-Country-Dancing-Arthur_Murray_Dance_Studio_in_The_Woodlands_TX1080x720.jpg"
+                     class="card-img-top imgPres" alt="...">
             </div>
             <div class="jumbotron jumbotron-fluid bg-white">
                 <div class="container">
                     <p class="lead">
-                        Country Club Route 45 est un club de danse country et  de line dance de la région orléanaise, une association née en 2007
-                        du désir de partager la passion de danser dans le respect des traditions et également avec la joie que ce hobby peut apporter
-                        à un groupe de danseurs qui ont les mêmes goûts. L'association a toujours aujourd'hui un but simple : notre idéal est la promotion
-                        de la danse country et de la line dance, et le partage de notre passion. Le défunt Robert Wanstreet, fondateur de la danse country en France a accepté
+                        Country Club Route 45 est un club de danse country et de line dance de la région orléanaise, une
+                        association née en 2007
+                        du désir de partager la passion de danser dans le respect des traditions et également avec la
+                        joie que ce hobby peut apporter
+                        à un groupe de danseurs qui ont les mêmes goûts. L'association a toujours aujourd'hui un but
+                        simple : notre idéal est la promotion
+                        de la danse country et de la line dance, et le partage de notre passion. Le défunt Robert
+                        Wanstreet, fondateur de la danse country en France a accepté
                         d'être le parrain du club dès sa création, chose qu'il n'avait jamais faite auparavant.
                     </p>
                 </div>
@@ -24,24 +29,39 @@
     </div>
 
 
-{# Animatrices #}
+    {# Animatrices #}
+    <section class="animatrices">
     <h1>Les animatrices</h1>
-    <div class="container-fluid teachers">
+
         {% for teacher in teachers %}
-            <div class="card teacherCard">
-                <img src="/assets/upload/{{ teacher.image }}" class="card-img-top imgTeachers" alt="Country's teacher">
-                <div class="card-body">
-                    <h2 clas="teacherTitle">{{ teacher.firstname }} {{ teacher.lastname }}</h2>
-                    <p class="card-text teacher-text">{{ teacher.description }}</p>
+            <div class="container-fluid teacherAndPractice">
+                <div class="card teacherCard">
+                    <img src="/assets/upload/{{ teacher.image }}" class="card-img-top imgTeachers"
+                         alt="Country's teacher">
+                    <div class="card-body">
+                        <h2 clas="teacherTitle">{{ teacher.firstname }} {{ teacher.lastname }}</h2>
+                        <p class="card-text teacher-text">{{ teacher.description }}</p>
+                    </div>
+                </div>
+                <div class="card practiceCard">
+                    <div class="card-body">
+                        <h2>Cours de {{ teacher.firstname }} {{ teacher.lastname }}</h2>
+                        <h2 clas="teacherTitle">{{ teacher.site }}</h2>
+                        <p class="card-text practice-text">{{ teacher.adress }}</p>
+                        <p class="card-text practice-text">{{ teacher.day }}</p>
+                        <p class="card-text practice-text">{{ teacher.hours }}</p>
+                        <p class="card-text practice-text">{{ teacher.hours2 }}</p>
+                        <p class="card-text practice-text">{{ teacher.hours3 }}</p>
+                    </div>
                 </div>
             </div>
+
         {% endfor %}
-    </div>
+    </section>
 
 
 
-
-{# Bureau #}
+    {# Bureau #}
 
     <h1 class="titleMember">Les membres du bureau</h1>
     <div class="container-fluid">
@@ -51,7 +71,7 @@
                     <img src="/assets/upload/{{ member.picture }}" class="card-img-top imgMember" alt="members photos">
                     <div class="card-body">
                         <h5 class="card-title memberName">{{ member.firstname }} {{ member.lastname }}</h5>
-                        <p class="card-text memberFunction">{{member.function}}</p>
+                        <p class="card-text memberFunction">{{ member.function }}</p>
                     </div>
                 </div>
             {% endfor %}

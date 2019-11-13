@@ -238,16 +238,21 @@ iframe {
     border-radius: 10px;
 }
 
-.teacherCard {
-    width: 18rem;
-    border: none;
-    box-shadow: 10px 10px 15px var(--text-color-light);
-    margin: 0 100px 40px;
+.animatrices {
+    background-color: var(--text-color-light);
 }
 
-.teachers {
+.teacherCard {
+    width: 20rem;
+    border: none;
+    box-shadow: 10px 10px 15px var(--text-color-light);
+    margin: 0 100px 40px 10%;
+    background-color: transparent;
+}
+
+.teacherAndPractice {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .imgTeachers {
@@ -278,6 +283,7 @@ iframe {
 
 .imgMember {
     align-self: center;
+    border-radius: 10px;
 }
 
 .imagePresentation {
