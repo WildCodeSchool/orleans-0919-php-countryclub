@@ -21,7 +21,11 @@
 h1 {
     font-family: var(--font-title) ;
     text-align: center;
-    padding: 40px 0;
+    padding: 50px 0;
+}
+
+.title {
+    font-family: var(--font-title) ;
 }
 
 
@@ -174,6 +178,7 @@ address {
 
 .titlePresentation, .titleMember {
     text-align: center;
+    margin-top: 30px;
 }
 
 
@@ -240,30 +245,46 @@ iframe {
 
 .animatrices {
     background-color: var(--text-color-light);
+    padding-bottom: 50px;
+    background-image: url('/assets/images/danseursVectoriel.png');
+    background-repeat: no-repeat;
+    background-position: right;
 }
 
 .teacherCard {
-    width: 20rem;
+    width: 22rem;
     border: none;
-    box-shadow: 10px 10px 15px var(--text-color-light);
-    margin: 0 100px 40px 10%;
+    box-shadow: 10px 10px 15px var(--text-color-dark);
+    margin: 0 100px 0 5%;
+    background-color: var(--light-color);
+    padding: 20px;
+    font-size: 1.1em;
+}
+
+.practiceCard {
     background-color: transparent;
+    border: none;
+    padding-bottom: 10px;
+    font-size: 1.2em;
 }
 
 .teacherAndPractice {
     display: flex;
     justify-content: flex-start;
+    align-items: end;
+    margin-bottom: 70px;
 }
 
 .imgTeachers {
     width: 60%;
     align-self: center;
-    margin-top: 20px;
+    margin: 20px 0;
     border-radius: 50%;
 }
 
 .teacherTitle {
     text-align: center;
+    font-family: var(--font-title);
 }
 
 .teacher-text {
