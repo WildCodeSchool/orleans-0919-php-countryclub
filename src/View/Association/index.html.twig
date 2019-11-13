@@ -7,8 +7,7 @@
     <div class="container-fluid">
         <div class="row d-flex justify-content-center">
             <div class="imagePresentation">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Country-Dancing-Arthur_Murray_Dance_Studio_in_The_Woodlands_TX1080x720.jpg/800px-Country-Dancing-Arthur_Murray_Dance_Studio_in_The_Woodlands_TX1080x720.jpg"
-                     class="card-img-top imgPres" alt="...">
+                <img src="/assets/images/countryDancers.jpg" class="card-img-top imgPres" alt="...">
             </div>
             <div class="jumbotron jumbotron-fluid bg-white">
                 <div class="container">
@@ -30,10 +29,10 @@
 
 
     {# Animatrices #}
-    <section class="animatrices">
+    <section class="sectionTeachers">
         <h1>Les animatrices</h1>
         {% for teacher in teachers %}
-            <div class="container-fluid teacherAndPractice">
+            <div class="teacherAndPractice">
                 <div class="card teacherCard">
                     <img src="/assets/upload/{{ teacher.image }}" class="card-img-top imgTeachers"
                          alt="Country's teacher">
