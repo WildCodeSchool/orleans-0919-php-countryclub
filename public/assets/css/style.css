@@ -9,7 +9,7 @@
     --text-color-dark: #878787;
     --dark-color: black;
     --light-color: white;
-    --bg-transp : rgba(255,255,255,0.8);
+    --bg-transp: rgba(255, 255, 255, 0.8);
 }
 
 @font-face {
@@ -20,15 +20,17 @@
 /************** NAVBAR *****************/
 
 .navbar-dark .navbar-nav .nav-link {
-    color: var( --block-color-dark);
+    color: var(--block-color-dark);
     margin: 1vw 2vw;
     background-color: transparent;
 }
+
 .navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover {
-    color: var( --text-color-dark);
+    color: var(--text-color-dark);
     border-bottom: 2px var(--text-color-medium) solid;
     padding-bottom: 0;
 }
+
 .navbar-brand {
     margin-right: 5vw;
 }
@@ -41,30 +43,33 @@
     font-size: 18pt;
     font-family: var(--font-title);
 }
+
 .navbar-toggler-icon {
     background: var(--text-color-dark);
 }
+
 .dark-blue-text {
     color: var(--dark-color);
 }
 
-.navbar img{
+.navbar img {
     margin-left: 10px;
 }
-.navbar{
+
+.navbar {
     padding: .3rem 1rem;
 }
 
 
 /************** CAROUSSEL *****************/
 
-.title-carousel{
+.title-carousel {
     font-size: calc(14px + 65 * ((100vw - 320px) / 960));
     text-shadow: 0px 0px 0.1em var(--dark-color);
     font-family: var(--font-title);
 }
 
-.carousel{
+.carousel {
     margin-bottom: 250px;
 }
 
@@ -73,8 +78,8 @@
 footer {
     background-color: var(--block-color-dark);
     color: var(--text-color-light);
-    width:100%;
-    height:35%;
+    width: 100%;
+    height: 35%;
 }
 
 footer a {
@@ -83,44 +88,44 @@ footer a {
 }
 
 a:hover {
-    text-decoration:underline;
+    text-decoration: underline;
 }
 
 .footer_nav {
-    display:flex;
-    justify-content:space-around;
-    padding-bottom:20px;
-    border-bottom:2px gray solid;
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 20px;
+    border-bottom: 2px gray solid;
 }
 
 .asso_footer {
-    display:flex;
-    flex-flow:column;
+    display: flex;
+    flex-flow: column;
 }
 
 .asso_footer a {
-    padding-top:3px;
-    font-size:20px;
-    text-decoration:none;
+    padding-top: 3px;
+    font-size: 20px;
+    text-decoration: none;
 }
 
 .infos_footer {
-    display:flex;
-    flex-flow:column;
+    display: flex;
+    flex-flow: column;
     text-align: center;
     margin-top: 20px;
 }
 
 .infos_footer a {
-    padding-top:3px;
-    text-decoration:none;
+    padding-top: 3px;
+    text-decoration: none;
     font-size: 16pt;
 }
 
 .footerAdress {
     display: flex;
     justify-content: center;
-    padding: 2rem 0 ;
+    padding: 2rem 0;
     flex-direction: column;
     align-items: center;
     margin-top: 20px;
@@ -129,8 +134,8 @@ a:hover {
 }
 
 .title_footer {
-    font-weight:500;
-    font-size:30px;
+    font-weight: 500;
+    font-size: 30px;
     color: var(--light-color);
     font-family: var(--font-title);
 }
@@ -192,12 +197,14 @@ iframe {
     font-size: 2.2em;
     font-family: var(--font-title);
 }
+
 .box-news-home {
     margin-left: 2em;
     margin-top: 1em;
     margin-bottom: 2em;
     text-align: center;
 }
+
 .date-news-home {
     color: var(--text-color-dark);
     text-decoration: none;
@@ -205,21 +212,78 @@ iframe {
     font-size: 1.2em;
     margin-top: 1em;
 }
+
 .title-news-home {
     font-family: var(--font-content);
     font-size: 1.8em;
 }
+
 .button-news-display {
     background-color: var(--text-color-medium);
     padding: 0.5em;
     font-family: var(--font-content);
     border: none;
 }
+
 .one-news-home {
     margin-top: 2em;
 }
+
 .text-news-home {
     font-family: var(--font-content);
     text-align: left;
 }
 
+
+/*SECTION CONTACT*/
+
+.parallax {
+    background-image: url('../../assets/images/pagecontact.jpeg');
+    width: 100%;
+    height: 50vh;
+    margin-top: 5px;
+
+    /* Pour l'effet scroll*/
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.titleContact {
+    margin-top: 10%;
+    text-align: center;
+    font-family: var(--font-title);
+    background-color: white;
+}
+
+.contactform {
+    width: 85%;
+    font-size: 1.2em;
+    margin-top: 5%;
+    margin-bottom: 2%;
+}
+
+.labelcontact {
+    font-family: var(--font-title);
+}
+
+.buttoncontact {
+    text-align: center;
+}
+
+.cardassociation {
+    margin-top: 4em;
+
+}
+
+.title_association_adress {
+    font-family: var(--font-title);
+}
+
+.cardassociation {
+    font-size: 14pt;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
