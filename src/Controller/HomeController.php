@@ -28,10 +28,12 @@ class HomeController extends AbstractController
     {
         $countryManager = new CountryManager();
         $countryDays = $countryManager->selectLast();
-        return $this->twig->render('Home/index.html.twig', ['countryDay' => $countryDays]);
 
         $newsManager = new NewsManager();
         $news = $newsManager->selectAll();
-        return $this->twig->render('Home/index.html.twig', ['news' =>$news]);
+        return $this->twig->render('Home/index.html.twig', [
+            'countryDay' => $countryDays,
+            'news' =>$news
+        ]);
     }
 }
