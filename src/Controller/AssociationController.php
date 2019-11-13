@@ -9,6 +9,7 @@
 
 namespace App\Controller;
 
+use App\Model\MemberManager;
 use App\Model\TeacherManager;
 
 /**
@@ -32,6 +33,12 @@ class AssociationController extends AbstractController
         $teacherManager = new TeacherManager();
         $teachers = $teacherManager->selectAll();
 
-        return $this->twig->render('/Association/index.html.twig', ['teachers' => $teachers]);
+        $memberManager = new MemberManager();
+        $members = $memberManager->selectAll();
+
+        return $this->twig->render('/Association/index.html.twig', [
+            'teachers' => $teachers,
+            'members' => $members,
+        ]);
     }
 }
