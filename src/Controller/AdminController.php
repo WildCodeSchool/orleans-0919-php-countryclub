@@ -9,18 +9,18 @@
 
 namespace App\Controller;
 
-use App\Model\MemberManager;
+use App\Model\AdminManager;
 
 /**
- * Class MemberController
+ * Class AdminController
  *
  */
-class MemberController extends AbstractController
+class AdminController extends AbstractController
 {
 
 
     /**
-     * Display association listing
+     * Display admin listing
      *
      * @return string
      * @throws \Twig\Error\LoaderError
@@ -29,9 +29,6 @@ class MemberController extends AbstractController
      */
     public function index()
     {
-        $memberManager = new MemberManager();
-        $members = $memberManager->selectAll();
-
-        return $this->twig->render('Member/index.html.twig', ['members' => $members]);
+        return $this->twig->render('Admin/index.html.twig');
     }
 }

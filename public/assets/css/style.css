@@ -17,6 +17,18 @@
     src: url("../font/docktrin.ttf");
 }
 
+
+h1 {
+    font-family: var(--font-title) ;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.title {
+    font-family: var(--font-title) ;
+}
+
+
 /************** NAVBAR *****************/
 
 .navbar-dark .navbar-nav .nav-link {
@@ -171,21 +183,10 @@ address {
 
 .titlePresentation, .titleMember {
     text-align: center;
+    margin-top: 30px;
 }
 
-.imagePresentation {
-    width: 30em;
-    margin-bottom: 50px;
-}
 
-.cardMember {
-    opacity: 95%;
-    margin-bottom: 2em;
-}
-
-.cardMember:hover {
-    opacity: 100%;
-}
 
 iframe {
     width: 97%;
@@ -233,6 +234,7 @@ iframe {
     font-family: var(--font-content);
     text-align: left;
 }
+
 
 
 /*SECTION CONTACT*/
@@ -287,3 +289,110 @@ iframe {
     justify-content: center;
     flex-direction: column;
 }
+
+/************** ASSOCIATION *****************/
+
+.titleAssociation {
+    margin-top: 40px;
+}
+
+.lead {
+    text-align: justify;
+}
+
+.jumbotron-fluid {
+    padding-left: 50px;
+    width: 50%;
+}
+
+.imgPres{
+    border-radius: 10px;
+}
+
+.sectionTeachers {
+    background-color: var(--text-color-light);
+    padding-bottom: 50px;
+    background-image: url('/assets/images/danseursVectoriel.png');
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.teacherCard {
+    width: 22rem;
+    border: none;
+    box-shadow: 10px 10px 15px var(--text-color-dark);
+    margin: 0 100px 0 5%;
+    background-color: var(--light-color);
+    padding: 20px;
+    font-size: 1.1em;
+}
+
+.practiceCard {
+    background-color: transparent;
+    border: none;
+    padding-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.teacherAndPractice {
+    display: flex;
+    justify-content: flex-start;
+    align-items: end;
+    margin-bottom: 70px;
+}
+
+.imgTeachers {
+    width: 60%;
+    align-self: center;
+    margin: 20px 0;
+    border-radius: 50%;
+}
+
+.teacherTitle {
+    text-align: center;
+    font-family: var(--font-title);
+}
+
+.teacher-text {
+    text-align: justify;
+    font-style: italic;
+    padding-top: 10px;
+}
+
+.memberFunction {
+    text-align: center;
+    font-style: italic;
+}
+
+.memberName {
+    text-align: center;
+}
+
+.imgMember {
+    align-self: center;
+    border-radius: 10px;
+}
+
+.imagePresentation {
+    width: 30em;
+    margin-bottom: 50px;
+}
+
+.cardMember {
+    opacity: 100%;
+    margin-bottom: 2em;
+    display: flex;
+    flex-direction: column;
+}
+
+.cardMember:hover {
+    opacity: 80%;
+}
+
+
+/*************** Admin *******************/
+
+.btn-logout {
+    align-self: center;
+}
+
