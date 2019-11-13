@@ -223,4 +223,12 @@ iframe {
     font-family: var(--font-content);
     text-align: left;
 }
+.imgCountryDay {
+    width: 250px;
+    height: 550px;
+}
+.iframeCountryDay {
+    width: 450px;
+    height: 300px;
+}
 
