@@ -416,7 +416,7 @@ iframe {
 .teacherCard {
     width: 18rem;
     border: none;
-    box-shadow: 10px 10px 15px var(--text-color-dark);
+    box-shadow: 10px 10px 15px var(--text-color-medium);
     margin: 0 100px 0 5%;
     background-color: var(--light-color);
     padding: 20px;
