@@ -412,3 +412,20 @@ iframe {
 .bg-pagesAdmin{
     width: 100%;
 }
+
+.teacherCard {
+    width: 18rem;
+    border: none;
+    box-shadow: 10px 10px 15px var(--text-color-dark);
+    margin: 0 100px 0 5%;
+    background-color: var(--light-color);
+    padding: 20px;
+    font-size: 1.1em;
+    flex-direction: row;
+}
+
+.containerTeacherAdmin{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 50px;
+}

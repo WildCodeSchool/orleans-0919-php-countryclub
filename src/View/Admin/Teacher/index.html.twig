@@ -5,15 +5,20 @@
 
 {% block content %}
     <img class="bg-pagesAdmin" src="/assets/images/westernAdmin.jpg" alt="paysage canyon">
-    <h1>Teachers</h1>
-    <ul>
+    <h1>Animatrices</h1>
+    <div class="containerTeacherAdmin">
         {% for teacher in teachers %}
-            <li>Animatrice :  <a href="/teacher/show/{{ teacher.id }}"> {{ teacher.firstname }} {{ teacher.lastname }}</a></li>
-            <img src="/assets/upload/{{ teacher.image }}" alt="">
-            <p>Description : {{ teacher.description }}</p>
+
+            <div class="card teacherCard">
+                <img src="/assets/upload/{{ teacher.image }}" class="card-img-top"
+                     alt="photo de {{ teacher.firstname }} {{ teacher.lastname }} ">
+                <div class="card-body">
+                    <p class="card-text">{{ teacher.firstname }} {{ teacher.lastname }}</p>
+                </div>
+            </div>
+
         {% else %}
             <li>Rien à afficher</li>
         {% endfor %}
-    </ul>
-
+    </div>
 {% endblock %}
