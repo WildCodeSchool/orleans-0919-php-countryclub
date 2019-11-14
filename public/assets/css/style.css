@@ -402,9 +402,6 @@ address {
 .btn-logout {
     align-self: center;
 }
-.p-0 {
-    margin: 10em;
-}
 
 .titleAdmin {
     font-family: var(--font-title);
