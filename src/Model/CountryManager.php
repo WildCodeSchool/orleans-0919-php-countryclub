@@ -12,12 +12,12 @@ namespace App\Model;
 /**
  *
  */
-class TeacherManager extends AbstractManager
+class CountryManager extends AbstractManager
 {
     /**
      *
      */
-    const TABLE = 'teacher';
+    const TABLE = 'event';
 
     /**
      *  Initializes this class.
@@ -28,14 +28,12 @@ class TeacherManager extends AbstractManager
     }
 
     /**
-     * Get all row from database.
+     * Get last row from database.
      *
      * @return array
      */
-    public function selectAllTables(): array
+    public function selectLast(): array
     {
-        return $this->pdo->query('
-                SELECT * FROM ' . self::TABLE .
-            ' JOIN practice p ON teacher.pratique_id = p.id')->fetchAll();
+        return $this->pdo->query("SELECT * FROM  $this->table ORDER BY  date DESC LIMIT 1")->fetch();
     }
 }
