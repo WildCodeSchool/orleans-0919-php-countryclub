@@ -1,0 +1,139 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    {% if success is not null %}
+        <div class="alert alert-success" role="alert">
+            <p>Votre message a été envoyé</p>
+        </div>
+    {% endif %}
+    <div class="titleadherer">
+        <h1>Pour adhérer à notre association</h1>
+    </div>
+    <div class="parallax"></div>
+    <div class="Join">
+        <div class="tarif-upload">
+            <div class="row">
+                <div class="col-sm-5 offset-sm-1">
+                    <div class="card text-center">
+                        <div class="card-body1">
+                            <h2 class="card-header">Tarif</h2>
+                            <p class="card-text"></p>
+                            <div>
+                                <h4><u>Forfait annuel Saison 2019/2020</u></h4>
+                                <p>Accès sur les deux sites à tous les cours pour tous niveaux !</p>
+                            </div>
+                            <div>
+                                <h4><u>1 personne</u></h4>
+                                <p>195 euros</p>
+                            </div>
+                            <div>
+                                <h4><u>1 couple ou deux personnes du même foyer</u></h4>
+                                <p>295 euros</p>
+                            </div>
+                            <div>
+                                <h4><u>1 étudiant jusqu'à 25 ans ou chômeur (sur justificatif)</u></h4>
+                                <p>195 euros</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <div class=" bulletin card">
+                        <div class="card-body1">
+                            <h2 class="card-header">Bulletin d'inscription</h2>
+                            <div class="etape1">
+                                <p class="card-text">Bulletin d'inscription au format papier disponible en cliquant
+                                    sur le
+                                    bouton
+                                    <strong>"télécharger"</strong>.</p>
+                            </div>
+                            <div>
+                                <p><u>Etape 1</u></p>
+                                <p>Imprimer le fichier</p>
+                            </div>
+                            <div>
+                                <p><u>Etape 2</u></p>
+                                <p>Envoyer nous le bulletin d'inscription par voie postal</p>
+                            </div>
+                            <div>
+                                <p><u>Etape 3</u></p>
+                                <p>Lors de la réception de votre courrier, nous validerons votre inscription</p>
+                            </div>
+                            <a href="#" class="btn btn-primary">Télécharger</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <form method="post" action="">
+            <div class="form_contact">
+                <div class="container">
+                    <fieldset>
+                        <legend>Formulaire de demande d'adhésion</legend>
+                    </fieldset>
+                    <div class="form-row">
+                        <div class="col-md-4 mb-4">
+                            <label for="firstname">Prénom</label>
+                            <input type="text" class="form-control" id="firstname" placeholder="John" name="firstname" required>
+                            {% if errors.firstname is not null %}
+                                <ul class="alert alert-danger">
+                                    <li>{{ errors.firstname }}</li>
+                                </ul>
+                            {% endif %}
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <label for="lastname">Nom</label>
+                            <input type="text" class="form-control" id="lastname" placeholder="Doe" name="lastname" required>
+                            {% if errors.lastname is not null %}
+                                <ul class="alert alert-danger">
+                                    <li>{{ errors.lastname }}</li>
+                                </ul>
+                            {% endif %}
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="JohnDoe@..." name="email" required>
+                            {% if errors.email is not null %}
+                                <ul class="alert alert-danger">
+                                    <li>{{ errors.email }}</li>
+                                </ul>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-4 mb-4">
+                            <label for="town">Ville</label>
+                            <input type="text" class="form-control" id="town" placeholder="Ville" name="town" required>
+                            {% if errors.town is not null %}
+                                <ul class="alert alert-danger">
+                                    <li>{{ errors.town }}</li>
+                                </ul>
+                            {% endif %}
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <label for="cp">Code postal</label>
+                            <input type="text" class="form-control" id="cp" placeholder="Code postal" name="cp" required>
+                            {% if errors.cp is not null %}
+                                <ul class="alert alert-danger">
+                                    <li>{{ errors.cp }}</li>
+                                </ul>
+                            {% endif %}
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <label for="tel">Téléphone</label>
+                            <input type="text" class="form-control" id="tel" placeholder="Numéro de téléphone" name="tel" required>
+                            {% if errors.tel is not null %}
+                                <ul class="alert alert-danger">
+                                    <li>{{ errors.tel }}</li>
+                                </ul>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" type="submit">Envoyer</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="parallax"></div>
+
+{% endblock %}

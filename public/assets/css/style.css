@@ -136,8 +136,10 @@ address {
 .card-header {
     font-family: var(--font-title);
 }
-ul {
+ul, li {
+    margin-top: 10px;
     list-style-type: none;
+    text-align: center;
 }
 .btn-primary {
     
@@ -176,4 +178,50 @@ ul {
 .text-news-home {
     font-family: var(--font-content);
     text-align: left;
+}
+.form_contact {
+    padding: 50pt;
+}
+legend {
+    font-family: var(--font-title);
+    margin-top:  35pt;
+}
+.Join {
+    text-align: center;
+}
+label {
+    font-family: var(--font-title);
+}
+u {
+    font-family: var(--font-title);
+}
+button {
+    margin-top: 15pt;
+}
+.parallax {
+    /* The image used */
+    background-image: url('../../assets/images/route66.jpg');
+    width: 100%;    /* Full height */
+    height: 50vh;
+    margin-bottom: 1px;    /* Create the parallax scrolling effect */
+    margin-top: 5px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.tarif-upload, .form_contact {
+    background-color: whitesmoke;
+}
+.bulletin {
+    height: 100%;
+}
+.etape1 {
+    padding: 8px;
+}
+.titleadherer {
+    margin-top: 5%;
+    text-align: center;
+    font-family: var(--font-title);
+    background-color: white;
 }
