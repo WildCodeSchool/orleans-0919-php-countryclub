@@ -197,6 +197,7 @@ iframe {
 .title-news {
     font-size: 2.2em;
     font-family: var(--font-title);
+    padding-left: 2em;
 }
 
 .box-news-home {
