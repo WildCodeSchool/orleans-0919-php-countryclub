@@ -1,0 +1,15 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <img class="bg-pagesAdmin" src="/assets/images/westernAdmin.jpg" alt="paysage canyon">
+    <h1>Teachers</h1>
+    <ul>
+        {% for teacher in teachers %}
+            <li><a href="/teacher/show/{{ teacher.id }}">{{ teacher.firstname }} {{ teacher.lastname }}</a></li>
+            <p>{{ teacher.description }}</p>
+        {% else %}
+            <li>Nothing to display</li>
+        {% endfor %}
+    </ul>
+    <a href="/teacher/add">Ajouter</a>
+{% endblock %}
