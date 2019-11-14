@@ -26,4 +26,16 @@ class TeacherManager extends AbstractManager
     {
         parent::__construct(self::TABLE);
     }
+
+    /**
+     * Get all row from database.
+     *
+     * @return array
+     */
+    public function selectAllTables(): array
+    {
+        return $this->pdo->query('
+                SELECT * FROM ' . self::TABLE .
+            ' JOIN practice p ON teacher.pratique_id = p.id')->fetchAll();
+    }
 }
