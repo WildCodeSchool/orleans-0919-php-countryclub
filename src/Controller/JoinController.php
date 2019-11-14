@@ -10,17 +10,15 @@ class JoinController extends AbstractController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $data = array_map('trim', $_POST);
             $errors = $this->validate($data);
-
             if (empty($errors)) {
-                // send mail
                 header('Location: /Join/index/?success=ok');
             }
         }
+
         return $this->twig->render('Join/index.html.twig', [
                 'errors' => $errors ?? [],
                 'success' => $_GET['success'] ?? null,
-            ]
-        );
+            ]);
     }
 
     private function validate($data)
