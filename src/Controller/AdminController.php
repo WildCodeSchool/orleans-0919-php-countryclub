@@ -18,7 +18,6 @@ use App\Model\AdminManager;
 class AdminController extends AbstractController
 {
 
-
     /**
      * Display admin listing
      *
@@ -29,6 +28,7 @@ class AdminController extends AbstractController
      */
     public function index()
     {
+
         return $this->twig->render('Admin/index.html.twig');
     }
 }

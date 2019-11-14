@@ -1,24 +1,21 @@
 {% block countryDay %}
-
-<div class="container bg-light text-dark" >
-    <div  class="card-header" align="center"><h2>COUNTRY DAY</h2></div>
+<div class="container-fluid bg-light text-dark" >
+    <div  class="countryTitle" align="center"><h2>COUNTRY DAY</h2></div>
     <div class="row ">
         <div class="col-md-6">
             <figure class="figure">
                 <img   src="/assets/images/{{ event.image }}" class="rounded mx-auto d-block imgCountryDay" alt="country day">
             </figure>
         </div>
-        <div class="card">
-            <div class="col-md-6">
-                <div class="card-body">
-                    <h4 class="card-title">{{ event.subtitle }}</h4>
-                    <p class="card-text">
-                        {{ event.description }}
-                    </p>
-                </div>
-                <div>
-                    <iframe src="https://www.youtube.com/embed/FqJl3d7yU5g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" class="iframeCountryDay" allowfullscreen></iframe>
-                </div>
+        <div class="col-md-6">
+            <div class="card-body">
+                <h4 class="card-title">{{ event.subtitle }}</h4>
+                <p class="card-text">
+                    {{ event.description }}
+                </p>
+            </div>
+            <div>
+                <iframe src="https://www.youtube.com/embed/FqJl3d7yU5g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" class="iframeCountryDay" allowfullscreen></iframe>
             </div>
         </div>
     </div>
