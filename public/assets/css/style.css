@@ -302,4 +302,7 @@ iframe {
 .btn-logout {
     align-self: center;
 }
+.p-0 {
+    margin: 10em;
+}
 
