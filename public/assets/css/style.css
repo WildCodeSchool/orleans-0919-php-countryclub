@@ -412,7 +412,7 @@ address {
     width: 100%;
 }
 
-.teacherCard {
+.teacherCardAdmin {
     width: 18rem;
     border: none;
     box-shadow: 10px 10px 15px var(--text-color-medium);
