@@ -1,51 +1,101 @@
 :root {
-    --font-title: 'Stardos Stencil', cursive;
+    --font-title: docktrin, cursive;
     --font-content: 'Roboto', sans-serif;
     --primary-color: #FFB223;
     --secondary-color: #B7542D;
     --block-color-dark: #555;
     --text-color-light: #EEE;
     --text-color-medium: #BBB;
-    --text-color-dark: #A9A9A9;
+    --text-color-dark: #878787;
+    --dark-color: black;
+    --light-color: white;
+    --bg-transp: rgba(255, 255, 255, 0.8);
 }
+
+@font-face {
+    font-family: docktrin;
+    src: url("../font/docktrin.ttf");
+}
+
+
+h1 {
+    font-family: var(--font-title);
+    text-align: center;
+    padding: 50px 0;
+}
+
+.title {
+    font-family: var(--font-title);
+}
+
+li {
+    list-style: none;
+}
+
+
+/************** NAVBAR *****************/
+
 .navbar-dark .navbar-nav .nav-link {
-    color: black;
-    margin: 2vw;
+    color: var(--block-color-dark);
+    margin: 1vw 2vw;
+    background-color: transparent;
 }
+
 .navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover {
-    color: lightslategrey;
+    color: var(--text-color-dark);
+    border-bottom: 2px var(--text-color-medium) solid;
+    padding-bottom: 0;
 }
+
 .navbar-brand {
     margin-right: 5vw;
 }
+
+.bg-white-transp {
+    background-color: var(--bg-transp);
+}
+
 .nav-link {
-    font-size: 15pt;
+    font-size: 18pt;
     font-family: var(--font-title);
 }
+
 .navbar-toggler-icon {
-    background: lightgray;
-}
-.dark-blue-text {
-    color: black;
+    background: var(--text-color-dark);
 }
 
-.title-carousel-primary{
-    font-size: calc(14px + 80 * ((100vw - 320px) / 960));
-    text-shadow: 0px 0px 0.3em black;
+.dark-blue-text {
+    color: var(--dark-color);
+}
+
+.navbar img {
+    margin-left: 10px;
+}
+
+.navbar {
+    padding: .3rem 1rem;
+}
+
+
+/************** CAROUSSEL *****************/
+
+.title-carousel {
+    font-size: calc(14px + 65 * ((100vw - 320px) / 960));
+    text-shadow: 0px 0px 0.1em var(--dark-color);
     font-family: var(--font-title);
 }
 
-.title-carousel-secondary{
-    font-size: calc(14px + 60 * ((100vw - 320px) / 960));
-    text-shadow: 0px 0px 0.3em black;
-    font-family: var(--font-content);
+.carousel {
+    margin-bottom: 100px;
 }
+
+/************** FOOTER *****************/
 
 footer {
     background-color: var(--block-color-dark);
     color: var(--text-color-light);
-    width:100%;
-    height:35%;
+    width: 100%;
+    height: 35%;
 }
 
 footer a {
@@ -54,55 +104,55 @@ footer a {
 }
 
 a:hover {
-    text-decoration:underline;
+    text-decoration: underline;
 }
 
 .footer_nav {
-    display:flex;
-    justify-content:space-around;
-    padding-bottom:20px;
-    border-bottom:2px gray solid;
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 20px;
+    border-bottom: 2px gray solid;
 }
 
 .asso_footer {
-    display:flex;
-    flex-flow:column;
+    display: flex;
+    flex-flow: column;
 }
 
 .asso_footer a {
-    padding-top:3px;
-    font-size:20px;
-    text-decoration:none;
+    padding-top: 3px;
+    font-size: 20px;
+    text-decoration: none;
 }
 
 .infos_footer {
-    display:flex;
-    flex-flow:column;
+    display: flex;
+    flex-flow: column;
     text-align: center;
     margin-top: 20px;
 }
 
 .infos_footer a {
-    padding-top:3px;
-    text-decoration:none;
+    padding-top: 3px;
+    text-decoration: none;
     font-size: 16pt;
 }
 
 .footerAdress {
     display: flex;
     justify-content: center;
-    padding: 2rem 0 ;
+    padding: 2rem 0;
     flex-direction: column;
     align-items: center;
     margin-top: 20px;
     font-size: 16pt;
-    border-top: 1px solid white;
+    border-top: 1px solid var(--light-color);
 }
 
 .title_footer {
-    font-weight:500;
-    font-size:30px;
-    color: white;
+    font-weight: 500;
+    font-size: 30px;
+    color: var(--light-color);
     font-family: var(--font-title);
 }
 
@@ -144,17 +194,27 @@ ul, li {
 .btn-primary {
     
 }
+
+
+.titlePresentation, .titleMember {
+    text-align: center;
+    margin-top: 30px;
+}
+
 /* Section news home*/
 .title-news {
     font-size: 2.2em;
     font-family: var(--font-title);
 }
+
 .box-news-home {
-    margin-left: 2em;
+    margin-left: 4em;
+    margin-right: 4em;
     margin-top: 1em;
     margin-bottom: 2em;
     text-align: center;
 }
+
 .date-news-home {
     color: var(--text-color-dark);
     text-decoration: none;
@@ -162,19 +222,23 @@ ul, li {
     font-size: 1.2em;
     margin-top: 1em;
 }
+
 .title-news-home {
     font-family: var(--font-content);
     font-size: 1.8em;
 }
+
 .button-news-display {
     background-color: var(--text-color-medium);
     padding: 0.5em;
     font-family: var(--font-content);
     border: none;
 }
+
 .one-news-home {
     margin-top: 2em;
 }
+
 .text-news-home {
     font-family: var(--font-content);
     text-align: left;
@@ -201,10 +265,36 @@ button {
 .parallax {
     /* The image used */
     background-image: url('../../assets/images/route66bis.jpeg');
-    width: 100%;    /* Full height */
+    width: 100%; /* Full height */
     height: 50vh;
-    margin-bottom: 1px;    /* Create the parallax scrolling effect */
+    margin-bottom: 1px; /* Create the parallax scrolling effect */
     margin-top: 5px;
+}
+.imgCountryDay {
+    width: 70%;
+
+}
+
+.iframeCountryDay {
+    width:100%;
+    height: 300px;
+}
+.countryTitle {
+    font-family: var(--font-title) ;
+    padding-top: 50px;
+}
+
+
+/*SECTION CONTACT*/
+
+.parallax {
+    background-image: url('../../assets/images/pagecontact.jpeg');
+    width: 100%;
+    height: 50vh;
+    margin-top: 5px;
+
+    /* Pour l'effet scroll*/
+>>>>>>> 495c14d0d29adffedda8a71fe4b03d2c0e95f52f
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -224,4 +314,182 @@ button {
     text-align: center;
     font-family: var(--font-title);
     background-color: white;
+}
+
+.titleContact {
+    margin-top: 10%;
+    text-align: center;
+    font-family: var(--font-title);
+    background-color: white;
+}
+
+.contactform {
+    width: 85%;
+    font-size: 1.2em;
+    margin-top: 5%;
+    margin-bottom: 2%;
+}
+
+.labelcontact {
+    font-family: var(--font-title);
+}
+
+.buttoncontact {
+    text-align: center;
+}
+
+.cardassociation {
+    margin-top: 4em;
+
+}
+
+.title_association_adress {
+    font-family: var(--font-title);
+}
+
+.cardassociation {
+    font-size: 14pt;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/************** ASSOCIATION *****************/
+
+.titleAssociation {
+    margin-top: 40px;
+}
+
+.lead {
+    text-align: justify;
+}
+
+.jumbotron-fluid {
+    padding-left: 50px;
+    width: 50%;
+}
+
+.imgPres {
+    border-radius: 10px;
+}
+
+.sectionTeachers {
+    background-color: var(--text-color-light);
+    padding-bottom: 50px;
+    background-image: url('/assets/images/danseursVectoriel.png');
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.teacherCard {
+    width: 22rem;
+    border: none;
+    box-shadow: 10px 10px 15px var(--text-color-dark);
+    margin: 0 100px 0 5%;
+    background-color: var(--light-color);
+    padding: 20px;
+    font-size: 1.1em;
+}
+
+.practiceCard {
+    background-color: transparent;
+    border: none;
+    padding-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.teacherAndPractice {
+    display: flex;
+    justify-content: flex-start;
+    align-items: end;
+    margin-bottom: 70px;
+}
+
+.imgTeachers {
+    width: 60%;
+    align-self: center;
+    margin: 20px 0;
+    border-radius: 50%;
+}
+
+.teacherTitle {
+    text-align: center;
+    font-family: var(--font-title);
+}
+
+.teacher-text {
+    text-align: justify;
+    font-style: italic;
+    padding-top: 10px;
+}
+
+.memberFunction {
+    text-align: center;
+    font-style: italic;
+}
+
+.memberName {
+    text-align: center;
+}
+
+.imgMember {
+    align-self: center;
+    border-radius: 10px;
+}
+
+.imagePresentation {
+    width: 30em;
+    margin-bottom: 50px;
+}
+
+.cardMember {
+    opacity: 100%;
+    margin-bottom: 2em;
+    display: flex;
+    flex-direction: column;
+}
+
+.cardMember:hover {
+    opacity: 80%;
+}
+
+
+/*************** Admin *******************/
+
+.btn-logout {
+    align-self: center;
+}
+
+
+.bg-pagesAdmin{
+    width: 100%;
+}
+
+.teacherCard {
+    width: 18rem;
+    border: none;
+    box-shadow: 10px 10px 15px var(--text-color-medium);
+    margin: 0 100px 0 5%;
+    background-color: var(--light-color);
+    padding: 20px;
+    font-size: 1.1em;
+    flex-direction: row;
+}
+
+.containerTeacherAdmin{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 50px;
+}
+
+
+.titleAdmin {
+    font-family: var(--font-title);
+    padding-left: 10px;
+    font-size: 2em;
+    margin: 0;
+}
+
+.bg-homeAdmin {
+    width: 100%;
 }

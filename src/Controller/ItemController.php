@@ -85,7 +85,7 @@ class ItemController extends AbstractController
      * @throws \Twig\Error\RuntimeError
      * @throws \Twig\Error\SyntaxError
      */
-    public function add()
+    public function add():string
     {
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
