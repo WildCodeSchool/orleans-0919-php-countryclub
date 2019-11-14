@@ -82,7 +82,7 @@ h1 {
 }
 
 .carousel {
-    margin-bottom: 250px;
+    margin-bottom: 100px;
 }
 
 /************** FOOTER *****************/
@@ -200,7 +200,8 @@ iframe {
 }
 
 .box-news-home {
-    margin-left: 2em;
+    margin-left: 4em;
+    margin-right: 4em;
     margin-top: 1em;
     margin-bottom: 2em;
     text-align: center;
@@ -233,6 +234,14 @@ iframe {
 .text-news-home {
     font-family: var(--font-content);
     text-align: left;
+}
+.imgCountryDay {
+    width: 250px;
+    height: 550px;
+}
+.iframeCountryDay {
+    width: 450px;
+    height: 300px;
 }
 
 

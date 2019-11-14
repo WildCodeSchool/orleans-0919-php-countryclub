@@ -5,18 +5,20 @@
     <div class="row ">
         <div class="col-md-6">
             <figure class="figure">
-                <img   src="/assets/images/{{ countryDay.picture }}" class="rounded mx-auto d-block" width="=250" height="550" alt="country day">
+                <img   src="/assets/images/{{ event.image }}" class="rounded mx-auto d-block imgCountryDay" alt="country day">
             </figure>
         </div>
-        <div class="col-md-6">
-            <div class="card-body">
-                <h4 class="card-title">{{ countryDay.title }} titre</h4>
-                <p class="card-text">
-                    {{ countryDay.content }}
-                </p>
-            </div>
-            <div>
-                <iframe width="450" height="300" src="https://www.youtube.com/embed/FqJl3d7yU5g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="card">
+            <div class="col-md-6">
+                <div class="card-body">
+                    <h4 class="card-title">{{ event.subtitle }}</h4>
+                    <p class="card-text">
+                        {{ event.description }}
+                    </p>
+                </div>
+                <div>
+                    <iframe src="https://www.youtube.com/embed/FqJl3d7yU5g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" class="iframeCountryDay" allowfullscreen></iframe>
+                </div>
             </div>
         </div>
     </div>
