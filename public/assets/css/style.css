@@ -19,13 +19,13 @@
 
 
 h1 {
-    font-family: var(--font-title) ;
+    font-family: var(--font-title);
     text-align: center;
     padding: 50px 0;
 }
 
 .title {
-    font-family: var(--font-title) ;
+    font-family: var(--font-title);
 }
 
 
@@ -187,7 +187,6 @@ address {
 }
 
 
-
 iframe {
     width: 97%;
 }
@@ -235,15 +234,16 @@ iframe {
     font-family: var(--font-content);
     text-align: left;
 }
+
 .imgCountryDay {
     width: 250px;
     height: 550px;
 }
+
 .iframeCountryDay {
     width: 450px;
     height: 300px;
 }
-
 
 
 /*SECTION CONTACT*/
@@ -314,7 +314,7 @@ iframe {
     width: 50%;
 }
 
-.imgPres{
+.imgPres {
     border-radius: 10px;
 }
 
@@ -405,3 +405,13 @@ iframe {
     align-self: center;
 }
 
+.titleAdmin {
+    font-family: var(--font-title);
+    padding-left: 10px;
+    font-size: 2em;
+    margin: 0;
+}
+
+.bg-homeAdmin {
+    width: 100%;
+}
