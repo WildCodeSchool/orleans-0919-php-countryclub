@@ -18,7 +18,6 @@ use App\Model\AdminManager;
 class AdminController extends AbstractController
 {
 
-
     /**
      * Display admin listing
      *
@@ -31,27 +30,5 @@ class AdminController extends AbstractController
     {
 
         return $this->twig->render('Admin/index.html.twig');
-    }
-    public function add()
-    {
-        $errors = [];
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $adminManager = new AdminManager();
-            $data = array_map('trim', $_POST);
-            if (empty($data['subtitle'])) {
-                $errors['subtitle'] = "The title is required ";
-            }
-            if (empty($data['description'])) {
-                $errors['description'] = "Description of Country Day is required ";
-            }
-            if (empty($_FILES['file']['name'][0])) {
-                $errors['file']['name'] = "Country Days's image is required ";
-            }
-            if (empty($errors)) {
-                $addCountry = $adminManager->insert($data);
-                header('Location: Admin/index');
-            }
-        }
-        return $this->twig->render('Admin/addCountry.html.twig');
     }
 }
