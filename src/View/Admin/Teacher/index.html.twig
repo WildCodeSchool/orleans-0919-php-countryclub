@@ -1,15 +1,19 @@
 {% extends 'layout.html.twig' %}
+{% block header %}
+    {% include 'Admin/header.html.twig' %}
+{% endblock %}
 
 {% block content %}
     <img class="bg-pagesAdmin" src="/assets/images/westernAdmin.jpg" alt="paysage canyon">
     <h1>Teachers</h1>
     <ul>
         {% for teacher in teachers %}
-            <li><a href="/teacher/show/{{ teacher.id }}">{{ teacher.firstname }} {{ teacher.lastname }}</a></li>
-            <p>{{ teacher.description }}</p>
+            <li>Animatrice :  <a href="/teacher/show/{{ teacher.id }}"> {{ teacher.firstname }} {{ teacher.lastname }}</a></li>
+            <img src="/assets/upload/{{ teacher.image }}" alt="">
+            <p>Description : {{ teacher.description }}</p>
         {% else %}
-            <li>Nothing to display</li>
+            <li>Rien à afficher</li>
         {% endfor %}
     </ul>
-    <a href="/teacher/add">Ajouter</a>
+
 {% endblock %}

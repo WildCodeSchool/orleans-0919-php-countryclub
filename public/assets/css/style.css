@@ -28,6 +28,10 @@ h1 {
     font-family: var(--font-title) ;
 }
 
+li {
+    list-style: none;
+}
+
 
 /************** NAVBAR *****************/
 
