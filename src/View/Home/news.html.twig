@@ -1,16 +1,21 @@
 <div class="box-news-home">
     <h3 class="title-news">Focus sur l'association:</h3>
+    <div class="row d-flex justify-content-around">
     {% for article in  news %}
-        <div class="one-news-home">
-            <div class="one-news-home">
-                <div class="card">
+        <div class="card mb-3 card-news">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img src="/assets/images/img-news.jpg" class="card-img" alt=" ">
+                </div>
+                <div class="col-md-8">
                     <div class="card-body">
                         <h5 class="card-title title-news-home">{{article.title}}</h5>
-                        <h6 class="card-subtitle mb-2 text-muted date-news-home">{{article.date|date("d/m/Y")}}</h6>
                         <p class="card-text text-news-home">{{ article.description }}</p>
+                        <p class="card-text"><small class="text-muted date-news-home">Le {{article.date|date("d/m/Y")}}</small></p>
                     </div>
                 </div>
             </div>
         </div>
     {% endfor %}
+    </div>
 </div>
