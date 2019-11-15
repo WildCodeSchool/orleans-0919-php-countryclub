@@ -194,14 +194,14 @@ address {
 .title-news {
     font-size: 2.2em;
     font-family: var(--font-title);
+    padding-left: 2em;
 }
 
 .box-news-home {
-    margin-left: 4em;
-    margin-right: 4em;
     margin-top: 1em;
     margin-bottom: 2em;
-    text-align: center;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .date-news-home {
@@ -217,27 +217,19 @@ address {
     font-size: 1.8em;
 }
 
-.button-news-display {
-    background-color: var(--text-color-medium);
-    padding: 0.5em;
-    font-family: var(--font-content);
-    border: none;
-}
-
-.one-news-home {
-    margin-top: 2em;
-}
-
 .text-news-home {
     font-family: var(--font-content);
     text-align: left;
 }
-
+.card-news {
+    display: inline-flex;
+    max-width: 500px;
+    margin: 0.5em;
+}
 .imgCountryDay {
     width: 70%;
 
 }
-
 .iframeCountryDay {
     width:100%;
     height: 300px;
@@ -412,7 +404,7 @@ address {
     width: 100%;
 }
 
-.teacherCard {
+.teacherCardAdmin {
     width: 18rem;
     border: none;
     box-shadow: 10px 10px 15px var(--text-color-medium);
