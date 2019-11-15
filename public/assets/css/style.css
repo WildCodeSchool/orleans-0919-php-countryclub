@@ -253,9 +253,6 @@ legend {
 .Join {
     text-align: center;
 }
-label {
-    font-family: var(--font-title);
-}
 u {
     font-family: var(--font-title);
 }
@@ -264,7 +261,7 @@ button {
 }
 .parallax {
     /* The image used */
-    background-image: url('../../assets/images/route66bis.jpeg');
+    background-image: url('../../assets/images/pagecontact.jpeg');
     width: 100%; /* Full height */
     height: 50vh;
     margin-bottom: 1px; /* Create the parallax scrolling effect */
@@ -294,7 +291,6 @@ button {
     margin-top: 5px;
 
     /* Pour l'effet scroll*/
->>>>>>> 495c14d0d29adffedda8a71fe4b03d2c0e95f52f
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
