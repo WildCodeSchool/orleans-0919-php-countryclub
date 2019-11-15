@@ -51,6 +51,8 @@ class AdminTeacherController extends AbstractController
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $teacher['firstname'] = $_POST['firstname'];
+            $teacher['lastname'] = $_POST['lastname'];
+            $teacher['description'] = $_POST['description'];
             $teacherManager->update($teacher);
         }
 

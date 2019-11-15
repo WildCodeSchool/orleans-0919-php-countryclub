@@ -441,3 +441,17 @@ address {
     width: 100%;
 }
 
+.formAdmin{
+    margin: 10px auto;
+}
+
+.btnFormAdmin{
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.btnReturnAdmin {
+    margin: 20px;
+}
+
