@@ -255,6 +255,8 @@ button {
     height: 50vh;
     margin-bottom: 1px; /* Create the parallax scrolling effect */
     margin-top: 5px;
+}
+
 .card-news {
     display: inline-flex;
     max-width: 500px;
