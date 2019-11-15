@@ -14,4 +14,3 @@ class GalleryController extends AbstractController
         return $this->twig->render('Gallery/index.html.twig', ['photos' => $photos]);
     }
 }
-
