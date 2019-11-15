@@ -9,8 +9,9 @@ class GalleryController extends AbstractController
 {
     public function index()
     {
-        $GalleryManager = new GalleryManager();
-        $photos = $GalleryManager->selectAll();
+        $galleryManager = new GalleryManager();
+        $photos = $galleryManager->selectAll();
         return $this->twig->render('Gallery/index.html.twig', ['photos' => $photos]);
     }
 }
+

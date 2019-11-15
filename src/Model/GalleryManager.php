@@ -3,7 +3,6 @@
 
 namespace App\Model;
 
-
 class GalleryManager extends AbstractManager
 {
     /**
