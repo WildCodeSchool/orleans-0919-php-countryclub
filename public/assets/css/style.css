@@ -19,13 +19,17 @@
 
 
 h1 {
-    font-family: var(--font-title) ;
+    font-family: var(--font-title);
     text-align: center;
     padding: 50px 0;
 }
 
 .title {
-    font-family: var(--font-title) ;
+    font-family: var(--font-title);
+}
+
+li {
+    list-style: none;
 }
 
 
@@ -179,6 +183,17 @@ address {
     text-align: center;
     line-height: 1.1;
 }
+.card-header {
+    font-family: var(--font-title);
+}
+ul, li {
+    margin-top: 10px;
+    list-style-type: none;
+    text-align: center;
+}
+.btn-primary {
+    
+}
 
 
 .titlePresentation, .titleMember {
@@ -190,14 +205,14 @@ address {
 .title-news {
     font-size: 2.2em;
     font-family: var(--font-title);
+    padding-left: 2em;
 }
 
 .box-news-home {
-    margin-left: 4em;
-    margin-right: 4em;
     margin-top: 1em;
     margin-bottom: 2em;
-    text-align: center;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .date-news-home {
@@ -213,20 +228,37 @@ address {
     font-size: 1.8em;
 }
 
-.button-news-display {
-    background-color: var(--text-color-medium);
-    padding: 0.5em;
-    font-family: var(--font-content);
-    border: none;
-}
-
-.one-news-home {
-    margin-top: 2em;
-}
-
 .text-news-home {
     font-family: var(--font-content);
     text-align: left;
+}
+.form_contact {
+    padding: 50pt;
+}
+legend {
+    font-family: var(--font-title);
+    margin-top:  35pt;
+}
+.Join {
+    text-align: center;
+}
+u {
+    font-family: var(--font-title);
+}
+button {
+    margin-top: 15pt;
+}
+.parallax {
+    /* The image used */
+    background-image: url('../../assets/images/pagecontact.jpeg');
+    width: 100%; /* Full height */
+    height: 50vh;
+    margin-bottom: 1px; /* Create the parallax scrolling effect */
+    margin-top: 5px;
+.card-news {
+    display: inline-flex;
+    max-width: 500px;
+    margin: 0.5em;
 }
 .imgCountryDay {
     width: 70%;
@@ -242,7 +274,6 @@ address {
 }
 
 
-
 /*SECTION CONTACT*/
 
 .parallax {
@@ -256,6 +287,21 @@ address {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+.tarif-upload, .form_contact {
+    background-color: whitesmoke;
+}
+.bulletin {
+    height: 100%;
+}
+.etape1 {
+    padding: 8px;
+}
+.titleadherer {
+    margin-top: 5%;
+    text-align: center;
+    font-family: var(--font-title);
+    background-color: white;
 }
 
 .titleContact {
@@ -311,7 +357,7 @@ address {
     width: 50%;
 }
 
-.imgPres{
+.imgPres {
     border-radius: 10px;
 }
 
@@ -401,7 +447,37 @@ address {
 .btn-logout {
     align-self: center;
 }
-.p-0 {
-    margin: 10em;
+
+
+.bg-pagesAdmin{
+    width: 100%;
 }
 
+.teacherCardAdmin {
+    width: 18rem;
+    border: none;
+    box-shadow: 10px 10px 15px var(--text-color-medium);
+    margin: 0 100px 0 5%;
+    background-color: var(--light-color);
+    padding: 20px;
+    font-size: 1.1em;
+    flex-direction: row;
+}
+
+.containerTeacherAdmin{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 50px;
+}
+
+
+.titleAdmin {
+    font-family: var(--font-title);
+    padding-left: 10px;
+    font-size: 2em;
+    margin: 0;
+}
+
+.bg-homeAdmin {
+    width: 100%;
+}
