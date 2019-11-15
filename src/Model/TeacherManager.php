@@ -41,15 +41,16 @@ class TeacherManager extends AbstractManager
 
 
     /**
-     * @param array $item
+     * @param array $teacher
      * @return bool
      */
     public function update(array $teacher):bool
     {
         // prepared request
         $statement = $this->pdo->prepare("
-                                UPDATE " . self::table . "
-                                SET `firstname` = :firstname, `lastname` = :lastname, `description` = :description, `image` = :image
+                                UPDATE " . self::TABLE . "
+                                SET `firstname` = :firstname, `lastname` = :lastname, 
+                                `description` = :description, `image` = :image
                                 WHERE id=:id");
         $statement->bindValue('id', $teacher['id'], \PDO::PARAM_INT);
         $statement->bindValue('firstname', $teacher['firstname'], \PDO::PARAM_STR);
@@ -59,5 +60,4 @@ class TeacherManager extends AbstractManager
 
         return $statement->execute();
     }
-
 }
