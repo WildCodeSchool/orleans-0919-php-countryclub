@@ -34,4 +34,65 @@ class AdminTeacherController extends AbstractController
 
         return $this->twig->render('Admin/Teacher/index.html.twig', ['teachers' => $teachers]);
     }
+
+    /**
+     * Display teacher edition page specified by $id
+     *
+     * @param int $id
+     * @return string
+     * @throws \Twig\Error\LoaderError
+     * @throws \Twig\Error\RuntimeError
+     * @throws \Twig\Error\SyntaxError
+     */
+    public function edit(int $id): string
+    {
+        $teacherManager = new TeacherManager();
+        $teacher = $teacherManager->selectOneById($id);
+
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $data = array_map('trim', $_POST);
+            $errors = $this->validate($data);
+            if (empty($errors)) {
+                $teacherManager->update($data);
+                header('Location: /AdminTeacher/edit/' . $data['id'] . '/?success=ok');
+            }
+        }
+
+        return $this->twig->render('Admin/Teacher/edit.html.twig', [
+            'teacher' => $teacher,
+            'errors' => $errors ?? [],
+            'success' => $_GET['success'] ?? null,
+        ]);
+    }
+
+    private function validate($data)
+    {
+        $emptyErrors = $this->validateEmpty($data);
+        $errors = [];
+        if (strlen($data['lastname']) > 155) {
+            $errors['lastname'] = 'Le nom est trop long';
+        }
+        if (strlen($data['firstname']) > 155) {
+            $errors['firstname'] = 'Le prénom est trop long';
+        }
+        return array_merge($emptyErrors, $errors);
+    }
+
+    private function validateEmpty(array $data)
+    {
+        if (empty($data['lastname'])) {
+            $errors['lastname'] = 'Le nom doit être indiqué';
+        }
+        if (empty($data['firstname'])) {
+            $errors['firstname'] = 'Le prénom doit être indiqué';
+        }
+        if (empty($data['description'])) {
+            $errors['description'] = 'Une description doit être renseignée';
+        }
+        if (empty($data['image'])) {
+            $errors['image'] = 'Un nom d\'image doit être renseignée';
+        }
+        return $errors ?? [];
+    }
 }
