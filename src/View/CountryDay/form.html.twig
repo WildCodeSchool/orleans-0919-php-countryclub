@@ -1,0 +1,42 @@
+<form method="post">
+    <div class="form-group">
+        <label for="subtitle">Titre</label>
+        <input type="text" name="subtitle" class="form-control" id="subtitle" value="{{ data.subtitle }}">
+        {% if(errors.subtitle) %}
+            {{ errors.subtitle  }}
+        {% endif %}
+    </div>
+
+    <div class="form-group">
+        <label for="description">Description</label>
+        <textarea class="form-control" name="description" id="description" rows="3">{{ data.description }}</textarea>
+        {% if(errors.description ) %}
+            {{ errors.description }}
+        {% endif %}
+    </div>
+    <div class="custom-file">
+        <label class="custom-file-label" for="image">Image</label>
+        <input type="file" name="image" class="custom-file-input" id="image" >
+        {% if errors.file %}
+            {{ errors.file }}
+        {% endif %}
+    </div>
+    <div class="form-group">
+        <div class="custom-file">
+            <label class="custom-file-label" for="video">Video</label>
+            <input type="file" name="video" class="custom-file-input" id="image">
+        </div>
+    </div>
+    <div>
+        <label for="start">Date</label>
+        <input type="date" id="start"
+               name="date" value=" date du jour"
+               min="2018-06-07T00:00" max="2018-06-14T00:00">
+        {% if errors.date %}
+            {{ errors.date }}
+        {% endif %}
+    </div>
+    <div>
+        <button type="submit" class="btn btn-primary mb-2">Submit</button>
+    </div>
+</form>
