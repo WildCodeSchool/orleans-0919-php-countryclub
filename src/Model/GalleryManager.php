@@ -8,7 +8,7 @@ class GalleryManager extends AbstractManager
     /**
      *
      */
-    const TABLE = 'photo';
+    const TABLE = 'picture';
 
     /**
      *  Initializes this class.
