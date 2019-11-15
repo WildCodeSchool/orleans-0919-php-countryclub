@@ -34,4 +34,26 @@ class AdminTeacherController extends AbstractController
 
         return $this->twig->render('Admin/Teacher/index.html.twig', ['teachers' => $teachers]);
     }
+
+    /**
+     * Display teacher edition page specified by $id
+     *
+     * @param int $id
+     * @return string
+     * @throws \Twig\Error\LoaderError
+     * @throws \Twig\Error\RuntimeError
+     * @throws \Twig\Error\SyntaxError
+     */
+    public function edit(int $id): string
+    {
+        $teacherManager = new TeacherManager();
+        $teacher = $teacherManager->selectOneById($id);
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $teacher['firstname'] = $_POST['firstname'];
+            $teacherManager->update($teacher);
+        }
+
+        return $this->twig->render('Admin/Teacher/edit.html.twig', ['teacher' => $teacher]);
+    }
 }
