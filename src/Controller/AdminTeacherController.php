@@ -9,17 +9,18 @@
 
 namespace App\Controller;
 
-use App\Model\AdminManager;
+use App\Model\TeacherManager;
 
 /**
- * Class AdminController
+ * Class AdminTeacherController
  *
  */
-class AdminController extends AbstractController
+class AdminTeacherController extends AbstractController
 {
 
+
     /**
-     * Display admin listing
+     * Display teacher listing
      *
      * @return string
      * @throws \Twig\Error\LoaderError
@@ -28,7 +29,9 @@ class AdminController extends AbstractController
      */
     public function index()
     {
+        $teacherManager = new TeacherManager();
+        $teachers = $teacherManager->selectAll();
 
-        return $this->twig->render('Admin/index.html.twig');
+        return $this->twig->render('Admin/Teacher/index.html.twig', ['teachers' => $teachers]);
     }
 }
