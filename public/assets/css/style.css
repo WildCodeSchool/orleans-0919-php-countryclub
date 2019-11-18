@@ -469,6 +469,7 @@ button {
     flex-direction: row;
     margin-bottom: 50px;
     justify-content: center;
+    align-items: center;
 }
 
 
@@ -524,4 +525,9 @@ button {
 
 .btnReturnAdmin {
     margin: 20px;
+}
+
+.imgAjout {
+    width: 50%;
+    align-self: center;
 }

@@ -12,11 +12,17 @@
                 <img src="/assets/upload/{{ teacher.image }}" class="card-img-top"
                      alt="photo de {{ teacher.firstname }} {{ teacher.lastname }} ">
                 <div class="card-body">
-                    <a href="/AdminTeacher/edit/{{ teacher.id }}"><p class="card-text">{{ teacher.firstname }} {{ teacher.lastname }}</p></a>
+                    <a href="/AdminTeacher/edit/{{ teacher.id }}"><p
+                                class="card-text">{{ teacher.firstname }} {{ teacher.lastname }}</p></a>
                 </div>
             </div>
+
         {% else %}
             <li>Rien à afficher</li>
         {% endfor %}
+        <a href="/AdminTeacher/add">
+            <img src="/assets/images/btnAdd.png" class="card-img-top imgAjout" alt="icone plus pour ajout">
+        </a>
     </div>
+
 {% endblock %}
