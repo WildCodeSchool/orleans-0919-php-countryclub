@@ -256,9 +256,10 @@ address {
     padding: 9%;
     text-align: center;
     font-family: var(--font-title);
-    color: white;
+    color: var(--text-color-light);
     text-shadow: 1px 1px 10px black;
     font-size: 7rem;
+    font-size: calc(14px + 65 * ((100vw - 320px) / 960));
 }
 
 .bg-contact {
@@ -282,6 +283,8 @@ address {
     text-align: center;
     padding-top: 2em;
 }
+
+/************** MEMBERS *****************/
 
 .cardassociation {
     margin-top: 4em;
