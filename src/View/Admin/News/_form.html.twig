@@ -1,0 +1,30 @@
+<form method="post">
+    <input type="hidden" value="{{ news.id }}" name="id">
+
+    <div class="form-group formAdmin col-md-8 col-lg-6">
+        <label for="article_title">Titre de l'actualité </label>
+        <input type="text" class="form-control" id="article_title" value="{{ news.title }}" name="title">
+        {% if errors.title is not null %}
+            <ul class="alert alert-danger">
+                <li>{{ errors.title }}</li>
+            </ul>
+        {% endif %}
+    </div>
+
+    <div class="form-group formAdmin col-md-8 col-lg-6">
+        <label for="contenu_news">Contenu de l'actualité </label>
+        <textarea class="form-control" id="contenu_news" rows="3" name="description">{{news.description }}</textarea>
+        {% if errors.description is not null %}
+            <ul class="alert alert-danger">
+                <li>{{ errors.description }}</li>
+            </ul>
+        {% endif %}
+    </div>
+
+    <div class="btnFormAdmin">
+        <button type="submit" class="btn btn-outline-secondary col-md-3 col-lg-2 col-4">Enregistrer</button>
+    </div>
+</form>
+
+
+

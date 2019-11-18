@@ -5,24 +5,19 @@
 
     {#Contact#}
 
-
-
-    <div class="titleContact">
-        <h1>Pour joindre Country Club Route 45</h1>
-    </div>
-
-
-    <div class="parallax"></div>
-
-    {% if success is not null %}
-        <div class="alert alert-success" role="alert">
-            <p>Merci, votre message a bien été envoyé</p>
+    <div class="parallax">
+        <div class="titleContact">
+            <h1>Pour joindre Country Club Route 45...</h1>
         </div>
-    {% endif %}
-
-    <div class="row">
-        <div class="d-flex justify-content-around col-sm-5 offset-sm-2">
+    </div>
+    <div class="row bg-contact">
+        <div class="d-flex justify-content-around col-sm-8 offset-sm-2">
             <form method="post" action="" class="contactform">
+                {% if success is not null %}
+                    <div class="alert alert-success" role="alert">
+                        <p>Merci, votre message a bien été envoyé</p>
+                    </div>
+                {% endif %}
                 <div class="form-group">
                     <label class="labelcontact" for="lastname">Nom</label>
                     <input type="text" class="form-control" id="lastname" placeholder="Votre nom" name="lastname">
@@ -51,7 +46,7 @@
                     {% endif %}
                 </div>
                 <div class="form-group">
-                    <label class="labelcontact" for="subject" >Vous voulez parler de...</label>
+                    <label class="labelcontact" for="subject">Vous voulez parler de...</label>
                     <input type="text" class="form-control" id="subject" placeholder="Votre sujet" name="subject">
                     {% if errors.subject is not null %}
                         <ul class="alert alert-danger">
@@ -60,7 +55,7 @@
                     {% endif %}
                 </div>
                 <div class="form-group">
-                    <label class="labelcontact" for="msg" >Votre message</label>
+                    <label class="labelcontact" for="msg">Votre message</label>
                     <textarea class="form-control" id="msg" rows="3" placeholder="Votre message" name="msg"></textarea>
                     {% if errors.msg is not null %}
                         <ul class="alert alert-danger">
@@ -69,24 +64,15 @@
                     {% endif %}
                 </div>
                 <div class="buttoncontact">
-                    <button type="submit" class="btn btn-primary">Envoyer</button>
+                    <button type="submit" class="btn btn-secondary btn-lg">Envoyer</button>
                 </div>
             </form>
         </div>
-        <div class="d-flex justify-content-around col-sm-2 offset-sm-1">
-            <div class="cardassociation">
-                <address>
-                    <h5 class="title_association_adress">Country Club Route 45</h5>
-                    <p> 54 rue des Chênes 45160 Olivet </p>
-                    <p> Tél.: 06.79.31.64.70 </p>
-                    <a href="#association" title="Adress du site">www.countryclubroute45.com</a>
-                    <div class="logo_CCR45">
-                        <img src="/assets/images/logofooter.png" alt="logo du club">
-                    </div>
-                </address>
+        <div class="parallax">
+            <div class="titleContact">
+                <h1>... il n'y a qu'à suivre la route</h1>
             </div>
         </div>
-        <div class="parallax"></div>
     </div>
 
 {% endblock %}

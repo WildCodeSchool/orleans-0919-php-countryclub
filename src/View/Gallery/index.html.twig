@@ -1,0 +1,28 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+
+
+    {#Gallery#}
+
+    <div class="titleContact">
+        <h1>Galerie d'images</h1>
+    </div>
+    <div class="parallaxGalerie"></div>
+    <div class="box-gallery">
+        <h3 class="title-gallery">Découvrez notre univers</h3>
+        <div class="container gallery">
+            <div class="row">
+                {% for picture in  photos %}
+                    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                        <a href="/assets/upload/gallery/{{ picture.photo }}">
+                            <img src="/assets/upload/gallery/{{ picture.photo }}" class="img-fluid"
+                                 alt="{{ picture.title }}">
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="parallaxGalerie"></div>
+{% endblock %}

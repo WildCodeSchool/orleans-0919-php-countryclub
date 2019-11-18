@@ -10,9 +10,12 @@
             <p>Merci, votre modification a bien été prise en compte</p>
         </div>
     {% endif %}
-    <h1>Modifier {{ teacher.firstname }} {{ teacher.lastname }}</h1>
+    <h1>Modifier {{ member.firstname }} {{ member.lastname }}</h1>
 
-    {% include 'Admin/Teacher/_form.html.twig' %}
+    {% include 'Admin/Member/_form.html.twig' %}
 
+    <a href="/AdminMember/index">
+        <button type="submit" class="btn btn-outline-secondary btnReturnAdmin col-md-2 col-lg-1 col-3">< Retour</button>
+    </a>
 
 {% endblock %}

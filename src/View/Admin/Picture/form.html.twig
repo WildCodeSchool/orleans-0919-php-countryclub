@@ -1,0 +1,27 @@
+<form method="post">
+    <input type="hidden" value="{{ picture.id }}" name="id">
+
+    <div class="form-group GalleryPicture col-md-8 col-lg-6">
+        <label for="photo">photo : </label>
+        <input type="text" class="form-control" id="photo" value="{{ picture.photo }}" name="photo">
+        {% if errors.photo is not null %}
+            <ul class="alert alert-danger">
+                <li>{{ errors.photo }}</li>
+            </ul>
+        {% endif %}
+    </div>
+
+    <div class="form-group GalleryPicture col-md-8 col-lg-6">
+        <label for="title"></label>
+        <input type="text" class="form-control" id="title" value="{{ picture.title }}" name="title">
+        {% if errors.title is not null %}
+            <ul class="alert alert-danger">
+                <li>{{ errors.title }}</li>
+            </ul>
+        {% endif %}
+    </div>
+
+    <div class="btnFormPicture">
+        <button type="submit" class="btn btn-outline-secondary col-md-3 col-lg-2 col-4">Modifier</button>
+    </div>
+</form>

@@ -9,6 +9,7 @@
 
 namespace App\Controller;
 
+use App\Model\ItemManager;
 use App\Model\TeacherManager;
 
 /**
@@ -65,6 +66,49 @@ class AdminTeacherController extends AbstractController
             'success' => $_GET['success'] ?? null,
         ]);
     }
+
+
+    /**
+     * Display teacher creation page
+     *
+     * @return string
+     * @throws \Twig\Error\LoaderError
+     * @throws \Twig\Error\RuntimeError
+     * @throws \Twig\Error\SyntaxError
+     */
+    public function add(): string
+    {
+        $teacher = [];
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $teacherManager = new TeacherManager();
+            $teacher = array_map('trim', $_POST);
+
+            $errors = $this->validate($teacher);
+
+            if (empty($errors)) {
+                $teacherManager->insert($teacher);
+                header('Location:/AdminTeacher/index');
+            }
+        }
+
+        return $this->twig->render('Admin/Teacher/add.html.twig', [
+            'teacher' => $teacher,
+            'errors' => $errors ?? [],
+            'success' => $_GET['success'] ?? null,
+        ]);
+    }
+
+    public function delete(int $id)
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $teacherManager = new TeacherManager();
+            $teacherManager->delete($id);
+
+            header('Location: /AdminTeacher/index');
+        }
+    }
+
 
     private function validate($data)
     {
