@@ -31,4 +31,18 @@ class NewsManager extends AbstractManager
 
         return $statement->execute();
     }
+    public function add(array $news):bool
+    {
+        $date = date("Y-m-d");
+        $statement = $this->pdo->prepare(
+            "INSERT INTO $this->table (`title`,`date`,`description`) 
+                        VALUES ( :title,:date, :description ) "
+        );
+        $statement->bindValue('title', $news['title'], \PDO::PARAM_STR);
+        $statement->bindValue('date', $date, \PDO::PARAM_STR);
+        $statement->bindValue('description', $news['description'], \PDO::PARAM_STR);
+        if ($statement->execute()) {
+            return (true);
+        }
+    }
 }
