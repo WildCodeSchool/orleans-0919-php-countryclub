@@ -47,10 +47,7 @@ class AdminNewsController extends AbstractController
                 $newsManager->update($data);
                 header('Location: /AdminNews/edit/' . $data['id'] . '/?success=ok');
             }
-
-
         }
-
         return $this->twig->render('Admin/News/edit.html.twig', [
             'news' => $news,
             'errors' => $errors ?? [],
@@ -77,6 +74,4 @@ class AdminNewsController extends AbstractController
         }
         return $errors ?? [];
     }
-
 }
-
