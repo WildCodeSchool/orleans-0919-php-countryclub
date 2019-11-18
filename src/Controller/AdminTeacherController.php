@@ -99,6 +99,16 @@ class AdminTeacherController extends AbstractController
         ]);
     }
 
+    public function delete(int $id)
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $teacherManager = new TeacherManager();
+            $teacherManager->delete($id);
+
+            header('Location: /AdminTeacher/index');
+        }
+    }
+
 
     private function validate($data)
     {

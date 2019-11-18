@@ -16,6 +16,12 @@
                         <p class="card-text">{{ teacher.firstname }} {{ teacher.lastname }}</p>
                     </a>
                 </div>
+
+                <form class="col-12" method="post" action="/AdminTeacher/delete/{{ teacher.id }}">
+                    <input type="submit" name="delete" value="Supprimer la fiche" class="btn btn-outline-danger">
+                </form>
+
+
             </div>
 
         {% else %}

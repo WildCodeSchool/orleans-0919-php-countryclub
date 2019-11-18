@@ -563,9 +563,10 @@ button {
     align-self: center;
 }
 
-.linkBtnAjout{
+.linkBtnAjout {
     justify-content: center;
     display: flex;
+}
 
 
 /************ADMIN NEWS****************/
