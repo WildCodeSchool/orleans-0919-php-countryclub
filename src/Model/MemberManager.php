@@ -26,4 +26,25 @@ class MemberManager extends AbstractManager
     {
         parent::__construct(self::TABLE);
     }
+
+    /**
+     * @param array $member
+     * @return bool
+     */
+    public function update(array $member):bool
+    {
+        // prepared request
+        $statement = $this->pdo->prepare("
+                                UPDATE " . self::TABLE . "
+                                SET `firstname` = :firstname, `lastname` = :lastname, 
+                                `function` = :function, `picture` = :picture
+                                WHERE id=:id");
+        $statement->bindValue('id', $member['id'], \PDO::PARAM_INT);
+        $statement->bindValue('firstname', $member['firstname'], \PDO::PARAM_STR);
+        $statement->bindValue('lastname', $member['lastname'], \PDO::PARAM_STR);
+        $statement->bindValue('function', $member['function'], \PDO::PARAM_STR);
+        $statement->bindValue('picture', $member['picture'], \PDO::PARAM_STR);
+
+        return $statement->execute();
+    }
 }
