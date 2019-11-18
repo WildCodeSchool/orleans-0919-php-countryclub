@@ -13,5 +13,4 @@ class GalleryController extends AbstractController
         $photos = $galleryManager->selectAll();
         return $this->twig->render('Gallery/index.html.twig', ['photos' => $photos]);
     }
-
 }

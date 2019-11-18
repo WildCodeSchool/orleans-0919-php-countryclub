@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Controller;
-
 
 use App\Model\GalleryManager;
 
@@ -15,5 +13,4 @@ class AdminGalleryController extends AbstractController
 
         return $this->twig->render('Admin/Picture/index.html.twig', ['photos' => $photos]);
     }
-
 }
