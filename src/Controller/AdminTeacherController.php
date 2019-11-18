@@ -78,6 +78,7 @@ class AdminTeacherController extends AbstractController
      */
     public function add(): string
     {
+        $teacher = [];
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $teacherManager = new TeacherManager();
@@ -91,7 +92,7 @@ class AdminTeacherController extends AbstractController
             }
         }
 
-        return $this->twig->render('Admin/Teacher/add.html.twig',[
+        return $this->twig->render('Admin/Teacher/add.html.twig', [
             'teacher' => $teacher,
             'errors' => $errors ?? [],
             'success' => $_GET['success'] ?? null,
@@ -131,5 +132,4 @@ class AdminTeacherController extends AbstractController
         }
         return $errors ?? [];
     }
-
 }

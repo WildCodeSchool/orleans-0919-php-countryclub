@@ -81,7 +81,4 @@ class TeacherManager extends AbstractManager
             return (int)$this->pdo->lastInsertId();
         }
     }
-
-
-
 }
