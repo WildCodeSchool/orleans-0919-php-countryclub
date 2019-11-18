@@ -41,9 +41,24 @@
         {% endif %}
     </div>
 
-    <div class="btnFormAdmin">
-        <button type="submit" class="btn btn-outline-secondary col-md-3 col-lg-2 col-4">Modifier</button>
+    <div class="form-group formAdmin col-md-8 col-lg-6">
+        <label for="pratique_id">Lieu de pratique : </label>
+        <input type="text" class="form-control" id="pratique_id" value="{{ teacher.image }}" name="pratique_id">
+        {% if errors.pratique_id is not null %}
+            <ul class="alert alert-danger">
+                <li>{{ errors.pratique_id }}</li>
+            </ul>
+        {% endif %}
     </div>
+
+    <div class="btnFormAdmin">
+        <button type="submit" class="btn btn-outline-secondary col-md-3 col-lg-2 col-4">Valider</button>
+    </div>
+
+    <a href="/AdminTeacher/index">
+        <button type="submit" class="btn btn-outline-secondary btnReturnAdmin col-md-2 col-lg-1 col-3">< Retour</button>
+    </a>
+
 </form>
 
 

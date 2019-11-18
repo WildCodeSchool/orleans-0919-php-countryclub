@@ -60,4 +60,28 @@ class TeacherManager extends AbstractManager
 
         return $statement->execute();
     }
+
+    /**
+     * @param array $teacher
+     * @return int
+     */
+    public function insert(array $teacher): int
+    {
+        // prepared request
+        $statement = $this->pdo->prepare("
+                INSERT INTO " . self::TABLE . " (firstname, lastname, description, image, pratique_id) 
+                VALUES (:firstname, :lastname, :description, :image, :pratique_id)");
+        $statement->bindValue('firstname', $teacher['firstname'], \PDO::PARAM_STR);
+        $statement->bindValue('lastname', $teacher['lastname'], \PDO::PARAM_STR);
+        $statement->bindValue('description', $teacher['description'], \PDO::PARAM_STR);
+        $statement->bindValue('image', $teacher['image'], \PDO::PARAM_STR);
+        $statement->bindValue('pratique_id', $teacher['pratique_id'], \PDO::PARAM_STR);
+
+        if ($statement->execute()) {
+            return (int)$this->pdo->lastInsertId();
+        }
+    }
+
+
+
 }
