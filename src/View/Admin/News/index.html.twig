@@ -1,0 +1,22 @@
+{% extends 'layout.html.twig' %}
+{% block header %}
+    {% include 'Admin/header.html.twig' %}
+{% endblock %}
+
+{% block content %}
+    <img class="bg-pagesAdmin" src="/assets/images/westernAdmin.jpg" alt="paysage canyon">
+    <h1>Actualités</h1>
+    <div class="containerNewsAdmin">
+        {% for article in news %}
+        <div class="card newsCardAdmin">
+            <p class="title-news-admin">{{ article.title }}</p>
+            <p class="txt-news-admin">{{ article.date|date("d/m/Y") }}</p>
+            <div class="card-body">
+                <a href="/AdminNews/edit/{{ article.id }}"><p class="card-text">Modifier l'actualité</p></a>
+            </div>
+        </div>
+        {% else %}
+            <li>Rien à afficher</li>
+        {% endfor %}
+    </div>
+{% endblock %}
