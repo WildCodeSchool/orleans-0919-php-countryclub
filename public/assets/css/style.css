@@ -465,7 +465,7 @@ button {
 
 .teacherCardAdmin {
     width: 18rem;
-    margin: 0 100px 0 5%;
+    margin: 0 100px 40px 5%;
     background-color: var(--light-color);
     padding: 20px;
     font-size: 1.3em;
@@ -477,6 +477,8 @@ button {
     flex-direction: row;
     margin-bottom: 50px;
     justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 
@@ -554,6 +556,16 @@ button {
 .btnReturnAdmin {
     margin: 20px;
 }
+
+
+.imgAjout {
+    width: 50%;
+    align-self: center;
+}
+
+.linkBtnAjout{
+    justify-content: center;
+    display: flex;
 
 
 /************ADMIN NEWS****************/
