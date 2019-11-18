@@ -127,9 +127,6 @@ class AdminTeacherController extends AbstractController
         if (empty($data['image'])) {
             $errors['image'] = 'Un nom d\'image doit être renseignée';
         }
-        if (empty($data['pratique_id'])) {
-            $errors['pratique_id'] = 'Le lieu de pratique doit être renseigné';
-        }
         return $errors ?? [];
     }
 }
