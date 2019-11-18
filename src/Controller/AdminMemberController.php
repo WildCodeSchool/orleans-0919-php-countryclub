@@ -66,6 +66,16 @@ class AdminMemberController extends AbstractController
         ]);
     }
 
+    public function delete(int $id)
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $memberManager = new MemberManager();
+            $memberManager->delete($id);
+
+            header('Location: /AdminMember/index');
+        }
+    }
+
     private function validate($data)
     {
         $emptyErrors = $this->validateEmpty($data);
