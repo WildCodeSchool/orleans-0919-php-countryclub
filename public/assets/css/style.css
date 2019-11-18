@@ -482,6 +482,27 @@ button {
 .bg-homeAdmin {
     width: 100%;
 }
+
+/*************** Admin Members*******************/
+
+
+.memberCardAdmin {
+    width: 18rem;
+    margin: 0 100px 0 5%;
+    background-color: var(--light-color);
+    padding: 20px;
+    font-size: 1.3em;
+    text-align: center;
+}
+
+.containerMemberAdmin{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 50px;
+    justify-content: center;
+}
+
+
 /*Galerie*/
 .thumb{
     margin-bottom: 30px;
