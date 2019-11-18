@@ -9,6 +9,7 @@
 
 namespace App\Controller;
 
+use App\Model\ItemManager;
 use App\Model\NewsManager;
 
 /**
@@ -91,5 +92,11 @@ class AdminNewsController extends AbstractController
             'errors' => $errors ?? [],
             'success' => $_GET['success'] ?? null,
         ]);
+    }
+    public function delete(int $id)
+    {
+        $newsManager = new NewsManager();
+        $newsManager->delete($id);
+        header('Location:/AdminNews/index');
     }
 }

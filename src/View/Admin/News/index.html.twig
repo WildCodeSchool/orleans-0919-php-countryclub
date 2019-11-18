@@ -14,6 +14,7 @@
             <p class="txt-news-admin">{{ article.date|date("d/m/Y") }}</p>
             <div class="card-body">
                 <a href="/AdminNews/edit/{{ article.id }}"><p class="card-text">Modifier l'actualité</p></a>
+                <a href="/AdminNews/delete/{{ article.id }}">Supprimer</a>
             </div>
         </div>
         {% else %}

@@ -529,17 +529,23 @@ button {
 
 /************ADMIN NEWS****************/
 .newsCardAdmin {
-    width: 22rem;
+
     margin: 0 10px 0 5%;
     background-color: var(--light-color);
     padding: 20px;
-    font-size: 1.3em;
     text-align: center;
 }
 
 .containerNewsAdmin{
     display: flex;
     flex-direction: row;
-    margin-bottom: 50px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px
     justify-content: center;
+}
+.title-news-admin {
+    font-size: 1em;
 }
