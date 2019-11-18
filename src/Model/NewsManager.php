@@ -3,6 +3,8 @@
 
 namespace App\Model;
 
+use DateTime;
+
 class NewsManager extends AbstractManager
 {
     /**
@@ -33,7 +35,7 @@ class NewsManager extends AbstractManager
     }
     public function add(array $news):bool
     {
-        $date = new \DateTime();
+        $date = new DateTime();
         $statement = $this->pdo->prepare(
             "INSERT INTO $this->table (`title`,`date`,`description`) 
                         VALUES ( :title,:date, :description ) "
