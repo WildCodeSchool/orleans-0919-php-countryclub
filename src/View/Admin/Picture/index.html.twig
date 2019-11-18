@@ -1,0 +1,26 @@
+{% extends 'layout.html.twig' %}
+{% block header %}
+    {% include 'Admin/header.html.twig' %}
+{% endblock %}
+
+{% block content %}
+
+    <img class="bg-pagesAdmin" src="/assets/images/westernAdmin.jpg" alt="paysage canyon">
+    <h1>Bienvenue dans la galerie de photos</h1>
+    <div class="container gallery">
+        <div class="row">
+            {% for picture in  photos %}
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    <a href="/assets/upload/gallery/{{picture.photo}}">
+                        <img  src="/assets/upload/gallery/{{picture.photo}}" class="img-fluid"  alt="{{picture.title}}">
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}
+
+
+{% block footer %}
+{% endblock %}
