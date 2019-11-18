@@ -13,8 +13,13 @@ class AdminCountryDayController extends AbstractController
             $data = array_map('trim', $_POST);
             $errors = $this->validate($data);
             if (empty($errors)) {
+                if ($_FILES['file']['size'] <= $data['MAX_FILE_SIZE']) {
+                    $odlDest = $_FILES['file']['tmp_name'];
+                    $newDest = 'assets/upload/'.$_FILES['file']['name'];
+                    move_uploaded_file($odlDest, $newDest);
+                }
                 $adminCountryDay->insert($data);
-                header('Location: Admin/index/');
+                header('Location: CountryDay/add/');
             }
         }
         return $this->twig->render('CountryDay/add.html.twig', [
@@ -30,11 +35,11 @@ class AdminCountryDayController extends AbstractController
         if (empty($data['description'])) {
             $errors['description'] = "Description of Country Day is required ";
         }
-        if (empty($data['file'])) {
-            $errors['image'] = "Country Days's image is required ";
+        if (empty($_FILES['file']['name'])) {
+            $errors['file'] = "Country Days's image is required ";
         }
-        if (empty($data['media'])) {
-            $errors['video'] = "Country Days's image is required ";
+        if (empty($_FILES['media']['name'])) {
+            $errors['media'] = "Country Days's movie is required ";
         }
         if (empty($data['date'])) {
             $errors['date'] = "Date must be current Date";

@@ -21,8 +21,8 @@ class AdminCountryDayManager extends AbstractManager
                      VALUES (:subtitle, :description,:image,:media,:date) ");
         $statement->bindValue('subtitle', $data['subtitle'], \PDO::PARAM_STR);
         $statement->bindValue('description', $data['description'], \PDO::PARAM_STR);
-        $statement->bindValue('image', $data['file'], \PDO::PARAM_STR);
-        $statement->bindValue('media', $data['media'], \PDO::PARAM_STR);
+        $statement->bindValue('image', $_FILES['file']['name'], \PDO::PARAM_STR);
+        $statement->bindValue('media', $_FILES['media']['name'], \PDO::PARAM_STR);
         $statement->bindValue('date', $data['date'], \PDO::PARAM_STR);
         $statement->execute();
     }

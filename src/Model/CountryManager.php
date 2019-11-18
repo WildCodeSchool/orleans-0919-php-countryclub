@@ -34,6 +34,6 @@ class CountryManager extends AbstractManager
      */
     public function selectLast(): array
     {
-        return $this->pdo->query("SELECT * FROM  $this->table ORDER BY  date DESC LIMIT 1")->fetch();
+        return $this->pdo->query("SELECT * FROM  $this->table ORDER BY  date DESC, id DESC LIMIT 1")->fetch();
     }
 }
