@@ -5,6 +5,7 @@ namespace App\Model;
 
 use DateTime;
 
+
 class NewsManager extends AbstractManager
 {
     /**
