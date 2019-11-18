@@ -12,16 +12,6 @@
     </div>
 
     <div class="form-group formAdmin col-md-8 col-lg-6">
-        <label for="article_title">Date</label>
-        <input type="date" class="form-control" id="article_title" value="{{ news.date }}" name="date">
-        {% if errors.date is not null %}
-            <ul class="alert alert-danger">
-                <li>{{ errors.date }}</li>
-            </ul>
-        {% endif %}
-    </div>
-
-    <div class="form-group formAdmin col-md-8 col-lg-6">
         <label for="contenu_news">Contenu de l'actualité </label>
         <textarea class="form-control" id="contenu_news" rows="3" name="description">{{news.description }}</textarea>
         {% if errors.description is not null %}

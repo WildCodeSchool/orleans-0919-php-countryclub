@@ -23,13 +23,11 @@ class NewsManager extends AbstractManager
         $statement = $this->pdo->prepare("
                                 UPDATE " . self::TABLE . "
                                 SET `title` = :title, 
-                                `description` = :description,
-                                `date` = :date
+                                `description` = :description
                                 WHERE id=:id");
         $statement->bindValue('id', $news['id'], \PDO::PARAM_INT);
         $statement->bindValue('title', $news['title'], \PDO::PARAM_STR);
         $statement->bindValue('description', $news['description'], \PDO::PARAM_STR);
-        $statement->bindValue('date', $news['date'], \PDO::PARAM_STR);
 
         return $statement->execute();
     }
