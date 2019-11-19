@@ -636,5 +636,23 @@ button {
     height: 55px;
     margin: 4em;
 }
+/*********************** Sitemap*****************/
 
+
+.box-sitemap-content {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+.box-sitemap-element {
+    margin-left: 3em;
+}
+.element-sitemap {
+    color: var(--text-color-dark);
+    font-size: 1.2em;
+    font-family: var(--font-content);
+    margin-top: 1.5em;
+}
+.link-sitemap {
+    font-family: var(--font-content);
+}
 
