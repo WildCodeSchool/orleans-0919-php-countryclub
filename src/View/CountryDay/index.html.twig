@@ -1,0 +1,30 @@
+{% extends 'layout.html.twig' %}
+{% block header %}
+    {% include 'Admin/header.html.twig' %}
+{% endblock %}
+
+{% block content %}
+<img class="bg-pagesAdmin" src="/assets/images/westernAdmin.jpg" alt="paysage canyon">
+    <h1>Liste des évènements</h1>
+    <div class="container">
+        <div class="row">
+            {% for event in events %}
+            <div class="col-sm-6" style="max-width: 20rem">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title"><a href="#">{{ event.subtitle }}</a></h4>
+                        <p class="card-text">{{event.description}}</p>
+                    </div>
+                </div>
+            </div>
+            {% else %}
+                <li>Rien à afficher</li>
+            {% endfor %}
+            <a href="/AdminCountryDay/add" class="linkBtnAjout">
+                <img src="/assets/images/btnAdd.png" class="card-img-top imgAjout" alt="icone plus pour ajout">
+            </a>
+        </div>
+
+    </div>
+
+{% endblock %}

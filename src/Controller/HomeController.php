@@ -29,7 +29,7 @@ class HomeController extends AbstractController
         $countryManager = new CountryManager();
         $eventDays = $countryManager->selectLast();
         $newsManager = new NewsManager();
-        $news = $newsManager->selectAll();
+        $news = $newsManager->selectNewsByDate();
         return $this->twig->render('Home/index.html.twig', [
             'news' =>$news,
             'event' =>$eventDays,

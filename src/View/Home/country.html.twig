@@ -14,9 +14,13 @@
                     {{ event.description }}
                 </p>
             </div>
-            <div>
-                <iframe src="https://www.youtube.com/embed/FqJl3d7yU5g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" class="iframeCountryDay" allowfullscreen></iframe>
-            </div>
+            {% if event.video %}
+                <div>
+                    <iframe src="https://www.youtube.com/embed/{{event.video}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" class="iframeCountryDay" allowfullscreen></iframe>
+                </div>
+                {% else %}
+                    <div><h3>Très bientôt votre video</h3></div>
+            {% endif %}
         </div>
     </div>
 </div>

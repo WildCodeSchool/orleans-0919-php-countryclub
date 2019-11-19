@@ -5,6 +5,12 @@ use App\Model\AdminCountryDayManager;
 
 class AdminCountryDayController extends AbstractController
 {
+    public function index()
+    {
+        $adminCountryDay = new AdminCountryDayManager();
+        $events = $adminCountryDay->selectAll();
+        return $this->twig->render('CountryDay/index.html.twig', ['events' => $events]);
+    }
     public function add()
     {
         $errors = [];
@@ -19,10 +25,10 @@ class AdminCountryDayController extends AbstractController
                     move_uploaded_file($odlDest, $newDest);
                 }
                 $adminCountryDay->insert($data);
-                header('Location: CountryDay/add/');
+                header('Location: /AdminCountryDay/index/');
             }
         }
-        return $this->twig->render('CountryDay/add.html.twig', [
+        return $this->twig->render('/CountryDay/add.html.twig', [
             'errors' => $errors,
             'data' => $data ?? null,
         ]);
@@ -38,7 +44,7 @@ class AdminCountryDayController extends AbstractController
         if (empty($_FILES['file']['name'])) {
             $errors['file'] = "Country Days's image is required ";
         }
-        if (empty($_FILES['media']['name'])) {
+        if (empty($data['media'])) {
             $errors['media'] = "Country Days's movie is required ";
         }
         if (empty($data['date'])) {

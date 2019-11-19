@@ -1,9 +1,10 @@
-<form method="post">
+
+<form method="post" enctype="multipart/form-data">
     <input type="hidden" value="{{ picture.id }}" name="id">
 
     <div class="form-group GalleryPicture col-md-8 col-lg-6">
         <label for="photo">photo : </label>
-        <input type="text" class="form-control" id="photo" value="{{ picture.photo }}" name="photo">
+        <input type="file" name="file" id="pictures">
         {% if errors.photo is not null %}
             <ul class="alert alert-danger">
                 <li>{{ errors.photo }}</li>
@@ -12,7 +13,7 @@
     </div>
 
     <div class="form-group GalleryPicture col-md-8 col-lg-6">
-        <label for="title"></label>
+        <label for="title">Ajouter un titre à votre photo : </label>
         <input type="text" class="form-control" id="title" value="{{ picture.title }}" name="title">
         {% if errors.title is not null %}
             <ul class="alert alert-danger">
@@ -22,6 +23,10 @@
     </div>
 
     <div class="btnFormPicture">
-        <button type="submit" class="btn btn-outline-secondary col-md-3 col-lg-2 col-4">Modifier</button>
+        <button type="submit" class="btn btn-outline-secondary col-md-3 col-lg-2 col-4">Ajouter</button>
+    </div>
+    <div class="btnFormPicture1">
+        <a href="/AdminGallery/index"><button type="button" class="btn btn-outline-secondary col-md-3 col-lg-2 col-4">
+              Retour</button></a>
     </div>
 </form>
