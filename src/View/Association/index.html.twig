@@ -1,15 +1,15 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-    <img src="/assets/images/road66.jpg" alt="landscape road 66">
+    <img src="/assets/images/road66.jpg" alt="landscape road 66" class="pictureTopPage">
     {# Présentation #}
     <h1 class="titleAssociation">L'ASSOCIATION EN BREF ...</h1>
     <div class="container-fluid">
-        <div class="row d-flex justify-content-center">
+        <div class="row d-flex presentationPart">
             <div class="imagePresentation">
                 <img src="/assets/images/countryDancers.jpg" class="card-img-top imgPres" alt="...">
             </div>
-            <div class="jumbotron jumbotron-fluid bg-white">
+            <div class="">
                 <div class="container">
                     <p class="lead">
                         Country Club Route 45 est un club de danse country et de line dance de la région orléanaise, une
@@ -31,28 +31,31 @@
     {# Animatrices #}
     <section class="sectionTeachers">
         <h1>Les animatrices</h1>
-        {% for teacher in teachers %}
-            <div class="teacherAndPractice">
-                <div class="card teacherCard">
-                    <img src="/assets/upload/{{ teacher.image }}" class="card-img-top imgTeachers"
-                         alt="Country's teacher">
-                    <div class="card-body">
-                        <h2 class="teacherTitle">{{ teacher.firstname }} {{ teacher.lastname }}</h2>
-                        <p class="card-text teacher-text">" {{ teacher.description }} "</p>
+        <div class="allTeachers row no-gutters">
+            {% for teacher in teachers %}
+                <div class="teacherAndPractice col-xl-5 col-lg-7 col-md-10 col-10 mx-auto">
+                    <div class="card teacherCard col-9 col-sm-8 col-md-6 col-lg-5 mx-auto">
+                        <img src="/assets/upload/{{ teacher.image }}" class="card-img-top imgTeachers"
+                             alt="Country's teacher">
+                        <div class="card-body">
+                            <h2 class="teacherTitle">{{ teacher.firstname }} {{ teacher.lastname }}</h2>
+                            <p class="card-text teacher-text">" {{ teacher.description }} "</p>
+
+                        </div>
+                    </div>
+                    <div class="card practiceCard col-9 col-lg-5 mx-auto">
+                        <div class="card-body mx-auto">
+                            <h2 class="title">{{ teacher.day }}</h2>
+                            <h3 clas="teacherTitle">{{ teacher.site }}</h3>
+                            <p class="card-text practice-text">{{ teacher.adress }}</p>
+                            <p class="card-text practice-text">{{ teacher.hours }}</p>
+                            <p class="card-text practice-text">{{ teacher.hours2 }}</p>
+                            <p class="card-text practice-text">{{ teacher.hours3 }}</p>
+                        </div>
                     </div>
                 </div>
-                <div class="card practiceCard">
-                    <div class="card-body">
-                        <h2 class="title">{{ teacher.day }}</h2>
-                        <h3 clas="teacherTitle">{{ teacher.site }}</h3>
-                        <p class="card-text practice-text">{{ teacher.adress }}</p>
-                        <p class="card-text practice-text">{{ teacher.hours }}</p>
-                        <p class="card-text practice-text">{{ teacher.hours2 }}</p>
-                        <p class="card-text practice-text">{{ teacher.hours3 }}</p>
-                    </div>
-                </div>
-            </div>
-        {% endfor %}
+            {% endfor %}
+        </div>
     </section>
 
 

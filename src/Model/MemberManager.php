@@ -31,7 +31,7 @@ class MemberManager extends AbstractManager
      * @param array $member
      * @return bool
      */
-    public function update(array $member):bool
+    public function update(array $member): bool
     {
         // prepared request
         $statement = $this->pdo->prepare("
@@ -48,10 +48,29 @@ class MemberManager extends AbstractManager
         return $statement->execute();
     }
 
+
     public function delete(int $id)
     {
         $statement = $this->pdo->prepare("DELETE FROM ". self::TABLE . " WHERE id=:id");
         $statement->bindValue('id', $id, \PDO::PARAM_INT);
         $statement->execute();
+
+    /**
+     * @param array $member
+     * @return int
+     */
+    public function insert(array $member): int
+    {
+        $statement = $this->pdo->prepare("
+            INSERT INTO " . self::TABLE . " (firstname, lastname, function, picture)
+            VALUES (:firstname, :lastname, :function, :picture)");
+        $statement->bindValue('firstname', $member['firstname'], \PDO::PARAM_STR);
+        $statement->bindValue('lastname', $member['lastname'], \PDO::PARAM_STR);
+        $statement->bindValue('function', $member['function'], \PDO::PARAM_STR);
+        $statement->bindValue('picture', $member['picture'], \PDO::PARAM_STR);
+
+        if ($statement->execute()) {
+            return (int)$this->pdo->lastInsertId();
+        }
     }
 }

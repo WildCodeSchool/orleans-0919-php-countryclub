@@ -32,6 +32,9 @@ li {
     list-style: none;
 }
 
+.pictureTopPage{
+    width: 100%;
+}
 
 /************** NAVBAR *****************/
 
@@ -256,7 +259,6 @@ button {
     margin-bottom: 1px; /* Create the parallax scrolling effect */
     margin-top: 5px;
 }
-
 .card-news {
     display: inline-flex;
     max-width: 500px;
@@ -380,13 +382,19 @@ button {
 }
 
 .teacherCard {
-    width: 22rem;
+    width: 32rem;
     border: none;
-    box-shadow: 10px 10px 15px var(--text-color-dark);
-    margin: 0 100px 0 5%;
+    box-shadow: 10px 10px 15px var(--text-color-medium);
+    margin: 0 50px 0 5%;
     background-color: var(--light-color);
     padding: 20px;
     font-size: 1.1em;
+    border-radius: 10px;
+}
+
+.allTeachers {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .practiceCard {
@@ -394,6 +402,7 @@ button {
     border: none;
     padding-bottom: 10px;
     font-size: 1.2em;
+    margin-left: 0;
 }
 
 .teacherAndPractice {
@@ -401,10 +410,11 @@ button {
     justify-content: flex-start;
     align-items: end;
     margin-bottom: 70px;
+    flex-wrap: wrap;
 }
 
 .imgTeachers {
-    width: 60%;
+    width: 40%;
     align-self: center;
     margin: 20px 0;
     border-radius: 50%;
@@ -438,6 +448,12 @@ button {
 .imagePresentation {
     width: 30em;
     margin-bottom: 50px;
+}
+
+.presentationPart{
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
 }
 
 .cardMember {

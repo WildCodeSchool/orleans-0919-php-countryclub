@@ -66,6 +66,7 @@ class AdminMemberController extends AbstractController
         ]);
     }
 
+  
     public function delete(int $id)
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -75,6 +76,41 @@ class AdminMemberController extends AbstractController
             header('Location: /AdminMember/index');
         }
     }
+
+
+
+    /**
+     * Display member creation page
+     *
+     * @return string
+     * @throws \Twig\Error\LoaderError
+     * @throws \Twig\Error\RuntimeError
+     * @throws \Twig\Error\SyntaxError
+     */
+    public function add(): string
+    {
+        $member = [];
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $memberManager = new MemberManager();
+            $member = array_map('trim', $_POST);
+
+            $errors = $this->validate($member);
+
+            if (empty($errors)) {
+                $memberManager->insert($member);
+                header('Location:/AdminMember/index');
+            }
+        }
+
+        return $this->twig->render('Admin/Member/add.html.twig', [
+            'member' => $member,
+            'errors' => $errors ?? [],
+            'success' => $_GET['success'] ?? null,
+        ]);
+    }
+
+
 
     private function validate($data)
     {

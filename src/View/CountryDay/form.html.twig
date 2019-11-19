@@ -1,0 +1,57 @@
+<div class="d-flex justify-content-around col-sm-5 offset-sm-2">
+    <form method="post" action="" class="contactform" enctype="multipart/form-data" >
+        <div class="form-group">
+            <label class="labelcontact" for="subtitle">Titre</label>
+            <input type="text" class="form-control" id="subtitle" placeholder="Votre titre" name="subtitle" value="{{ data.subtitle }}">
+            {% if errors.subtitle is not null %}
+                <ul class="alert alert-danger">
+                    <li>{{ errors.subtitle }}</li>
+                </ul>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            <label class="labelcontact" for="description" >Description </label>
+            <textarea class="form-control" id="description" rows="3" placeholder="Votre description" name="description">{{ data.description }}</textarea>
+            {% if errors.description is not null %}
+                <ul class="alert alert-danger">
+                    <li>{{ errors.description }}</li>
+                </ul>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            <div class="custom-file">
+                <label class="labelcontact" for="image">Image country day </label>
+                <input type="hidden" name="MAX_FILE_SIZE" value="200000" />
+                <input type="file" name="file" class="file-input" id="image">
+                {% if errors.file is not null %}
+                    <ul class="alert alert-danger">
+                        <li>{{ errors.file }}</li>
+                    </ul>
+                {% endif %}
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="custom-file">
+                <label class="labelcontact" for="video">Vidéo country day</label>
+                <input type="file" name="media" class="file-input" id="video">
+                {% if errors.media is not null %}
+                    <ul class="alert alert-danger">
+                        <li>{{ errors.media }}</li>
+                    </ul>
+                {% endif %}
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="labelcontact" for="start">Date</label>
+            <input type="date" class="form-control" id="start"  name="date" >
+            {% if errors.date is not null %}
+                <ul class="alert alert-danger">
+                    <li>{{ errors.date }}</li>
+                </ul>
+            {% endif %}
+        </div>
+        <div class="buttoncontact">
+            <button type="submit" class="btn btn-primary">Envoyer</button>
+        </div>
+    </form>
+</div>

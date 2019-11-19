@@ -1,4 +1,4 @@
-<form method="post">
+<form method="post" enctype="multipart/form-data">
     <input type="hidden" value="{{ teacher.id }}" name="id">
 
     <div class="form-group formAdmin col-md-8 col-lg-6">
@@ -29,6 +29,11 @@
                 <li>{{ errors.image }}</li>
             </ul>
         {% endif %}
+    </div>
+
+    <div class="form-group formAdmin col-md-8 col-lg-6">
+        <input type="hidden" name="MAX_FILE_SIZE" value="1000000"> Photo : <input type="file" name="files" multiple>
+        <input type="submit" value="Upload">
     </div>
 
     <div class="form-group formAdmin col-md-8 col-lg-6">
