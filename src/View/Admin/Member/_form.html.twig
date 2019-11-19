@@ -1,4 +1,4 @@
-<form method="post">
+<form method="post" enctype="multipart/form-data">
     <input type="hidden" value="{{ member.id }}" name="id">
 
     <div class="form-group formAdmin col-md-8 col-lg-6">
@@ -22,17 +22,19 @@
     </div>
 
     <div class="form-group formAdmin col-md-8 col-lg-6">
-        <label for="picture">Nom de l'image : </label>
-        <input type="text" class="form-control" id="picture" value="{{ member.picture }}" name="picture">
-        {% if errors.picture is not null %}
-            <ul class="alert alert-danger">
-                <li>{{ errors.picture }}</li>
-            </ul>
-        {% endif %}
+        <div class="custom-file">
+            <label for="picture" >Photo : </label>
+            <input type="file" name="file" class="file-input" id="picture">
+            {% if errors.file is not null %}
+                <ul class="alert alert-danger">
+                    <li>{{ errors.file }}</li>
+                </ul>
+            {% endif %}
+        </div>
     </div>
 
     <div class="form-group formAdmin col-md-8 col-lg-6">
-        <label for="function">Function : </label>
+        <label for="function">Fonction : </label>
         <textarea class="form-control" id="function" rows="3" name="function">{{ member.function }}</textarea>
         {% if errors.function is not null %}
             <ul class="alert alert-danger">

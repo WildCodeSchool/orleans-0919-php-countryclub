@@ -636,6 +636,31 @@ button {
     font-size: 1em;
 }
 
+.imgEditTeacher {
+    width: 20%;
+    margin: 0 auto;
+}
+
+.containerMentionsLegales p {
+    font-size: 1.2em;
+    max-width: 960px;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.containerMentionsLegales h2 {
+    max-width: 960px;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+
+}
+
 .link-modify-news {
     padding-bottom: 2em
 }
@@ -647,6 +672,7 @@ button {
 }
 
 /*********************** Sitemap*****************/
+
 
 .box-sitemap-content {
     margin-top: 2em;
@@ -667,6 +693,7 @@ button {
 .link-sitemap {
     font-family: var(--font-content);
 }
+
 
 .containerPresentationIcone div {
     display: flex;
@@ -698,3 +725,4 @@ button {
 .imgNews {
     padding: 1.25rem;
 }
+

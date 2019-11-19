@@ -1,0 +1,31 @@
+{% extends 'layout.html.twig' %}
+{% block header %}
+    {% include 'Admin/header.html.twig' %}
+{% endblock %}
+
+{% block content %}
+
+<img class="bg-pagesAdmin" src="/assets/images/westernAdmin.jpg" alt="paysage canyon">
+    <h1>Bienvenue dans la galerie de photos</h1>
+<div class="container-fluid gallery">
+    <div class="row">
+        {% for photo in photos %}
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a href="/assets/upload/gallery/{{ photo.path }}"></a>
+                <div class="card" style="width: 18rem;">
+                    <img src="/assets/upload/gallery/{{ photo.path }}" class="card-img-top" alt="{{ photo.title }}">
+                    <form class="col-12" method="post" action="/AdminGallery/delete/{{ photo.id }}">
+                        <input type="submit" name="delete" value="Supprimer la photo" class="btn btn-outline-danger">
+                    </form>
+                </div>
+            </div>
+        {% else %}
+            <li>Rien à afficher</li>
+        {% endfor %}
+        <a href="/AdminGallery/add" class="linkBtnAjout">
+            <img src="/assets/images/btnAdd.png" class="card-img-top imgAjout" alt="icone plus pour ajout">
+        </a>
+    </div>
+</div>
+        {% endblock %}
+
