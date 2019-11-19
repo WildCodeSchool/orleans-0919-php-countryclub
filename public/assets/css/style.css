@@ -608,6 +608,11 @@ button {
     font-size: 1em;
 }
 
+.imgEditTeacher {
+    width: 20%;
+    margin: 0 auto;
+}
+
 .containerMentionsLegales p {
     font-size: 1.2em;
     max-width: 960px;
@@ -655,4 +660,5 @@ button {
 .link-sitemap {
     font-family: var(--font-content);
 }
+
 
