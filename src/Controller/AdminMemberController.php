@@ -116,12 +116,8 @@ class AdminMemberController extends AbstractController
                     move_uploaded_file($path['tmp_name'], UPLOAD_PATH . $fileName);
                 }
                 $memberManager = new MemberManager();
-                $member = [
-                    'firstname' => $_POST['firstname'],
-                    'lastname'  => $_POST['lastname'],
-                    'function' => $_POST['function'],
-                    'picture'      => $fileName ?? '',
-                ];
+                $member = $data;
+                $member['picture'] = $fileName ?? '';
                 $memberManager->insert($member);
                 header('Location:/AdminMember/index');
             }
