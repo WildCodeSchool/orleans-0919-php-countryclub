@@ -54,7 +54,8 @@ class MemberManager extends AbstractManager
         $statement = $this->pdo->prepare("DELETE FROM ". self::TABLE . " WHERE id=:id");
         $statement->bindValue('id', $id, \PDO::PARAM_INT);
         $statement->execute();
-
+    }
+    
     /**
      * @param array $member
      * @return int
