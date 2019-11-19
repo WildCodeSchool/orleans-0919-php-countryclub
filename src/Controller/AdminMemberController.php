@@ -18,6 +18,8 @@ use App\Model\MemberManager;
 class AdminMemberController extends AbstractController
 {
 
+    const MAX_FILE_SIZE = 200000;
+    const ALLOWED_MIMES = ['image/jpeg', 'image/png', 'image/jpg'];
 
     /**
      * Display member listing
@@ -89,22 +91,39 @@ class AdminMemberController extends AbstractController
      */
     public function add(): string
     {
-        $member = [];
-
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $memberManager = new MemberManager();
-            $member = array_map('trim', $_POST);
-
-            $errors = $this->validate($member);
-
+            $data = array_map('trim', $_POST);
+            $errors = $this->validate($data);
+            if (!empty($_FILES['file']['name'])) {
+                $path = $_FILES['file'];
+                if ($path['error'] !== 0) {
+                    $errors[] = 'Erreur de téléchargement';
+                }
+                // size du fichier
+                if ($path['size'] > self::MAX_FILE_SIZE) {
+                    $errors[] = 'La taille du fichier doit être < ' . (self::MAX_FILE_SIZE / 1000) . ' ko';
+                }
+                // type mime autorisés
+                if (!in_array($path['type'], self::ALLOWED_MIMES)) {
+                    $errors[] = 'Erreur d\'extension, les extensions autorisées 
+                    sont : ' . implode(', ', self::ALLOWED_MIMES);
+                }
+            }
             if (empty($errors)) {
+                // finalisation de l'upload en déplacant le fichier dans le dossier upload
+                if (!empty($path)) {
+                    $fileName = uniqid() . '.' . pathinfo($path['name'], PATHINFO_EXTENSION);
+                    move_uploaded_file($path['tmp_name'], UPLOAD_PATH . $fileName);
+                }
+                $memberManager = new MemberManager();
+                $member = $data;
+                $member['picture'] = $fileName ?? '';
                 $memberManager->insert($member);
                 header('Location:/AdminMember/index');
             }
         }
-
         return $this->twig->render('Admin/Member/add.html.twig', [
-            'member' => $member,
+            'member' => $member ?? [],
             'errors' => $errors ?? [],
             'success' => $_GET['success'] ?? null,
         ]);
@@ -137,10 +156,7 @@ class AdminMemberController extends AbstractController
             $errors['firstname'] = 'Le prénom doit être indiqué';
         }
         if (empty($data['function'])) {
-            $errors['function'] = 'Une fonction doit être renseignée';
-        }
-        if (empty($data['picture'])) {
-            $errors['picture'] = 'Un nom d\'image doit être renseignée';
+            $errors['function'] = 'Une fonction doit être renseigné';
         }
         return $errors ?? [];
     }
