@@ -74,4 +74,22 @@ class AdminNewsController extends AbstractController
         }
         return $errors ?? [];
     }
+    public function add()
+    {
+        $newsManager = new NewsManager();
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $data = array_map('trim', $_POST);
+            $errors = $this->validate($data);
+
+            if (empty($errors)) {
+                $newsManager->add($data);
+                header('Location: /AdminNews/index/?success=ok');
+            }
+        }
+        return $this->twig->render('Admin/News/add.html.twig', [
+            'errors' => $errors ?? [],
+            'success' => $_GET['success'] ?? null,
+        ]);
+    }
 }

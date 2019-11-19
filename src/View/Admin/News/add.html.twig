@@ -5,17 +5,10 @@
 
 {% block content %}
     <img class="bg-pagesAdmin" src="/assets/images/westernAdmin.jpg" alt="paysage canyon">
-    {% if success is not null %}
-        <div class="alert alert-success" role="alert">
-            <p>Merci, votre modification a bien été prise en compte</p>
-        </div>
-    {% endif %}
-    
-    <h1>Modifier {{ member.firstname }} {{ member.lastname }}</h1>
 
-    {% include 'Admin/Member/_form.html.twig' %}
+    {% include 'Admin/News/_form.html.twig' %}
 
-    <a href="/AdminMember/index">
+    <a href="/AdminNews/index">
         <button type="submit" class="btn btn-outline-secondary btnReturnAdmin col-md-2 col-lg-1 col-3">< Retour</button>
     </a>
 
