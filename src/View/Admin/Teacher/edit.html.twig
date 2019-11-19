@@ -11,7 +11,9 @@
         </div>
     {% endif %}
     <h1>Modifier {{ teacher.firstname }} {{ teacher.lastname }}</h1>
-
+    <div class="text-center">
+        <img src="/assets/upload/{{ teacher.image }}" alt="photo de {{ teacher.firstname }} {{ teacher.lastname }} ">
+    </div>
     {% include 'Admin/Teacher/_form.html.twig' %}
 
 
