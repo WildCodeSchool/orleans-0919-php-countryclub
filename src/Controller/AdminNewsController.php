@@ -31,7 +31,7 @@ class AdminNewsController extends AbstractController
     public function index()
     {
         $newsManager = new NewsManager();
-        $news = $newsManager->selectAll();
+        $news = $newsManager->selectNewsByDate();
 
         return $this->twig->render('Admin/News/index.html.twig', ['news' => $news]);
     }

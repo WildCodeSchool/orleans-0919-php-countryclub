@@ -19,6 +19,10 @@ class NewsManager extends AbstractManager
     {
         parent::__construct(self::TABLE);
     }
+    public function selectNewsByDate()
+    {
+        return $this->pdo->query("SELECT id,title, description, date FROM  $this->table ORDER BY  date");
+    }
     public function update(array $news):bool
     {
         // prepared request
