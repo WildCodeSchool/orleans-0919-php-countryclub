@@ -12,7 +12,7 @@
             <p class="title-news-admin">{{ article.title }}</p>
             <p class="txt-news-admin">{{ article.date|date("d/m/Y") }}</p>
             <div class="card-body">
-                <a href="/AdminNews/edit/{{ article.id }}"><p class="card-text">Modifier l'actualité</p></a>
+                <a href="/AdminNews/edit/{{ article.id }}"><p class="card-text link-modify-news">Modifier l'actualité</p></a>
                 <form class="col-12" method="post" action="/AdminNews/delete/{{ article.id }}">
                     <input type="submit" name="delete" value="Supprimer l'actualité" class="btn btn-outline-danger">
                 </form>
@@ -21,5 +21,8 @@
         {% else %}
             <li>Rien à afficher</li>
         {% endfor %}
+        <a href="/AdminNews/add" class="linkBtnAjout">
+            <img src="/assets/images/btnAdd.png" class="card-img-top imgAddNews" alt="Ajouter une actualité">
+        </a>
     </div>
 {% endblock %}
