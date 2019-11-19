@@ -74,7 +74,6 @@ class AdminTeacherController extends AbstractController
             }
 
             if (empty($errors)) {
-
                 if (!empty($path)) {
                     $fileName = uniqid() . '.' . pathinfo($path['name'], PATHINFO_EXTENSION);
                     move_uploaded_file($path['tmp_name'], UPLOAD_PATH . $fileName);
