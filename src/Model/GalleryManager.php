@@ -37,7 +37,6 @@ class GalleryManager extends AbstractManager
         $statement->bindValue('path', $gallery['file']['name'], \PDO::PARAM_STR);
         $statement->bindValue('title', $gallery['title'], \PDO::PARAM_STR);
         $statement->execute();
-
     }
 
     public function delete(int $id)

@@ -68,11 +68,10 @@ class AdminGalleryController extends AbstractController
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $galleryManager = new GalleryManager();
-            $gallery = $galleryManager->selectOneById($id);
+            $galleryManager->selectOneById($id);
             $galleryManager->delete($id);
 
             header('Location: /AdminGallery/index');
-            exit();
         }
     }
 }
