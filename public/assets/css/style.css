@@ -530,7 +530,7 @@ button {
 /************ADMIN NEWS****************/
 .newsCardAdmin {
 
-    margin: 0 10px 0 5%;
+    margin: 2em;
     background-color: var(--light-color);
     padding: 20px;
     text-align: center;
@@ -549,3 +549,11 @@ button {
 .title-news-admin {
     font-size: 1em;
 }
+.link-modify-news {
+    padding-bottom: 2em
+}
+.imgAddNews {
+    width: 30%;
+    margin: 4em;
+}
+
