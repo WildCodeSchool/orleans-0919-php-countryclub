@@ -87,6 +87,11 @@ class AdminTeacherController extends AbstractController
             $errors = $this->validate($teacher);
 
             if (empty($errors)) {
+                if ($_FILES['file']['size'] <= $teacher['MAX_FILE_SIZE']) {
+                    $odlDest = $_FILES['file']['tmp_name'];
+                    $newDest = 'assets/upload/'.$_FILES['file']['name'];
+                    move_uploaded_file($odlDest, $newDest);
+                }
                 $teacherManager->insert($teacher);
                 header('Location:/AdminTeacher/index');
             }
@@ -134,8 +139,8 @@ class AdminTeacherController extends AbstractController
         if (empty($data['description'])) {
             $errors['description'] = 'Une description doit être renseignée';
         }
-        if (empty($data['image'])) {
-            $errors['image'] = 'Un nom d\'image doit être renseignée';
+        if (empty($_FILES['file']['name'])) {
+            $errors['file'] = "Une photo doit être ajoutée";
         }
         return $errors ?? [];
     }
