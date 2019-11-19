@@ -35,7 +35,9 @@ class NewsManager extends AbstractManager
     }
     public function add(array $news):bool
     {
+
         $date = new DateTime();
+
         $statement = $this->pdo->prepare(
             "INSERT INTO $this->table (`title`,`date`,`description`) 
                         VALUES ( :title,:date, :description ) "
@@ -46,5 +48,12 @@ class NewsManager extends AbstractManager
         if ($statement->execute()) {
             return (true);
         }
+    }
+    public function delete(int $id): void
+    {
+        // prepared request
+        $statement = $this->pdo->prepare("DELETE FROM $this->table WHERE id=:id");
+        $statement->bindValue('id', $id, \PDO::PARAM_INT);
+        $statement->execute();
     }
 }
