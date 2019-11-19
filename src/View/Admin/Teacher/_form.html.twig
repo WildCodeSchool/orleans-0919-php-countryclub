@@ -24,7 +24,6 @@
     <div class="form-group formAdmin col-md-8 col-lg-6">
         <div class="custom-file">
             <label for="image" >Photo : </label>
-            <input type="hidden" name="MAX_FILE_SIZE" value="200000" />
             <input type="file" name="file" class="file-input" id="image">
             {% if errors.file is not null %}
                 <ul class="alert alert-danger">

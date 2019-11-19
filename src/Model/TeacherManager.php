@@ -74,7 +74,7 @@ class TeacherManager extends AbstractManager
         $statement->bindValue('firstname', $teacher['firstname'], \PDO::PARAM_STR);
         $statement->bindValue('lastname', $teacher['lastname'], \PDO::PARAM_STR);
         $statement->bindValue('description', $teacher['description'], \PDO::PARAM_STR);
-        $statement->bindValue('image', $_FILES['file']['name'], \PDO::PARAM_STR);
+        $statement->bindValue('image', $teacher['image'], \PDO::PARAM_STR);
 
         if ($statement->execute()) {
             return (int)$this->pdo->lastInsertId();
