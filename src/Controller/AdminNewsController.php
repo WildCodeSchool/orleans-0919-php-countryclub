@@ -95,8 +95,11 @@ class AdminNewsController extends AbstractController
     }
     public function delete(int $id)
     {
-        $newsManager = new NewsManager();
-        $newsManager->delete($id);
-        header('Location:/AdminNews/index');
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+            $newsManager = new NewsManager();
+            $newsManager->delete($id);
+            header('Location:/AdminNews/index');
+        }
     }
 }
