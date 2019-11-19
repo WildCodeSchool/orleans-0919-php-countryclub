@@ -26,4 +26,3 @@ class SitemapController extends AbstractController
         return $this->twig->render('sitemap/index.html.twig');
     }
 }
-
