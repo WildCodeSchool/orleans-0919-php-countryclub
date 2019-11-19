@@ -19,6 +19,10 @@ class NewsManager extends AbstractManager
     {
         parent::__construct(self::TABLE);
     }
+    public function selectNewsByDate()
+    {
+        return $this->pdo->query("SELECT id,title, description, date FROM  $this->table ORDER BY  date");
+    }
     public function update(array $news):bool
     {
         // prepared request
@@ -35,7 +39,9 @@ class NewsManager extends AbstractManager
     }
     public function add(array $news):bool
     {
+
         $date = new DateTime();
+
         $statement = $this->pdo->prepare(
             "INSERT INTO $this->table (`title`,`date`,`description`) 
                         VALUES ( :title,:date, :description ) "
@@ -46,5 +52,12 @@ class NewsManager extends AbstractManager
         if ($statement->execute()) {
             return (true);
         }
+    }
+    public function delete(int $id): void
+    {
+        // prepared request
+        $statement = $this->pdo->prepare("DELETE FROM $this->table WHERE id=:id");
+        $statement->bindValue('id', $id, \PDO::PARAM_INT);
+        $statement->execute();
     }
 }

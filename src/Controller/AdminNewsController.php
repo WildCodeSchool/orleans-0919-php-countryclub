@@ -9,6 +9,7 @@
 
 namespace App\Controller;
 
+use App\Model\ItemManager;
 use App\Model\NewsManager;
 
 /**
@@ -30,7 +31,7 @@ class AdminNewsController extends AbstractController
     public function index()
     {
         $newsManager = new NewsManager();
-        $news = $newsManager->selectAll();
+        $news = $newsManager->selectNewsByDate();
 
         return $this->twig->render('Admin/News/index.html.twig', ['news' => $news]);
     }
@@ -91,5 +92,14 @@ class AdminNewsController extends AbstractController
             'errors' => $errors ?? [],
             'success' => $_GET['success'] ?? null,
         ]);
+    }
+    public function delete(int $id)
+    {
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $newsManager = new NewsManager();
+            $newsManager->delete($id);
+            header('Location:/AdminNews/index');
+        }
     }
 }

@@ -587,17 +587,72 @@ button {
 
 /************ADMIN NEWS****************/
 .newsCardAdmin {
-    width: 22rem;
-    margin: 0 10px 0 5%;
+
+    margin: 2em;
     background-color: var(--light-color);
     padding: 20px;
-    font-size: 1.3em;
     text-align: center;
 }
 
 .containerNewsAdmin{
     display: flex;
     flex-direction: row;
-    margin-bottom: 50px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
     justify-content: center;
 }
+.title-news-admin {
+    font-size: 1em;
+}
+
+.containerMentionsLegales p {
+    font-size: 1.2em;
+    max-width: 960px;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.containerMentionsLegales h2 {
+    max-width: 960px;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+
+}
+
+.link-modify-news {
+    padding-bottom: 2em
+}
+.imgAddNews {
+    width: 179px;
+    height: 55px;
+    margin: 4em;
+}
+/*********************** Sitemap*****************/
+
+
+.box-sitemap-content {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+.box-sitemap-element {
+    margin-left: 3em;
+}
+.element-sitemap {
+    color: var(--text-color-dark);
+    font-size: 1.2em;
+    font-family: var(--font-content);
+    margin-top: 1.5em;
+}
+.link-sitemap {
+    font-family: var(--font-content);
+}
+
