@@ -55,9 +55,34 @@ class AdminMemberController extends AbstractController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $data = array_map('trim', $_POST);
             $errors = $this->validate($data);
+
+            if (!empty($_FILES['file']['name'])) {
+                $path = $_FILES['file'];
+
+                if ($path['error'] !== 0) {
+                    $errors[] = 'Erreur de téléchargement';
+                }
+                // size du fichier
+                if ($path['size'] > self::MAX_FILE_SIZE) {
+                    $errors[] = 'La taille du fichier doit être < ' . (self::MAX_FILE_SIZE / 1000) . ' ko';
+                }
+                // type mime autorisés
+                if (!in_array($path['type'], self::ALLOWED_MIMES)) {
+                    $errors[] = 'Erreur d\'extension, les extensions autorisées 
+                    sont : ' . implode(', ', self::ALLOWED_MIMES);
+                }
+            }
+
             if (empty($errors)) {
-                $memberManager->update($data);
-                header('Location: /AdminMember/edit/' . $data['id'] . '/?success=ok');
+                if (!empty($path)) {
+                    $fileName = uniqid() . '.' . pathinfo($path['name'], PATHINFO_EXTENSION);
+                    move_uploaded_file($path['tmp_name'], UPLOAD_PATH . $fileName);
+                }
+                $memberManager = new MemberManager();
+                $member = $data;
+                $member['picture'] = $fileName ?? '';
+                $memberManager->update($member);
+                header('Location: /AdminMember/edit/' . $member['id'] . '/?success=ok');
             }
         }
 
