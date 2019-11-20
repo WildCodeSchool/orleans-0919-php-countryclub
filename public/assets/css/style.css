@@ -250,24 +250,6 @@ ul, li {
 .form_contact {
     padding: 50pt;
 }
-
-legend {
-    font-family: var(--font-title);
-    margin-top: 35pt;
-}
-
-.Join {
-    text-align: center;
-}
-
-u {
-    font-family: var(--font-title);
-}
-
-button {
-    margin-top: 15pt;
-}
-
 .card-news {
     display: inline-flex;
     max-width: 500px;
@@ -289,7 +271,76 @@ button {
     padding-top: 50px;
 }
 
+/* SECTION ADHERER */
 
+.Join {
+    text-align: center;
+}
+.tarif-upload, .form_contact {
+    background-color: whitesmoke;
+}
+.form_contact {
+    background-image: url('../../assets/images/dancersVector2.png');
+    background-repeat: no-repeat;
+    background-position: right;
+}
+.tarif-upload {
+    background-image: url('../../assets/images/dancersVector2.png');
+    background-repeat: no-repeat;
+    background-position: left top 20px;
+}
+.titleadherer {
+    text-align: center;
+    font-family: var(--font-title);
+}
+legend {
+    font-family: var(--font-title);
+    margin-top: 35pt;
+    font-size: 2rem;
+}
+button {
+    margin-top: 15pt;
+}
+.parallax {
+    /* The image used */
+    background-image: url('../../assets/images/pagecontact.jpeg');
+    width: 100%; /* Full height */
+    height: 50vh;
+    margin-bottom: 1px; /* Create the parallax scrolling effect */
+}
+.card.text-center , .div.bulletin.card {
+    margin-top: 5vh;
+    height: 90%;
+}
+.card-news {
+    display: inline-flex;
+    max-width: 500px;
+    margin: 0.5em;
+}
+.etape1 {
+     padding: 14px;
+ }
+.h3list {
+    font-family: var(--font-title);
+    font-size: 1.5rem;
+}
+.sizeh3 {
+    font-size: 1.2rem;
+}
+.fontdl {
+    font-family: var(--font-title);
+}
+.li_bulletin {
+    line-height: 1.5em;
+}
+.parah1 {
+    font-family: var(--font-title);
+    text-align: center;
+    padding: 15%;
+    color: white;
+    font-size: 5em;
+    text-shadow: 1px 1px 2px black;
+}
 /*SECTION CONTACT*/
 
 .parallax {
@@ -301,26 +352,6 @@ button {
     background-repeat: no-repeat;
     background-size: cover;
 }
-
-.tarif-upload, .form_contact {
-    background-color: whitesmoke;
-}
-
-.bulletin {
-    height: 100%;
-}
-
-.etape1 {
-    padding: 8px;
-}
-
-.titleadherer {
-    margin-top: 5%;
-    text-align: center;
-    font-family: var(--font-title);
-    background-color: white;
-}
-
 .titleContact > h1 {
     padding: 10.5%;
     text-align: center;
