@@ -89,7 +89,7 @@ li {
 }
 
 .carousel {
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 
 /************** FOOTER *****************/
@@ -211,7 +211,11 @@ ul, li {
 .title-news {
     font-size: 2.2em;
     font-family: var(--font-title);
-    padding-left: 2em;
+    text-align: center;
+}
+
+.card-news p {
+    text-align: justify;
 }
 
 .box-news-home {
@@ -236,7 +240,8 @@ ul, li {
 
 .text-news-home {
     font-family: var(--font-content);
-    text-align: left;
+    margin-top: 1em;
+    line-height: 1.6em;
 }
 
 .form_contact {
@@ -398,11 +403,12 @@ button {
     background-position: right;
 }
 
-.sectionCountry {
+.sectionNews {
     background-color: var(--text-color-light);
-    background-image: url('/assets/images/dancersVector2.png');
+    background-image: url('/assets/images/hatWhite.png');
     background-repeat: no-repeat;
     background-position: center;
+    padding-bottom: 60px;
 
 }
 
@@ -632,6 +638,8 @@ button {
     justify-content: center;
 }
 
+
+
 .title-news-admin {
     font-size: 1em;
 }
@@ -719,10 +727,22 @@ button {
 }
 
 .containerPresentationIcone {
-    margin-bottom: 50px;
+    margin-bottom: 100px;
 }
 
 .imgNews {
     padding: 1.25rem;
 }
 
+.countryTitle h2 {
+    font-size: 2.5em;
+    margin-bottom: 1em;
+}
+
+.containerCountry{
+    padding-bottom: 30px;
+}
+
+.containerCountry .card-body {
+    margin-bottom: 30px;
+}
