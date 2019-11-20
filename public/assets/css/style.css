@@ -17,6 +17,9 @@
     src: url("../font/docktrin.ttf");
 }
 
+body{
+    overflow-x: hidden;
+}
 
 h1 {
     font-family: var(--font-title);
@@ -538,6 +541,7 @@ button {
 
 .bg-homeAdmin {
     width: 100%;
+    overflow-y: hidden;
 }
 
 /*************** Admin Members*******************/
