@@ -260,15 +260,6 @@ button {
     margin-top: 15pt;
 }
 
-.parallax {
-    /* The image used */
-    background-image: url('../../assets/images/pagecontact.jpeg');
-    width: 100%; /* Full height */
-    height: 50vh;
-    margin-bottom: 1px; /* Create the parallax scrolling effect */
-    margin-top: 5px;
-}
-
 .card-news {
     display: inline-flex;
     max-width: 500px;
@@ -323,14 +314,15 @@ button {
 }
 
 .titleContact > h1 {
-    padding: 9%;
+    padding: 10.5%;
     text-align: center;
     font-family: var(--font-title);
     color: var(--text-color-light);
     text-shadow: 1px 1px 10px black;
     font-size: 7rem;
-    font-size: calc(14px + 65 * ((100vw - 320px) / 960));
+    font-size: calc(14px + 45 * ((100vw - 320px) / 960));
 }
+
 
 .bg-contact {
     background-image: url('../../assets/images/hat2.png');
