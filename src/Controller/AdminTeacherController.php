@@ -167,7 +167,9 @@ class AdminTeacherController extends AbstractController
             $teacherManager = new TeacherManager();
             $teacher = $teacherManager->selectOneById($id);
             if ($teacher) {
-                unlink(UPLOAD_PATH . $teacher['image']);
+                if ($teacher['image']) {
+                    unlink(UPLOAD_PATH . $teacher['image']);
+                }
                 $teacherManager->delete($id);
             }
             header('Location: /AdminTeacher/index');
