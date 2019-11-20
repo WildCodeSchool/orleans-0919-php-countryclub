@@ -9,7 +9,7 @@
     <div class="containerNewsAdmin">
         {% for article in news %}
         <div class="card newsCardAdmin">
-            <p class="title-news-admin">{{ article.title }}</p>
+            <p class="title-news-admin"><b>{{ article.title }}</b></p>
             <p class="txt-news-admin">{{ article.date|date("d/m/Y") }}</p>
             <div class="card-body">
                 <a href="/AdminNews/edit/{{ article.id }}"><p class="card-text link-modify-news">Modifier l'actualité</p></a>

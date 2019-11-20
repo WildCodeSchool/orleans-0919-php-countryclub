@@ -36,19 +36,19 @@ class AdminCountryDayController extends AbstractController
     private function validate(array $data): array
     {
         if (empty($data['subtitle'])) {
-            $errors['subtitle'] = "The title is required ";
+            $errors['subtitle'] = "Le titre de l'évènement doit être  indiqué ";
         }
         if (empty($data['description'])) {
-            $errors['description'] = "Description of Country Day is required ";
+            $errors['description'] = "La description doit être renseignée ";
         }
         if (empty($_FILES['file']['name'])) {
-            $errors['file'] = "Country Days's image is required ";
+            $errors['file'] = "L'affiche du Country Day  doit  être renseignée";
         }
         if (empty($data['media'])) {
-            $errors['media'] = "Country Days's movie is required ";
+            $errors['media'] = "La vidéo  doit être indiquée ";
         }
         if (empty($data['date'])) {
-            $errors['date'] = "Date must be current Date";
+            $errors['date'] = "La date  doit être indiquée";
         }
         return $errors ?? [];
     }
