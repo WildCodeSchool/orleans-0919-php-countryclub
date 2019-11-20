@@ -1,0 +1,31 @@
+{% extends 'layout.html.twig' %}
+{% block header %}
+    {% include 'Admin/header.html.twig' %}
+{% endblock %}
+
+{% block content %}
+
+    <img class="bg-pagesAdmin" src="/assets/images/westernAdmin.jpg" alt="paysage canyon">
+    <h1>Membres du bureau</h1>
+    <div class="containerMemberAdmin">
+        {% for member in members %}
+            <div class="card memberCardAdmin">
+                <img src="/assets/upload/{{ member.picture }}" class="card-img-top"
+                     alt="photo de {{ member.firstname }} {{ member.lastname }} {{ member.function }}">
+                <div class="card-body">
+                    <a href="/AdminMember/edit/{{ member.id }}"><p
+                                class="card-text">{{ member.firstname }} {{ member.lastname }}</p></a>
+                </div>
+                <form class="col-12" method="post" action="/AdminMember/delete/{{ member.id }}">
+                    <input type="submit" name="delete" value="Supprimer la fiche" class="btn btn-outline-danger">
+                </form>
+            </div>
+        {% else %}
+            <li>Rien à afficher</li>
+        {% endfor %}
+        <a href="/AdminMember/add" class="linkBtnAjout">
+            <img src="/assets/images/btnAdd.png" class="card-img-top imgAjout" alt="icone plus pour ajout">
+        </a>
+    </div>
+
+{% endblock %}

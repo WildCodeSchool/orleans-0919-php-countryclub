@@ -32,6 +32,9 @@ li {
     list-style: none;
 }
 
+.pictureTopPage {
+    width: 100%;
+}
 
 /************** NAVBAR *****************/
 
@@ -184,6 +187,20 @@ address {
     line-height: 1.1;
 }
 
+.card-header {
+    font-family: var(--font-title);
+}
+
+ul, li {
+    margin-top: 10px;
+    list-style-type: none;
+    text-align: center;
+}
+
+.btn-primary {
+
+}
+
 
 .titlePresentation, .titleMember {
     text-align: center;
@@ -221,21 +238,55 @@ address {
     font-family: var(--font-content);
     text-align: left;
 }
+
+.form_contact {
+    padding: 50pt;
+}
+
+legend {
+    font-family: var(--font-title);
+    margin-top: 35pt;
+}
+
+.Join {
+    text-align: center;
+}
+
+u {
+    font-family: var(--font-title);
+}
+
+button {
+    margin-top: 15pt;
+}
+
+.parallax {
+    /* The image used */
+    background-image: url('../../assets/images/pagecontact.jpeg');
+    width: 100%; /* Full height */
+    height: 50vh;
+    margin-bottom: 1px; /* Create the parallax scrolling effect */
+    margin-top: 5px;
+}
+
 .card-news {
     display: inline-flex;
     max-width: 500px;
     margin: 0.5em;
 }
+
 .imgCountryDay {
     width: 70%;
 
 }
+
 .iframeCountryDay {
-    width:100%;
+    width: 100%;
     height: 300px;
 }
+
 .countryTitle {
-    font-family: var(--font-title) ;
+    font-family: var(--font-title);
     padding-top: 50px;
 }
 
@@ -245,41 +296,68 @@ address {
 .parallax {
     background-image: url('../../assets/images/pagecontact.jpeg');
     width: 100%;
-    height: 50vh;
-    margin-top: 5px;
-
-    /* Pour l'effet scroll*/
+    height: 58vh;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.titleContact {
-    margin-top: 10%;
+.tarif-upload, .form_contact {
+    background-color: whitesmoke;
+}
+
+.bulletin {
+    height: 100%;
+}
+
+.etape1 {
+    padding: 8px;
+}
+
+.titleadherer {
+    margin-top: 5%;
     text-align: center;
     font-family: var(--font-title);
     background-color: white;
 }
 
-.contactform {
-    width: 85%;
-    font-size: 1.2em;
-    margin-top: 5%;
-    margin-bottom: 2%;
+.titleContact > h1 {
+    padding: 9%;
+    text-align: center;
+    font-family: var(--font-title);
+    color: var(--text-color-light);
+    text-shadow: 1px 1px 10px black;
+    font-size: 7rem;
+    font-size: calc(14px + 65 * ((100vw - 320px) / 960));
+}
+
+.bg-contact {
+    background-image: url('../../assets/images/hat2.png');
+    background-repeat: no-repeat;
+    background-position: center top;
+    margin-top: 2%;
+    background-size: 75rem;
 }
 
 .labelcontact {
-    font-family: var(--font-title);
+    font-size: 1.5em;
+}
+
+.contactform {
+    width: 85%;
+    padding: 8%;
 }
 
 .buttoncontact {
     text-align: center;
+    padding-top: 2em;
 }
+
+/************** MEMBERS *****************/
 
 .cardassociation {
     margin-top: 4em;
-
 }
 
 .title_association_adress {
@@ -320,14 +398,28 @@ address {
     background-position: right;
 }
 
+.sectionCountry {
+    background-color: var(--text-color-light);
+    background-image: url('/assets/images/dancersVector2.png');
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
 .teacherCard {
-    width: 22rem;
+    width: 32rem;
     border: none;
-    box-shadow: 10px 10px 15px var(--text-color-dark);
-    margin: 0 100px 0 5%;
+    box-shadow: 10px 10px 15px var(--text-color-medium);
+    margin: 0 50px 0 5%;
     background-color: var(--light-color);
     padding: 20px;
     font-size: 1.1em;
+    border-radius: 10px;
+}
+
+.allTeachers {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .practiceCard {
@@ -335,6 +427,7 @@ address {
     border: none;
     padding-bottom: 10px;
     font-size: 1.2em;
+    margin-left: 0;
 }
 
 .teacherAndPractice {
@@ -342,10 +435,11 @@ address {
     justify-content: flex-start;
     align-items: end;
     margin-bottom: 70px;
+    flex-wrap: wrap;
 }
 
 .imgTeachers {
-    width: 60%;
+    width: 40%;
     align-self: center;
     margin: 20px 0;
     border-radius: 50%;
@@ -381,6 +475,12 @@ address {
     margin-bottom: 50px;
 }
 
+.presentationPart {
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
 .cardMember {
     opacity: 100%;
     margin-bottom: 2em;
@@ -400,25 +500,26 @@ address {
 }
 
 
-.bg-pagesAdmin{
+.bg-pagesAdmin {
     width: 100%;
 }
 
 .teacherCardAdmin {
     width: 18rem;
-    border: none;
-    box-shadow: 10px 10px 15px var(--text-color-medium);
-    margin: 0 100px 0 5%;
+    margin: 0 100px 40px 5%;
     background-color: var(--light-color);
     padding: 20px;
-    font-size: 1.1em;
-    flex-direction: row;
+    font-size: 1.3em;
+    text-align: center;
 }
 
-.containerTeacherAdmin{
+.containerTeacherAdmin {
     display: flex;
     flex-direction: row;
     margin-bottom: 50px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 
@@ -431,5 +532,197 @@ address {
 
 .bg-homeAdmin {
     width: 100%;
+}
+
+/*************** Admin Members*******************/
+
+
+.memberCardAdmin {
+    width: 18rem;
+    margin: 0 100px 0 5%;
+    background-color: var(--light-color);
+    padding: 20px;
+    font-size: 1.3em;
+    text-align: center;
+}
+
+.containerMemberAdmin {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 50px;
+    justify-content: center;
+}
+
+
+/*Galerie*/
+.thumb {
+    margin-bottom: 30px;
+}
+
+.box-gallery {
+    margin-right: 2em;
+    margin-left: 2em;
+    margin-top: 4em;
+    margin-bottom: 4em;
+}
+
+.title-gallery {
+    font-size: 2.2em;
+    font-family: var(--font-title);
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.parallaxGalerie {
+    background-image: url('../../assets/images/pagegalerie.jpg');
+    width: 100%;
+    height: 50vh;
+    margin-top: 5px;
+    /* Pour l'effet scroll*/
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.formAdmin {
+    margin: 10px auto;
+}
+
+.btnFormAdmin {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.btnReturnAdmin {
+    margin: 20px;
+}
+
+
+.imgAjout {
+    width: 50%;
+    align-self: center;
+}
+
+.linkBtnAjout {
+    justify-content: center;
+    display: flex;
+}
+
+
+/************ADMIN NEWS****************/
+.newsCardAdmin {
+
+    margin: 2em;
+    background-color: var(--light-color);
+    padding: 20px;
+    text-align: center;
+}
+
+.containerNewsAdmin {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    justify-content: center;
+}
+
+.title-news-admin {
+    font-size: 1em;
+}
+
+.imgEditTeacher {
+    width: 20%;
+    margin: 0 auto;
+}
+
+.containerMentionsLegales p {
+    font-size: 1.2em;
+    max-width: 960px;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.containerMentionsLegales h2 {
+    max-width: 960px;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+
+}
+
+.link-modify-news {
+    padding-bottom: 2em
+}
+
+.imgAddNews {
+    width: 179px;
+    height: 55px;
+    margin: 4em;
+}
+
+/*********************** Sitemap*****************/
+
+
+.box-sitemap-content {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.box-sitemap-element {
+    margin-left: 3em;
+}
+
+.element-sitemap {
+    color: var(--text-color-dark);
+    font-size: 1.2em;
+    font-family: var(--font-content);
+    margin-top: 1.5em;
+}
+
+.link-sitemap {
+    font-family: var(--font-content);
+}
+
+
+.containerPresentationIcone div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerPresentationIcone div img {
+    width: 7em;
+    margin: 20px 0;
+}
+
+.containerPresentationIcone div h3 {
+    font-weight: 700;
+    font-size: 1.3em;
+}
+
+.containerPresentationIcone div p {
+    font-size: 1em;
+    text-align: center;
+    width: 70%;
+}
+
+.containerPresentationIcone {
+    margin-bottom: 50px;
+}
+
+.imgNews {
+    padding: 1.25rem;
 }
 

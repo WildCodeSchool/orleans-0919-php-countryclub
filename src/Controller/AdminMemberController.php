@@ -9,20 +9,20 @@
 
 namespace App\Controller;
 
-use App\Model\TeacherManager;
+use App\Model\MemberManager;
 
 /**
- * Class AdminTeacherController
+ * Class AdminMemberController
  *
  */
-class AdminTeacherController extends AbstractController
+class AdminMemberController extends AbstractController
 {
 
     const MAX_FILE_SIZE = 200000;
     const ALLOWED_MIMES = ['image/jpeg', 'image/png', 'image/jpg'];
 
     /**
-     * Display teacher listing
+     * Display member listing
      *
      * @return string
      * @throws \Twig\Error\LoaderError
@@ -31,14 +31,14 @@ class AdminTeacherController extends AbstractController
      */
     public function index()
     {
-        $teacherManager = new TeacherManager();
-        $teachers = $teacherManager->selectAll();
+        $memberManager = new MemberManager();
+        $members = $memberManager->selectAll();
 
-        return $this->twig->render('Admin/Teacher/index.html.twig', ['teachers' => $teachers]);
+        return $this->twig->render('Admin/Member/index.html.twig', ['members' => $members]);
     }
 
     /**
-     * Display teacher edition page specified by $id
+     * Display member edition page specified by $id
      *
      * @param int $id
      * @return string
@@ -48,8 +48,8 @@ class AdminTeacherController extends AbstractController
      */
     public function edit(int $id): string
     {
-        $teacherManager = new TeacherManager();
-        $teacher = $teacherManager->selectOneById($id);
+        $memberManager = new MemberManager();
+        $member = $memberManager->selectOneById($id);
 
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -78,28 +78,36 @@ class AdminTeacherController extends AbstractController
                     $fileName = uniqid() . '.' . pathinfo($path['name'], PATHINFO_EXTENSION);
                     move_uploaded_file($path['tmp_name'], UPLOAD_PATH . $fileName);
                 }
-                $teacher = [
-                    'id' => $_POST['id'],
-                    'firstname' => $_POST['firstname'],
-                    'lastname'  => $_POST['lastname'],
-                    'description' => $_POST['description'],
-                    'image'      => $fileName ?? '',
-                ];
-                $teacherManager->update($teacher);
-                header('Location: /AdminTeacher/edit/' . $teacher['id'] . '/?success=ok');
+                $memberManager = new MemberManager();
+                $member = $data;
+                $member['picture'] = $fileName ?? '';
+                $memberManager->update($member);
+                header('Location: /AdminMember/edit/' . $member['id'] . '/?success=ok');
             }
         }
 
-        return $this->twig->render('Admin/Teacher/edit.html.twig', [
-            'teacher' => $teacher,
+        return $this->twig->render('Admin/Member/edit.html.twig', [
+            'member' => $member,
             'errors' => $errors ?? [],
             'success' => $_GET['success'] ?? null,
         ]);
     }
 
+  
+    public function delete(int $id)
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $memberManager = new MemberManager();
+            $memberManager->delete($id);
+
+            header('Location: /AdminMember/index');
+        }
+    }
+
+
 
     /**
-     * Display teacher creation page
+     * Display member creation page
      *
      * @return string
      * @throws \Twig\Error\LoaderError
@@ -110,69 +118,42 @@ class AdminTeacherController extends AbstractController
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $data = array_map('trim', $_POST);
-
             $errors = $this->validate($data);
-
             if (!empty($_FILES['file']['name'])) {
                 $path = $_FILES['file'];
-
                 if ($path['error'] !== 0) {
                     $errors[] = 'Erreur de téléchargement';
                 }
-
                 // size du fichier
                 if ($path['size'] > self::MAX_FILE_SIZE) {
                     $errors[] = 'La taille du fichier doit être < ' . (self::MAX_FILE_SIZE / 1000) . ' ko';
                 }
-
                 // type mime autorisés
                 if (!in_array($path['type'], self::ALLOWED_MIMES)) {
                     $errors[] = 'Erreur d\'extension, les extensions autorisées 
                     sont : ' . implode(', ', self::ALLOWED_MIMES);
                 }
             }
-
-
             if (empty($errors)) {
                 // finalisation de l'upload en déplacant le fichier dans le dossier upload
-
                 if (!empty($path)) {
                     $fileName = uniqid() . '.' . pathinfo($path['name'], PATHINFO_EXTENSION);
-
                     move_uploaded_file($path['tmp_name'], UPLOAD_PATH . $fileName);
                 }
-
-                $teacherManager = new TeacherManager();
-                $teacher = [
-                    'firstname' => $_POST['firstname'],
-                    'lastname'  => $_POST['lastname'],
-                    'description' => $_POST['description'],
-                    'image'      => $fileName ?? '',
-                ];
-                $teacherManager->insert($teacher);
-                header('Location:/AdminTeacher/index');
+                $memberManager = new MemberManager();
+                $member = $data;
+                $member['picture'] = $fileName ?? '';
+                $memberManager->insert($member);
+                header('Location:/AdminMember/index');
             }
         }
-
-        return $this->twig->render('Admin/Teacher/add.html.twig', [
-            'teacher' => $teacher ?? [],
+        return $this->twig->render('Admin/Member/add.html.twig', [
+            'member' => $member ?? [],
             'errors' => $errors ?? [],
             'success' => $_GET['success'] ?? null,
         ]);
     }
 
-    public function delete(int $id)
-    {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $teacherManager = new TeacherManager();
-            $teacher = $teacherManager->selectOneById($id);
-            if ($teacher) {
-                unlink(UPLOAD_PATH . $teacher['image']);
-                $teacherManager->delete($id);
-            }
-            header('Location: /AdminTeacher/index');
-        }
-    }
 
 
     private function validate($data)
@@ -185,6 +166,9 @@ class AdminTeacherController extends AbstractController
         if (strlen($data['firstname']) > 155) {
             $errors['firstname'] = 'Le prénom est trop long';
         }
+        if (strlen($data['function']) > 155) {
+            $errors['function'] = 'La fonction est trop longue';
+        }
         return array_merge($emptyErrors, $errors);
     }
 
@@ -196,8 +180,8 @@ class AdminTeacherController extends AbstractController
         if (empty($data['firstname'])) {
             $errors['firstname'] = 'Le prénom doit être indiqué';
         }
-        if (empty($data['description'])) {
-            $errors['description'] = 'Une description doit être renseignée';
+        if (empty($data['function'])) {
+            $errors['function'] = 'Une fonction doit être renseigné';
         }
         return $errors ?? [];
     }

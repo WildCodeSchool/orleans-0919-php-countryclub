@@ -1,10 +1,10 @@
 {% block countryDay %}
-<div class="container-fluid bg-light text-dark" >
+<div class="container-fluid bg-light text-dark sectionCountry" >
     <div  class="countryTitle" align="center"><h2>COUNTRY DAY</h2></div>
     <div class="row ">
         <div class="col-md-6">
             <figure class="figure">
-                <img   src="/assets/images/{{ event.image }}" class="rounded mx-auto d-block imgCountryDay" alt="country day">
+                <img   src="assets/upload/{{ event.image }}" class="rounded mx-auto d-block imgCountryDay" alt="country day">
             </figure>
         </div>
         <div class="col-md-6">
@@ -14,9 +14,13 @@
                     {{ event.description }}
                 </p>
             </div>
-            <div>
-                <iframe src="https://www.youtube.com/embed/FqJl3d7yU5g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" class="iframeCountryDay" allowfullscreen></iframe>
-            </div>
+            {% if event.video %}
+                <div>
+                    <iframe src="https://www.youtube.com/embed/{{event.video}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" class="iframeCountryDay" allowfullscreen></iframe>
+                </div>
+                {% else %}
+                    <div><h3>Très bientôt votre video</h3></div>
+            {% endif %}
         </div>
     </div>
 </div>

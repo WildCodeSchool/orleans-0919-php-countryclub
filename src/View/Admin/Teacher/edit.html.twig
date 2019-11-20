@@ -1,0 +1,20 @@
+{% extends 'layout.html.twig' %}
+{% block header %}
+    {% include 'Admin/header.html.twig' %}
+{% endblock %}
+
+{% block content %}
+    <img class="bg-pagesAdmin" src="/assets/images/westernAdmin.jpg" alt="paysage canyon">
+    {% if success is not null %}
+        <div class="alert alert-success" role="alert">
+            <p>Merci, votre modification a bien été prise en compte</p>
+        </div>
+    {% endif %}
+    <h1>Modifier {{ teacher.firstname }} {{ teacher.lastname }}</h1>
+    <div class="text-center">
+        <img src="/assets/upload/{{ teacher.image }}" alt="photo de {{ teacher.firstname }} {{ teacher.lastname }} ">
+    </div>
+    {% include 'Admin/Teacher/_form.html.twig' %}
+
+
+{% endblock %}

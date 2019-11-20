@@ -1,0 +1,54 @@
+<form method="post" enctype="multipart/form-data">
+    <input type="hidden" value="{{ member.id }}" name="id">
+
+    <div class="form-group formAdmin col-md-8 col-lg-6">
+        <label for="firstname">Prénom : </label>
+        <input type="text" class="form-control" id="firstname" value="{{ member.firstname }}" name="firstname">
+        {% if errors.firstname is not null %}
+            <ul class="alert alert-danger">
+                <li>{{ errors.firstname }}</li>
+            </ul>
+        {% endif %}
+    </div>
+
+    <div class="form-group formAdmin col-md-8 col-lg-6">
+        <label for="lastname">Nom : </label>
+        <input type="text" class="form-control" id="lastname" value="{{ member.lastname }}" name="lastname">
+        {% if errors.lastname is not null %}
+            <ul class="alert alert-danger">
+                <li>{{ errors.lastname }}</li>
+            </ul>
+        {% endif %}
+    </div>
+
+    <div class="form-group formAdmin col-md-8 col-lg-6">
+        <div class="custom-file">
+            <label for="picture" >Photo : </label>
+            <input type="file" name="file" class="file-input" id="picture">
+            {% if errors.file is not null %}
+                <ul class="alert alert-danger">
+                    <li>{{ errors.file }}</li>
+                </ul>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="form-group formAdmin col-md-8 col-lg-6">
+        <label for="function">Fonction : </label>
+        <textarea class="form-control" id="function" rows="3" name="function">{{ member.function }}</textarea>
+        {% if errors.function is not null %}
+            <ul class="alert alert-danger">
+                <li>{{ errors.function }}</li>
+            </ul>
+        {% endif %}
+    </div>
+
+    <div class="btnFormAdmin">
+        <button type="submit" class="btn btn-outline-secondary col-md-3 col-lg-2 col-4">Valider</button>
+    </div>
+</form>
+
+<a href="/AdminMember/index">
+    <button type="submit" class="btn btn-outline-secondary btnReturnAdmin col-md-2 col-lg-1 col-3">< Retour</button>
+</a>
+

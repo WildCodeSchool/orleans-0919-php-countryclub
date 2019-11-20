@@ -6,19 +6,30 @@
 {% block content %}
     <img class="bg-pagesAdmin" src="/assets/images/westernAdmin.jpg" alt="paysage canyon">
     <h1>Animatrices</h1>
-    <div class="containerTeacherAdmin">
+    <div class="containerTeacherAdmin ">
         {% for teacher in teachers %}
-
             <div class="card teacherCardAdmin">
                 <img src="/assets/upload/{{ teacher.image }}" class="card-img-top"
                      alt="photo de {{ teacher.firstname }} {{ teacher.lastname }} ">
                 <div class="card-body">
-                    <p class="card-text">{{ teacher.firstname }} {{ teacher.lastname }}</p>
+                    <a href="/AdminTeacher/edit/{{ teacher.id }}">
+                        <p class="card-text">{{ teacher.firstname }} {{ teacher.lastname }}</p>
+                    </a>
                 </div>
+
+                <form class="col-12" method="post" action="/AdminTeacher/delete/{{ teacher.id }}">
+                    <input type="submit" name="delete" value="Supprimer la fiche" class="btn btn-outline-danger">
+                </form>
+
+
             </div>
 
         {% else %}
             <li>Rien à afficher</li>
         {% endfor %}
+        <a href="/AdminTeacher/add" class="linkBtnAjout">
+            <img src="/assets/images/btnAdd.png" class="card-img-top imgAjout" alt="icone plus pour ajout">
+        </a>
     </div>
+
 {% endblock %}
