@@ -726,3 +726,9 @@ button {
     padding: 1.25rem;
 }
 
+/*Galerie text*/
+.title-photo-gallery {
+    color: var(--text-color-dark);
+    font-size: 1.2em;
+    font-family: var(--font-content);
+}
