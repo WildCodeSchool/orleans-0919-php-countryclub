@@ -24,7 +24,6 @@ class JoinController extends AbstractController
     private function validate($data)
     {
         $errors = [];
-        $telephone = "06.01-02.03 04";
 
         //start validation
         if (empty($data['firstname'])) {
