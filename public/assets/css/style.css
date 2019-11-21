@@ -302,11 +302,9 @@ button {
     margin-top: 15pt;
 }
 .parallax {
-    /* The image used */
     background-image: url('../../assets/images/pagecontact.jpeg');
-    width: 100%; /* Full height */
+    width: 100%;
     height: 50vh;
-    margin-bottom: 1px; /* Create the parallax scrolling effect */
 }
 .card.text-center , .div.bulletin.card {
     margin-top: 5vh;
@@ -652,6 +650,7 @@ button {
 .linkBtnAjout {
     justify-content: center;
     display: flex;
+    margin: 30px;
 }
 
 
@@ -662,6 +661,7 @@ button {
     background-color: var(--light-color);
     padding: 20px;
     text-align: center;
+
 }
 
 .containerNewsAdmin {
@@ -684,6 +684,10 @@ button {
 .imgEditTeacher {
     width: 20%;
     margin: 0 auto;
+}
+
+.containerMentionsLegales {
+    margin: 50px;
 }
 
 .containerMentionsLegales p {
@@ -783,11 +787,32 @@ button {
 
 .containerCountry .card-body {
     margin-bottom: 30px;
- 
+}
+
 /*Galerie text*/
 .title-photo-gallery {
     color: var(--text-color-dark);
     font-size: 1.2em;
     font-family: var(--font-content);
+}
 
+.btn-upload {
+margin-bottom: 30px;
+}
+
+.alert-success {
+    margin-top: 20px;
+}
+
+.cardAdminGallery {
+    border: none;
+}
+
+.cardAdminGallery img {
+    border-radius: 10px;
+}
+
+.cardAdminGallery form {
+    margin: 10px;
+    align-self: center;
 }

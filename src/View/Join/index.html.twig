@@ -2,12 +2,7 @@
 
 {% block content %}
 
-    {% if success is not null %}
-        <div class="alert alert-success" role="alert">
-            <p>Votre message a été envoyé</p>
-        </div>
-    {% endif %}
-    <div class="parallax">
+   <div class="parallax">
         <div class="titleadherer">
             <h1 class="parah1">Pour adhérer à notre association</h1>
         </div>
@@ -25,15 +20,15 @@
                                 <p><strong>Accès sur les deux sites à tous les cours pour tous niveaux !</strong></p>
                             </div>
                             <div>
-                                <h3 class="sizeh3">1 personne</h3>
+                                <h3 class="sizeh3">Une personne</h3>
                                 <p class="h3list">195 euros</p>
                             </div>
                             <div>
-                                <h3 class="sizeh3">1 couple ou deux personnes du même foyer</h3>
+                                <h3 class="sizeh3">Un couple ou deux personnes du même foyer</h3>
                                 <p class="h3list">295 euros</p>
                             </div>
                             <div>
-                                <h3 class="sizeh3">1 étudiant jusqu'à 25 ans ou chômeur (sur justificatif)</h3>
+                                <h3 class="sizeh3">Un étudiant jusqu'à 25 ans ou chômeur (sur justificatif)</h3>
                                 <p class="h3list">195 euros</p>
                             </div>
                         </div>
@@ -45,7 +40,7 @@
                             <h2 class="card-header">Bulletin d'inscription</h2>
                             <div class="etape1">
                                 <p class="card-text">Bulletin d'inscription au format papier disponible en cliquant
-                                    sur le bouton<strong>"télécharger"</strong>.</p>
+                                    sur le bouton <strong>"télécharger"</strong>.</p>
                             </div>
                             <div class="li_bulletin">
                                 <p class="h3list">Etape 1</p>
@@ -53,9 +48,6 @@
                             </div>
                             <div class="li_bulletin">
                                 <p class="h3list">Etape 2</p>
-                                <p>Envoyer nous le bulletin d'inscription par voie postal</p>
-                            <div>
-                                <p><strong>Etape 2</strong></p>
                                 <p>Envoyez-nous le bulletin d'inscription par voie postale</p>
                             </div>
                             <div class="li_bulletin">
@@ -63,7 +55,7 @@
                                 <p>Lors de la réception de votre courrier, nous validerons votre inscription</p>
                             </div>
                             <a href="http://www.countryclubroute45.com/bulletin_d27adhesion_saison_2019_2020.pdf"
-                               class="btn btn-secondary">Télécharger</a>
+                               class="btn btn-secondary btn-upload">Télécharger</a>
                         </div>
                     </div>
                 </div>
@@ -139,6 +131,11 @@
                             </div>
                         </div>
                         <button class="btn btn-secondary" type="submit">Envoyer</button>
+                        {% if success is not null %}
+                            <div class="alert alert-success" role="alert">
+                                <p>Votre message a été envoyé</p>
+                            </div>
+                        {% endif %}
                     </div>
                 </div>
             </form>
