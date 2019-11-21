@@ -406,10 +406,20 @@ button {
 
 .titleAssociation {
     margin-top: 40px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -180%);
+    font-family: var(--font-title);
+    color: var(--text-color-light);
+    text-shadow: 1px 1px 10px black;
+    font-size: 7rem;
+    font-size: calc(14px + 45 * ((100vw - 320px) / 960));
 }
 
 .lead {
     text-align: justify;
+    font-size: 1.50rem;
+
 }
 
 .jumbotron-fluid {
@@ -474,7 +484,7 @@ button {
     width: 40%;
     align-self: center;
     margin: 20px 0;
-    border-radius: 50%;
+    border-radius: 10px;
 }
 
 .teacherTitle {
@@ -511,17 +521,13 @@ button {
     justify-content: center;
     align-items: center;
     flex-direction: row;
+    margin-top: 2%;
 }
 
 .cardMember {
-    opacity: 100%;
     margin-bottom: 2em;
     display: flex;
     flex-direction: column;
-}
-
-.cardMember:hover {
-    opacity: 80%;
 }
 
 
@@ -530,7 +536,6 @@ button {
 .btn-logout {
     align-self: center;
 }
-
 
 .bg-pagesAdmin {
     width: 100%;
@@ -586,6 +591,11 @@ button {
     justify-content: center;
 }
 
+.memberName {
+    font-family: var(--font-title);
+    font-size: 1.7em;
+    margin: 0;
+}
 
 /*Galerie*/
 .thumb {
