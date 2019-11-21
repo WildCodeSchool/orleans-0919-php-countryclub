@@ -1,9 +1,12 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-    <img src="/assets/images/road66.jpg" alt="landscape road 66" class="pictureTopPage">
     {# Présentation #}
-    <h1 class="titleAssociation">L'ASSOCIATION EN BREF ...</h1>
+
+
+    <img src="/assets/images/road66.jpg" alt="landscape road 66" class="pictureTopPage">
+    <h1 class="titleAssociation">L'association en bref...</h1>
+
     <div class="container-fluid">
         <div class="row d-flex presentationPart">
             <div class="imagePresentation">
@@ -16,11 +19,11 @@
                         association née en 2007
                         du désir de partager la passion de danser dans le respect des traditions et également avec la
                         joie que ce hobby peut apporter
-                        à un groupe de danseurs qui ont les mêmes goûts. L'association a toujours aujourd'hui un but
+                        à un groupe de danseurs qui ont les mêmes goûts. Aujourd'hui, l'association a toujours un but
                         simple : notre idéal est la promotion
                         de la danse country et de la line dance, et le partage de notre passion. Le défunt Robert
-                        Wanstreet, fondateur de la danse country en France a accepté
-                        d'être le parrain du club dès sa création, chose qu'il n'avait jamais faite auparavant.
+                        Wanstreet, fondateur de la danse country en France, a accepté
+                        d'être le parrain du club dès sa création : chose qu'il n'avait jamais fait auparavant.
                     </p>
                 </div>
             </div>
@@ -30,6 +33,7 @@
 
     {# Animatrices #}
     <section class="sectionTeachers">
+        <div>
         <h1>Les animatrices</h1>
         <div class="allTeachers row no-gutters">
             {% for teacher in teachers %}
